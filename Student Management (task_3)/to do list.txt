@@ -1,4 +1,1 @@
-- test add (Student , instructor , course)
-- test print all (Student , instructor , course)
-- test find by id
-- find by name 
+- make different file for each class
