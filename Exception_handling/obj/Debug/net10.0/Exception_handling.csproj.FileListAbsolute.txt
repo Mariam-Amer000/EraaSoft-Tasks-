@@ -1,0 +1,15 @@
+E:\programming\Eraasoft\Eraasoft\EraaSoft-Tasks-\Exception_handling\bin\Debug\net10.0\Exception_handling.exe
+E:\programming\Eraasoft\Eraasoft\EraaSoft-Tasks-\Exception_handling\bin\Debug\net10.0\Exception_handling.deps.json
+E:\programming\Eraasoft\Eraasoft\EraaSoft-Tasks-\Exception_handling\bin\Debug\net10.0\Exception_handling.runtimeconfig.json
+E:\programming\Eraasoft\Eraasoft\EraaSoft-Tasks-\Exception_handling\bin\Debug\net10.0\Exception_handling.dll
+E:\programming\Eraasoft\Eraasoft\EraaSoft-Tasks-\Exception_handling\bin\Debug\net10.0\Exception_handling.pdb
+E:\programming\Eraasoft\Eraasoft\EraaSoft-Tasks-\Exception_handling\obj\Debug\net10.0\Exception_handling.GeneratedMSBuildEditorConfig.editorconfig
+E:\programming\Eraasoft\Eraasoft\EraaSoft-Tasks-\Exception_handling\obj\Debug\net10.0\Exception_handling.AssemblyInfoInputs.cache
+E:\programming\Eraasoft\Eraasoft\EraaSoft-Tasks-\Exception_handling\obj\Debug\net10.0\Exception_handling.AssemblyInfo.cs
+E:\programming\Eraasoft\Eraasoft\EraaSoft-Tasks-\Exception_handling\obj\Debug\net10.0\Exception_handling.csproj.CoreCompileInputs.cache
+E:\programming\Eraasoft\Eraasoft\EraaSoft-Tasks-\Exception_handling\obj\Debug\net10.0\Exception_handling.sourcelink.json
+E:\programming\Eraasoft\Eraasoft\EraaSoft-Tasks-\Exception_handling\obj\Debug\net10.0\Exception_handling.dll
+E:\programming\Eraasoft\Eraasoft\EraaSoft-Tasks-\Exception_handling\obj\Debug\net10.0\refint\Exception_handling.dll
+E:\programming\Eraasoft\Eraasoft\EraaSoft-Tasks-\Exception_handling\obj\Debug\net10.0\Exception_handling.pdb
+E:\programming\Eraasoft\Eraasoft\EraaSoft-Tasks-\Exception_handling\obj\Debug\net10.0\Exception_handling.genruntimeconfig.cache
+E:\programming\Eraasoft\Eraasoft\EraaSoft-Tasks-\Exception_handling\obj\Debug\net10.0\ref\Exception_handling.dll

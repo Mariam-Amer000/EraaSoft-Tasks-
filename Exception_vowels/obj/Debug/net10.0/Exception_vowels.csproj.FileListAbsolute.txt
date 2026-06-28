@@ -1,0 +1,15 @@
+E:\programming\Eraasoft\Eraasoft\EraaSoft-Tasks-\Exception_vowels\bin\Debug\net10.0\Exception_vowels.exe
+E:\programming\Eraasoft\Eraasoft\EraaSoft-Tasks-\Exception_vowels\bin\Debug\net10.0\Exception_vowels.deps.json
+E:\programming\Eraasoft\Eraasoft\EraaSoft-Tasks-\Exception_vowels\bin\Debug\net10.0\Exception_vowels.runtimeconfig.json
+E:\programming\Eraasoft\Eraasoft\EraaSoft-Tasks-\Exception_vowels\bin\Debug\net10.0\Exception_vowels.dll
+E:\programming\Eraasoft\Eraasoft\EraaSoft-Tasks-\Exception_vowels\bin\Debug\net10.0\Exception_vowels.pdb
+E:\programming\Eraasoft\Eraasoft\EraaSoft-Tasks-\Exception_vowels\obj\Debug\net10.0\Exception_vowels.GeneratedMSBuildEditorConfig.editorconfig
+E:\programming\Eraasoft\Eraasoft\EraaSoft-Tasks-\Exception_vowels\obj\Debug\net10.0\Exception_vowels.AssemblyInfoInputs.cache
+E:\programming\Eraasoft\Eraasoft\EraaSoft-Tasks-\Exception_vowels\obj\Debug\net10.0\Exception_vowels.AssemblyInfo.cs
+E:\programming\Eraasoft\Eraasoft\EraaSoft-Tasks-\Exception_vowels\obj\Debug\net10.0\Exception_vowels.csproj.CoreCompileInputs.cache
+E:\programming\Eraasoft\Eraasoft\EraaSoft-Tasks-\Exception_vowels\obj\Debug\net10.0\Exception_vowels.sourcelink.json
+E:\programming\Eraasoft\Eraasoft\EraaSoft-Tasks-\Exception_vowels\obj\Debug\net10.0\Exception_vowels.dll
+E:\programming\Eraasoft\Eraasoft\EraaSoft-Tasks-\Exception_vowels\obj\Debug\net10.0\refint\Exception_vowels.dll
+E:\programming\Eraasoft\Eraasoft\EraaSoft-Tasks-\Exception_vowels\obj\Debug\net10.0\Exception_vowels.pdb
+E:\programming\Eraasoft\Eraasoft\EraaSoft-Tasks-\Exception_vowels\obj\Debug\net10.0\Exception_vowels.genruntimeconfig.cache
+E:\programming\Eraasoft\Eraasoft\EraaSoft-Tasks-\Exception_vowels\obj\Debug\net10.0\ref\Exception_vowels.dll

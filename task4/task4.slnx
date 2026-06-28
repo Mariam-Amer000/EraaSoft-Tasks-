@@ -1,0 +1,5 @@
+<Solution>
+  <Project Path="../Exception_handling/Exception_dublicatNumber.csproj" Id="520b7d8c-83aa-43d0-a4f5-d8a16ec6e8ea" />
+  <Project Path="../Exception_vowels/Exception_vowels.csproj" Id="9bed3814-00c1-481e-93ee-3a3dc7b1655d" />
+  <Project Path="mainTask.csproj" />
+</Solution>

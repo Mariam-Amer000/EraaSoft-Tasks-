@@ -1,0 +1,15 @@
+E:\programming\Eraasoft\Eraasoft\EraaSoft-Tasks-\task4\bin\Debug\net10.0\task4.exe
+E:\programming\Eraasoft\Eraasoft\EraaSoft-Tasks-\task4\bin\Debug\net10.0\task4.deps.json
+E:\programming\Eraasoft\Eraasoft\EraaSoft-Tasks-\task4\bin\Debug\net10.0\task4.runtimeconfig.json
+E:\programming\Eraasoft\Eraasoft\EraaSoft-Tasks-\task4\bin\Debug\net10.0\task4.dll
+E:\programming\Eraasoft\Eraasoft\EraaSoft-Tasks-\task4\bin\Debug\net10.0\task4.pdb
+E:\programming\Eraasoft\Eraasoft\EraaSoft-Tasks-\task4\obj\Debug\net10.0\task4.GeneratedMSBuildEditorConfig.editorconfig
+E:\programming\Eraasoft\Eraasoft\EraaSoft-Tasks-\task4\obj\Debug\net10.0\task4.AssemblyInfoInputs.cache
+E:\programming\Eraasoft\Eraasoft\EraaSoft-Tasks-\task4\obj\Debug\net10.0\task4.AssemblyInfo.cs
+E:\programming\Eraasoft\Eraasoft\EraaSoft-Tasks-\task4\obj\Debug\net10.0\task4.csproj.CoreCompileInputs.cache
+E:\programming\Eraasoft\Eraasoft\EraaSoft-Tasks-\task4\obj\Debug\net10.0\task4.sourcelink.json
+E:\programming\Eraasoft\Eraasoft\EraaSoft-Tasks-\task4\obj\Debug\net10.0\task4.dll
+E:\programming\Eraasoft\Eraasoft\EraaSoft-Tasks-\task4\obj\Debug\net10.0\refint\task4.dll
+E:\programming\Eraasoft\Eraasoft\EraaSoft-Tasks-\task4\obj\Debug\net10.0\task4.pdb
+E:\programming\Eraasoft\Eraasoft\EraaSoft-Tasks-\task4\obj\Debug\net10.0\task4.genruntimeconfig.cache
+E:\programming\Eraasoft\Eraasoft\EraaSoft-Tasks-\task4\obj\Debug\net10.0\ref\task4.dll

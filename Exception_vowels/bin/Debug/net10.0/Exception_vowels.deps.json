@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v10.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v10.0": {
+      "Exception_vowels/1.0.0": {
+        "runtime": {
+          "Exception_vowels.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "Exception_vowels/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
