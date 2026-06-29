@@ -18,6 +18,6 @@ public class SavingsAccount : Account
     }
     public override string ToString()
     {
-        return $"[Checking Account: {Name}: {Balance} : {interest_rate}]";
+        return $"[Saving Account: {Name}: {Balance} : {interest_rate}]";
     }
 }

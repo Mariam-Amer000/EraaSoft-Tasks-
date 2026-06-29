@@ -3,7 +3,24 @@
   "WorkspaceRootPath": "E:\\programming\\Eraasoft\\Eraasoft\\EraaSoft-Tasks-\\task4\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{9BED3814-00C1-481E-93EE-3A3DC7B1655D}|..\\Exception_vowels\\Exception_vowels.csproj|e:\\programming\\eraasoft\\eraasoft\\eraasoft-tasks-\\exception_vowels\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{90B7C01A-0B88-BA46-2A51-9B51303C2121}|mainTask.csproj|e:\\programming\\eraasoft\\eraasoft\\eraasoft-tasks-\\task4\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{90B7C01A-0B88-BA46-2A51-9B51303C2121}|mainTask.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{90B7C01A-0B88-BA46-2A51-9B51303C2121}|mainTask.csproj|e:\\programming\\eraasoft\\eraasoft\\eraasoft-tasks-\\task4\\trustaccount.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{90B7C01A-0B88-BA46-2A51-9B51303C2121}|mainTask.csproj|solutionrelative:trustaccount.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{90B7C01A-0B88-BA46-2A51-9B51303C2121}|mainTask.csproj|e:\\programming\\eraasoft\\eraasoft\\eraasoft-tasks-\\task4\\checkingaccount.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{90B7C01A-0B88-BA46-2A51-9B51303C2121}|mainTask.csproj|solutionrelative:checkingaccount.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{90B7C01A-0B88-BA46-2A51-9B51303C2121}|mainTask.csproj|e:\\programming\\eraasoft\\eraasoft\\eraasoft-tasks-\\task4\\savingaccount.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{90B7C01A-0B88-BA46-2A51-9B51303C2121}|mainTask.csproj|solutionrelative:savingaccount.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{90B7C01A-0B88-BA46-2A51-9B51303C2121}|mainTask.csproj|e:\\programming\\eraasoft\\eraasoft\\eraasoft-tasks-\\task4\\accountutil.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{90B7C01A-0B88-BA46-2A51-9B51303C2121}|mainTask.csproj|solutionrelative:accountutil.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -13,19 +30,71 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 3,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "TrustAccount.cs",
+              "DocumentMoniker": "E:\\programming\\Eraasoft\\Eraasoft\\EraaSoft-Tasks-\\task4\\TrustAccount.cs",
+              "RelativeDocumentMoniker": "TrustAccount.cs",
+              "ToolTip": "E:\\programming\\Eraasoft\\Eraasoft\\EraaSoft-Tasks-\\task4\\TrustAccount.cs",
+              "RelativeToolTip": "TrustAccount.cs",
+              "ViewState": "AgIAABoAAAAAAAAAAAAwwCUAAAAHAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-29T11:05:41.477Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "SavingAccount.cs",
+              "DocumentMoniker": "E:\\programming\\Eraasoft\\Eraasoft\\EraaSoft-Tasks-\\task4\\SavingAccount.cs",
+              "RelativeDocumentMoniker": "SavingAccount.cs",
+              "ToolTip": "E:\\programming\\Eraasoft\\Eraasoft\\EraaSoft-Tasks-\\task4\\SavingAccount.cs",
+              "RelativeToolTip": "SavingAccount.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAAA5wBcAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-29T11:08:03.423Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "CheckingAccount.cs",
+              "DocumentMoniker": "E:\\programming\\Eraasoft\\Eraasoft\\EraaSoft-Tasks-\\task4\\CheckingAccount.cs",
+              "RelativeDocumentMoniker": "CheckingAccount.cs",
+              "ToolTip": "E:\\programming\\Eraasoft\\Eraasoft\\EraaSoft-Tasks-\\task4\\CheckingAccount.cs",
+              "RelativeToolTip": "CheckingAccount.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-29T11:07:56.443Z",
+              "EditorCaption": ""
+            },
             {
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "Program.cs",
-              "DocumentMoniker": "E:\\programming\\Eraasoft\\Eraasoft\\EraaSoft-Tasks-\\Exception_vowels\\Program.cs",
-              "RelativeDocumentMoniker": "..\\Exception_vowels\\Program.cs",
-              "ToolTip": "E:\\programming\\Eraasoft\\Eraasoft\\EraaSoft-Tasks-\\Exception_vowels\\Program.cs",
-              "RelativeToolTip": "..\\Exception_vowels\\Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "DocumentMoniker": "E:\\programming\\Eraasoft\\Eraasoft\\EraaSoft-Tasks-\\task4\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "E:\\programming\\Eraasoft\\Eraasoft\\EraaSoft-Tasks-\\task4\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AgIAABAAAAAAAAAAAAAgwAUAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-28T14:06:05.216Z",
+              "WhenOpened": "2026-06-29T10:47:35.185Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "AccountUtil.cs",
+              "DocumentMoniker": "E:\\programming\\Eraasoft\\Eraasoft\\EraaSoft-Tasks-\\task4\\AccountUtil.cs",
+              "RelativeDocumentMoniker": "AccountUtil.cs",
+              "ToolTip": "E:\\programming\\Eraasoft\\Eraasoft\\EraaSoft-Tasks-\\task4\\AccountUtil.cs",
+              "RelativeToolTip": "AccountUtil.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAiwC4AAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-29T10:47:30.553Z",
               "EditorCaption": ""
             }
           ]
