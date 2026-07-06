@@ -1,0 +1,293 @@
+﻿using Examination_System.Answers;
+using Examination_System.Enums;
+using Examination_System.Questions;
+namespace Examination_System;
+internal class Program
+{
+    #region Menus
+    public static void MainMenu()
+    {
+        Console.WriteLine("Examination System ");
+        Console.WriteLine("1- Teacher mode");
+        Console.WriteLine("2- Student mode");
+        Console.WriteLine("0- Exit");
+    }
+    public static void SubjectsList()
+    {
+        Console.WriteLine("****** Subjects ******");
+        Console.WriteLine("1- Physics");
+        Console.WriteLine("2- Chemistry");
+        Console.WriteLine("3- Math");
+        Console.WriteLine("4- Biology");
+        Console.WriteLine("5- English");
+        Console.WriteLine("0- Back");
+    }
+    public static void SubjectQuestionsList()
+    {
+        Console.WriteLine("****** Subject Menu ******");
+        Console.WriteLine("1- Add question");
+        Console.WriteLine("2- edit question");
+        Console.WriteLine("3- remove question");
+        Console.WriteLine("4- show all questions");
+        Console.WriteLine("0- Back");
+    }
+    public static void QuestionTypesMenu()
+    {
+        Console.WriteLine("Question types");
+        Console.WriteLine("1- True and false");
+        Console.WriteLine("2- Chose one");
+        Console.WriteLine("3- Chose more than one");
+    }
+    public static void ExamTypes()
+    {
+        Console.WriteLine("****** Exams ******");
+        Console.WriteLine("1- Final Exam");
+        Console.WriteLine("2- Practical Exam");
+        Console.WriteLine("0- Back");
+    }
+    #endregion
+
+    #region Input Helpers
+    public static int TakeChoise()
+    {
+        Console.WriteLine("Enter your choise: ");
+        int num = Convert.ToInt32(Console.ReadLine());
+        return num;
+    }
+
+    public static QuestionLevel TakeQuestionLevel()
+    {
+        Console.WriteLine("Enter level of the question:");
+        Console.WriteLine("1- Easy");
+        Console.WriteLine("2- Medium");
+        Console.WriteLine("3- Hard");
+
+        int choice = Convert.ToInt32(Console.ReadLine());
+
+        return choice switch
+        {
+            1 => QuestionLevel.Easy,
+            2 => QuestionLevel.Medium,
+            3 => QuestionLevel.Hard,
+            _ => throw new Exception("Invalid Level")
+        };
+    }
+
+    public static string ChoseSubject() 
+    {
+        string subject = string.Empty;
+        int SubjectChoise;
+
+        SubjectsList();
+        SubjectChoise = TakeChoise();
+
+        switch (SubjectChoise)
+        {
+            case 1:
+                subject = "Physics";
+                break;
+            case 2:
+                subject = "Chemistry";
+                break;
+            case 3:
+                subject = "Math";
+                break;
+            case 4:
+                subject = "Biology";
+                break;
+            case 5:
+                subject = "English";
+                break;
+            case 0:
+                break;
+            default:
+                Console.WriteLine("invalid choise");
+                break;
+        }
+        return subject;
+    }
+    #endregion
+
+    #region Factory Methods
+    public static Answer MakeAnswer()
+    {
+        char symbol;
+        string value;
+        bool IsCorrect = false;
+
+        Console.Write("Enter symbol: ");
+        symbol = Convert.ToChar(Console.ReadLine());
+
+        Console.Write("Enter Value: ");
+        value = Console.ReadLine();
+
+        Console.Write("Value Correct [True / False]: ");
+        IsCorrect = Convert.ToBoolean(Console.ReadLine());
+
+        Answer answer = new(symbol, value, IsCorrect);
+        return answer;
+    }
+    public static Question MakeQuestion(int ChooisesNumber)
+    {
+        string body = string.Empty;
+        double degree;
+        QuestionLevel level;
+        int questionType;
+        Console.WriteLine("Enter question body: ");
+        body = Console.ReadLine();
+
+        Console.WriteLine("Enter Mark of The question: ");
+        degree = Convert.ToDouble(Console.ReadLine());
+
+        level = TakeQuestionLevel();
+
+        List<Answer> Choises = [];
+        for (int i = 0; i < ChooisesNumber; i++)
+        {
+            Answer answer = MakeAnswer();
+            Choises.Add(answer);
+        }
+
+        QuestionTypesMenu();
+        questionType = TakeChoise();
+        return questionType switch
+        {
+            1 => new TrueFalseQuestion(body, level, degree, Choises),
+            2 => new ChooseOneQuestion(body, level, degree, Choises),
+            3 => new ChooseAllQuestion(body, level, degree, Choises),
+
+        };
+    }
+    #endregion
+
+    #region Teacher Mode
+    public static void TeacherMode()
+    {
+        
+        int InnerSubjectChoise;
+        string subject = string.Empty;
+        int questionType;
+
+        Console.WriteLine("****** Teacher Mode ******");
+
+        subject = ChoseSubject();
+        SubjectQuestionsList();
+        QuestionList questions = new QuestionList($"{subject}.txt");
+        InnerSubjectChoise = TakeChoise();
+        switch (InnerSubjectChoise)
+        {
+            case 1://add question
+                Console.WriteLine("Enter numer of questions: ");
+                int numberOfQuestions = Convert.ToInt32(Console.ReadLine());
+                while (numberOfQuestions >= 0)
+                {
+                    QuestionTypesMenu();
+                    questionType = TakeChoise();
+                    switch (questionType)
+                    {
+                        case 1:
+                            questions.Add(MakeQuestion(2));
+                            break;
+                        case 2:
+                            questions.Add(MakeQuestion(4));
+                            break;
+                        case 3:
+                            // TODO enter number of choises
+                            questions.Add(MakeQuestion(4));
+                            break;
+                    }
+                    numberOfQuestions--;
+                }
+                
+                break;
+            case 2:
+                Console.WriteLine("Edit Question is not implemented yet.");
+                break;
+
+            case 3:
+                Console.WriteLine("Remove Question is not implemented yet.");
+                break;
+
+            case 4:
+                Console.WriteLine("Show Questions is not implemented yet.");
+                break;
+        }
+    }
+    #endregion
+
+    #region StudentMode
+    public static void StudentMode()
+    {
+        double Score = 0;
+
+        Console.Clear();
+        Console.WriteLine("****** Student Mode ******");
+
+        string subject = ChoseSubject();
+        QuestionList questions = new($"{subject}.txt");
+        questions.ReadQuestionsFromFile();
+
+        ExamTypes();
+        int examType = TakeChoise();
+        QuestionLevel ExamLevel = TakeQuestionLevel();
+
+        List<Question> examQuestions = [];
+
+        foreach (Question question in questions)
+        {
+            if (question.Level == ExamLevel)
+                examQuestions.Add(question);
+        }
+
+        Console.Write("Enter Number of questions: ");
+        int numberOfQuestoins = Convert.ToInt32(Console.ReadLine());
+
+        for (int i = 0; i < numberOfQuestoins; i++) 
+        {
+            Console.WriteLine(examQuestions[i]);
+
+            Console.Write("Enter Your Choise: ");
+            int answerSympol = Convert.ToInt32(Console.ReadLine());
+
+
+            if (examQuestions[i].Choices.ElementAt(answerSympol - 1).IsCorrect == true) 
+                Score += examQuestions[i].Mark;
+        }
+    }
+    #endregion
+
+    #region Program Entry
+    static void Main(string[] args)
+    {
+        int MainChoise;
+
+        do
+        {
+            MainMenu();
+            MainChoise = TakeChoise();
+
+            switch (MainChoise)
+            {
+                case 1:
+                    Console.Clear();
+                    TeacherMode();
+                    Console.WriteLine();
+                    Console.WriteLine("Press any key to return...");
+                    Console.ReadKey();
+                    break;
+                case 2:
+                    Console.Clear();
+                    StudentMode();
+                    break;
+                case 0:
+                    Console.WriteLine("Exit");
+                    break;
+                default:
+                    Console.WriteLine("invalid choise");
+                    break;
+            }
+        } while (MainChoise != 0);
+    }
+    #endregion
+}
+

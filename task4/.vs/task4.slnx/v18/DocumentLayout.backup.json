@@ -3,12 +3,12 @@
   "WorkspaceRootPath": "E:\\programming\\Eraasoft\\Eraasoft\\EraaSoft-Tasks-\\task4\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{90B7C01A-0B88-BA46-2A51-9B51303C2121}|mainTask.csproj|e:\\programming\\eraasoft\\eraasoft\\eraasoft-tasks-\\task4\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{90B7C01A-0B88-BA46-2A51-9B51303C2121}|mainTask.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{90B7C01A-0B88-BA46-2A51-9B51303C2121}|mainTask.csproj|e:\\programming\\eraasoft\\eraasoft\\eraasoft-tasks-\\task4\\trustaccount.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{90B7C01A-0B88-BA46-2A51-9B51303C2121}|mainTask.csproj|solutionrelative:trustaccount.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{90B7C01A-0B88-BA46-2A51-9B51303C2121}|mainTask.csproj|e:\\programming\\eraasoft\\eraasoft\\eraasoft-tasks-\\task4\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{90B7C01A-0B88-BA46-2A51-9B51303C2121}|mainTask.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{90B7C01A-0B88-BA46-2A51-9B51303C2121}|mainTask.csproj|e:\\programming\\eraasoft\\eraasoft\\eraasoft-tasks-\\task4\\checkingaccount.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -30,17 +30,21 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 1,
           "Children": [
             {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "TrustAccount.cs",
               "DocumentMoniker": "E:\\programming\\Eraasoft\\Eraasoft\\EraaSoft-Tasks-\\task4\\TrustAccount.cs",
               "RelativeDocumentMoniker": "TrustAccount.cs",
               "ToolTip": "E:\\programming\\Eraasoft\\Eraasoft\\EraaSoft-Tasks-\\task4\\TrustAccount.cs",
               "RelativeToolTip": "TrustAccount.cs",
-              "ViewState": "AgIAABoAAAAAAAAAAAAwwCUAAAAHAAAAAAAAAA==",
+              "ViewState": "AgIAACAAAAAAAAAAAAAwwAsAAAALAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-06-29T11:05:41.477Z",
               "EditorCaption": ""
@@ -73,13 +77,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "Program.cs",
               "DocumentMoniker": "E:\\programming\\Eraasoft\\Eraasoft\\EraaSoft-Tasks-\\task4\\Program.cs",
               "RelativeDocumentMoniker": "Program.cs",
               "ToolTip": "E:\\programming\\Eraasoft\\Eraasoft\\EraaSoft-Tasks-\\task4\\Program.cs",
               "RelativeToolTip": "Program.cs",
-              "ViewState": "AgIAABAAAAAAAAAAAAAgwAUAAAAFAAAAAAAAAA==",
+              "ViewState": "AgIAACIAAAAAAAAAAAAgwDAAAAAxAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-06-29T10:47:35.185Z",
               "EditorCaption": ""

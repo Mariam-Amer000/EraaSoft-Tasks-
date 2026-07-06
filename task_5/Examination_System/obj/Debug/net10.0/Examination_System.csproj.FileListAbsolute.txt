@@ -1,0 +1,15 @@
+E:\programming\Eraasoft\Eraasoft\EraaSoft-Tasks-\task_5\Examination_System\bin\Debug\net10.0\Examination_System.exe
+E:\programming\Eraasoft\Eraasoft\EraaSoft-Tasks-\task_5\Examination_System\bin\Debug\net10.0\Examination_System.deps.json
+E:\programming\Eraasoft\Eraasoft\EraaSoft-Tasks-\task_5\Examination_System\bin\Debug\net10.0\Examination_System.runtimeconfig.json
+E:\programming\Eraasoft\Eraasoft\EraaSoft-Tasks-\task_5\Examination_System\bin\Debug\net10.0\Examination_System.dll
+E:\programming\Eraasoft\Eraasoft\EraaSoft-Tasks-\task_5\Examination_System\bin\Debug\net10.0\Examination_System.pdb
+E:\programming\Eraasoft\Eraasoft\EraaSoft-Tasks-\task_5\Examination_System\obj\Debug\net10.0\Examination_System.GeneratedMSBuildEditorConfig.editorconfig
+E:\programming\Eraasoft\Eraasoft\EraaSoft-Tasks-\task_5\Examination_System\obj\Debug\net10.0\Examination_System.AssemblyInfoInputs.cache
+E:\programming\Eraasoft\Eraasoft\EraaSoft-Tasks-\task_5\Examination_System\obj\Debug\net10.0\Examination_System.AssemblyInfo.cs
+E:\programming\Eraasoft\Eraasoft\EraaSoft-Tasks-\task_5\Examination_System\obj\Debug\net10.0\Examination_System.csproj.CoreCompileInputs.cache
+E:\programming\Eraasoft\Eraasoft\EraaSoft-Tasks-\task_5\Examination_System\obj\Debug\net10.0\Examination_System.sourcelink.json
+E:\programming\Eraasoft\Eraasoft\EraaSoft-Tasks-\task_5\Examination_System\obj\Debug\net10.0\Examination_System.dll
+E:\programming\Eraasoft\Eraasoft\EraaSoft-Tasks-\task_5\Examination_System\obj\Debug\net10.0\refint\Examination_System.dll
+E:\programming\Eraasoft\Eraasoft\EraaSoft-Tasks-\task_5\Examination_System\obj\Debug\net10.0\Examination_System.pdb
+E:\programming\Eraasoft\Eraasoft\EraaSoft-Tasks-\task_5\Examination_System\obj\Debug\net10.0\Examination_System.genruntimeconfig.cache
+E:\programming\Eraasoft\Eraasoft\EraaSoft-Tasks-\task_5\Examination_System\obj\Debug\net10.0\ref\Examination_System.dll

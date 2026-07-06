@@ -1,0 +1,7 @@
+ChooseOneQuestion
+egypt will win or not 
+Easy
+5
+2
+49|True|True
+50|false|False
