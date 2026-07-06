@@ -1,6 +1,7 @@
 ﻿using Examination_System.Answers;
 using Examination_System.Enums;
 using Examination_System.Questions;
+using Examination_System.Subjects;
 namespace Examination_System;
 internal class Program
 {
@@ -12,7 +13,7 @@ internal class Program
         Console.WriteLine("2- Student mode");
         Console.WriteLine("0- Exit");
     }
-    public static void SubjectsList()
+    public static void Subjects()
     {
         Console.WriteLine("****** Subjects ******");
         Console.WriteLine("1- Physics");
@@ -22,7 +23,7 @@ internal class Program
         Console.WriteLine("5- English");
         Console.WriteLine("0- Back");
     }
-    public static void SubjectQuestionsList()
+    public static void SubjectMenu()
     {
         Console.WriteLine("****** Subject Menu ******");
         Console.WriteLine("1- Add question");
@@ -72,31 +73,30 @@ internal class Program
             _ => throw new Exception("Invalid Level")
         };
     }
-
-    public static string ChoseSubject() 
+    public static string ChoseSubjectTitle() 
     {
-        string subject = string.Empty;
+        string title = string.Empty;
+        
+        Subjects();
         int SubjectChoise;
-
-        SubjectsList();
         SubjectChoise = TakeChoise();
 
         switch (SubjectChoise)
         {
             case 1:
-                subject = "Physics";
+                title = "Physics";
                 break;
             case 2:
-                subject = "Chemistry";
+                title = "Chemistry";
                 break;
             case 3:
-                subject = "Math";
+                title = "Math";
                 break;
             case 4:
-                subject = "Biology";
+                title = "Biology";
                 break;
             case 5:
-                subject = "English";
+                title = "English";
                 break;
             case 0:
                 break;
@@ -104,7 +104,7 @@ internal class Program
                 Console.WriteLine("invalid choise");
                 break;
         }
-        return subject;
+        return title;
     }
     #endregion
 
@@ -122,17 +122,14 @@ internal class Program
         value = Console.ReadLine();
 
         Console.Write("Value Correct [True / False]: ");
-        IsCorrect = Convert.ToBoolean(Console.ReadLine());
-
-        Answer answer = new(symbol, value, IsCorrect);
-        return answer;
+        IsCorrect = Convert.ToBoolean(Console.ReadLine()); 
+        return new(symbol, value, IsCorrect);
     }
-    public static Question MakeQuestion(int ChooisesNumber)
+    public static Question MakeQuestion(int ChooisesNumber, int questionType)
     {
         string body = string.Empty;
         double degree;
         QuestionLevel level;
-        int questionType;
         Console.WriteLine("Enter question body: ");
         body = Console.ReadLine();
 
@@ -147,9 +144,6 @@ internal class Program
             Answer answer = MakeAnswer();
             Choises.Add(answer);
         }
-
-        QuestionTypesMenu();
-        questionType = TakeChoise();
         return questionType switch
         {
             1 => new TrueFalseQuestion(body, level, degree, Choises),
@@ -158,6 +152,8 @@ internal class Program
 
         };
     }
+    public static Subject MakeSubject(string title) => new(title);
+    
     #endregion
 
     #region Teacher Mode
@@ -165,38 +161,41 @@ internal class Program
     {
         
         int InnerSubjectChoise;
-        string subject = string.Empty;
         int questionType;
 
         Console.WriteLine("****** Teacher Mode ******");
+        //Chose and creat subject and make question list
+        Subject subject = MakeSubject(ChoseSubjectTitle());
 
-        subject = ChoseSubject();
-        SubjectQuestionsList();
-        QuestionList questions = new QuestionList($"{subject}.txt");
+
+        SubjectMenu();
         InnerSubjectChoise = TakeChoise();
         switch (InnerSubjectChoise)
         {
             case 1://add question
                 Console.WriteLine("Enter numer of questions: ");
                 int numberOfQuestions = Convert.ToInt32(Console.ReadLine());
-                while (numberOfQuestions >= 0)
+
+                while (numberOfQuestions > 0)
                 {
                     QuestionTypesMenu();
                     questionType = TakeChoise();
                     switch (questionType)
                     {
                         case 1:
-                            questions.Add(MakeQuestion(2));
+                            subject.Questions.Add(MakeQuestion(2,1));
+                            numberOfQuestions--;
                             break;
                         case 2:
-                            questions.Add(MakeQuestion(4));
+                            subject.Questions.Add(MakeQuestion(4, 2));
+                            numberOfQuestions--;
                             break;
                         case 3:
-                            // TODO enter number of choises
-                            questions.Add(MakeQuestion(4));
+                            subject.Questions.Add(MakeQuestion(4,3));
+                            numberOfQuestions--;
                             break;
                     }
-                    numberOfQuestions--;
+                    
                 }
                 
                 break;
@@ -223,9 +222,8 @@ internal class Program
         Console.Clear();
         Console.WriteLine("****** Student Mode ******");
 
-        string subject = ChoseSubject();
-        QuestionList questions = new($"{subject}.txt");
-        questions.ReadQuestionsFromFile();
+        Subject subject = MakeSubject(ChoseSubjectTitle());
+        subject.Questions.ReadQuestionsFromFile();
 
         ExamTypes();
         int examType = TakeChoise();
@@ -233,7 +231,7 @@ internal class Program
 
         List<Question> examQuestions = [];
 
-        foreach (Question question in questions)
+        foreach (Question question in subject.Questions)
         {
             if (question.Level == ExamLevel)
                 examQuestions.Add(question);
@@ -242,7 +240,13 @@ internal class Program
         Console.Write("Enter Number of questions: ");
         int numberOfQuestoins = Convert.ToInt32(Console.ReadLine());
 
-        for (int i = 0; i < numberOfQuestoins; i++) 
+        if (numberOfQuestoins > examQuestions.Count)
+        {
+            Console.WriteLine("Not enough questions.");
+            return;
+        }
+
+        for (int i = 0; i < numberOfQuestoins; i++)
         {
             Console.WriteLine(examQuestions[i]);
 
@@ -250,7 +254,7 @@ internal class Program
             int answerSympol = Convert.ToInt32(Console.ReadLine());
 
 
-            if (examQuestions[i].Choices.ElementAt(answerSympol - 1).IsCorrect == true) 
+            if (examQuestions[i].Choices.ElementAt(answerSympol - 1).IsCorrect)
                 Score += examQuestions[i].Mark;
         }
     }
@@ -277,7 +281,7 @@ internal class Program
                     break;
                 case 2:
                     Console.Clear();
-                    StudentMode();
+                    //StudentMode();
                     break;
                 case 0:
                     Console.WriteLine("Exit");
