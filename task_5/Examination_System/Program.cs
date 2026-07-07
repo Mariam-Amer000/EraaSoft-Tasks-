@@ -217,6 +217,7 @@ internal class Program
     #region StudentMode
     public static void StudentMode()
     {
+        int answerSympol;
         double Score = 0;
 
         Console.Clear();
@@ -251,13 +252,40 @@ internal class Program
             Console.WriteLine(examQuestions[i]);
 
             Console.Write("Enter Your Choise: ");
-            int answerSympol = Convert.ToInt32(Console.ReadLine());
+            answerSympol = Convert.ToInt32(Console.ReadLine());
 
 
             if (examQuestions[i].Choices.ElementAt(answerSympol - 1).IsCorrect)
                 Score += examQuestions[i].Mark;
         }
-    }
+        switch (examType)
+        {
+            case 1:
+                Console.WriteLine("Final Exam");
+                Console.WriteLine($"Your score is: {Score}");
+                break;
+            case 2:
+                Console.WriteLine("Practical Exam: ");
+                Console.WriteLine("Questions wih corrcet answer");
+                int correct = 0 ;
+                for (int i = 0; i < numberOfQuestoins; i++)
+                {
+                    Console.WriteLine(examQuestions[i]);
+                    for (int k = 0; k < examQuestions[i].Choices.Count; k++)
+                    {
+                        if (examQuestions[i].Choices[k].IsCorrect) { correct = k;  break; }
+                           
+                    }
+                    Console.WriteLine($"Your correct answer is:{examQuestions[i].Choices[correct]}");
+                    
+                }
+                break;
+            default:
+                Console.WriteLine("invalid choies");
+                break;
+        }
+
+    }         
     #endregion
 
     #region Program Entry
@@ -294,4 +322,11 @@ internal class Program
     }
     #endregion
 }
-
+/*
+ * TODO refactor 
+ * make Exception for
+ * 1- read lines
+ * 
+ * make validation for 
+ * 1- 
+ */
