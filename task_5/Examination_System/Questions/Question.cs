@@ -17,6 +17,7 @@ public abstract class Question(string body, QuestionLevel level,double mark,List
 
     public void Display()
     {
+        Console.WriteLine(Header);
         Console.WriteLine(Body);
 
         foreach (Answer answer in Choices)

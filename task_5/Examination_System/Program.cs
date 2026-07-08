@@ -324,6 +324,7 @@ internal class Program
 }
 /*
  * TODO refactor 
+ * 
  * make Exception for
  * 1- read lines
  * 
