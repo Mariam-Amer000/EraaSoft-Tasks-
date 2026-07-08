@@ -5,8 +5,8 @@ namespace Examination_System.Questions;
 
 public class TrueFalseQuestion : Question
 {
-    public override string Header => "TrueFalseQuestion";
-    public TrueFalseQuestion(string body, QuestionLevel level, double mark, List<Answer> choises)
-            : base( body, level, mark,choises) { }
+    public override string Header => "True_ False_Question";
+    public TrueFalseQuestion(string body, QuestionLevel level, double mark, List<Answer> choices)
+            : base( body, level, mark,choices) { }
      
 }

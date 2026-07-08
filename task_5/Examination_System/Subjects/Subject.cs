@@ -4,6 +4,6 @@ namespace Examination_System.Subjects;
 
 public class Subject(string title)
 {
-    public string Title { get; set; } = title;
-    public QuestionList Questions = new QuestionList($"{title}.txt");
+    public string Title { get;} = title;
+    public QuestionList Questions { get; } = new($"{title}.txt");
 }

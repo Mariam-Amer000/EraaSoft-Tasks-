@@ -3,12 +3,8 @@
   "WorkspaceRootPath": "E:\\programming\\Eraasoft\\Eraasoft\\EraaSoft-Tasks-\\task_5\\Examination_System\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{BDF78ABD-44C5-87C0-4A69-9A719D5EBA83}|Examination_System.csproj|e:\\programming\\eraasoft\\eraasoft\\eraasoft-tasks-\\task_5\\examination_system\\questions\\questionlist.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{BDF78ABD-44C5-87C0-4A69-9A719D5EBA83}|Examination_System.csproj|solutionrelative:questions\\questionlist.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{BDF78ABD-44C5-87C0-4A69-9A719D5EBA83}|Examination_System.csproj|e:\\programming\\eraasoft\\eraasoft\\eraasoft-tasks-\\task_5\\examination_system\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{BDF78ABD-44C5-87C0-4A69-9A719D5EBA83}|Examination_System.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{BDF78ABD-44C5-87C0-4A69-9A719D5EBA83}|Examination_System.csproj|e:\\programming\\eraasoft\\eraasoft\\eraasoft-tasks-\\task_5\\examination_system\\exams\\exam.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BDF78ABD-44C5-87C0-4A69-9A719D5EBA83}|Examination_System.csproj|solutionrelative:exams\\exam.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -27,27 +23,14 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "QuestionList.cs",
-              "DocumentMoniker": "E:\\programming\\Eraasoft\\Eraasoft\\EraaSoft-Tasks-\\task_5\\Examination_System\\Questions\\QuestionList.cs",
-              "RelativeDocumentMoniker": "Questions\\QuestionList.cs",
-              "ToolTip": "E:\\programming\\Eraasoft\\Eraasoft\\EraaSoft-Tasks-\\task_5\\Examination_System\\Questions\\QuestionList.cs",
-              "RelativeToolTip": "Questions\\QuestionList.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAAGUAAAABAAAAAAAAAA==",
+              "Title": "Exam.cs",
+              "DocumentMoniker": "E:\\programming\\Eraasoft\\Eraasoft\\EraaSoft-Tasks-\\task_5\\Examination_System\\Exams\\Exam.cs",
+              "RelativeDocumentMoniker": "Exams\\Exam.cs",
+              "ToolTip": "E:\\programming\\Eraasoft\\Eraasoft\\EraaSoft-Tasks-\\task_5\\Examination_System\\Exams\\Exam.cs",
+              "RelativeToolTip": "Exams\\Exam.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-07-08T21:10:46.868Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Program.cs",
-              "DocumentMoniker": "E:\\programming\\Eraasoft\\Eraasoft\\EraaSoft-Tasks-\\task_5\\Examination_System\\Program.cs",
-              "RelativeDocumentMoniker": "Program.cs",
-              "ToolTip": "E:\\programming\\Eraasoft\\Eraasoft\\EraaSoft-Tasks-\\task_5\\Examination_System\\Program.cs",
-              "RelativeToolTip": "Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAEYBAAADAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-07-02T17:02:48.055Z",
+              "WhenOpened": "2026-07-08T21:29:14.997Z",
               "EditorCaption": ""
             }
           ]

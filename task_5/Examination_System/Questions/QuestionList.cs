@@ -5,7 +5,7 @@ namespace Examination_System.Questions;
 
 public class QuestionList(string filePath) : List<Question>
 {
-    public string FilePath { get; set; } = filePath;
+    public string FilePath { get;} = filePath;
 
     public new void Add(Question question)
     {
@@ -59,7 +59,7 @@ public class QuestionList(string filePath) : List<Question>
                 string[] parts = line.Split('|');
 
                 Answer answer = new Answer(
-                    parts[0][0],
+                   Convert.ToInt32(parts[0]),
                     parts[1],
                     Convert.ToBoolean(parts[2]));
 

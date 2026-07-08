@@ -332,3 +332,9 @@ internal class Program
  * make validation for 
  * 1- 
  */
+/*
+ *  make answer class shorter
+ *  edit tostring function in Question class 
+ *  inhance UI in Types of questions
+ *  enhance QuestionList 
+ */
