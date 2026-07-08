@@ -271,6 +271,7 @@ internal class Program
                 for (int i = 0; i < numberOfQuestoins; i++)
                 {
                     Console.WriteLine(examQuestions[i]);
+
                     for (int k = 0; k < examQuestions[i].Choices.Count; k++)
                     {
                         if (examQuestions[i].Choices[k].IsCorrect) { correct = k;  break; }
