@@ -1,0 +1,7 @@
+Ward host patient (1:M) => T : T 
+patient assigned to consultant (M:1) => T:P
+Consultant examine patient (M:M) P:T 
+nurse supervise ward (1:1) T:T
+
+Nurse give patient drug (ternary)
+
