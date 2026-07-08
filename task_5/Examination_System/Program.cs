@@ -49,7 +49,7 @@ internal class Program
     #endregion
 
     #region Input Helpers
-    public static int TakeChoise()
+    public static int TakeChoice()
     {
         Console.WriteLine("Enter your choise: ");
         int num = Convert.ToInt32(Console.ReadLine());
@@ -79,7 +79,7 @@ internal class Program
         
         Subjects();
         int SubjectChoise;
-        SubjectChoise = TakeChoise();
+        SubjectChoise = TakeChoice();
 
         switch (SubjectChoise)
         {
@@ -138,17 +138,17 @@ internal class Program
 
         level = TakeQuestionLevel();
 
-        List<Answer> Choises = [];
+        List<Answer> Choices = [];
         for (int i = 0; i < ChooisesNumber; i++)
         {
             Answer answer = MakeAnswer();
-            Choises.Add(answer);
+            Choices.Add(answer);
         }
         return questionType switch
         {
-            1 => new TrueFalseQuestion(body, level, degree, Choises),
-            2 => new ChooseOneQuestion(body, level, degree, Choises),
-            3 => new ChooseAllQuestion(body, level, degree, Choises),
+            1 => new TrueFalseQuestion(body, level, degree, Choices),
+            2 => new ChooseOneQuestion(body, level, degree, Choices),
+            3 => new ChooseAllQuestion(body, level, degree, Choices),
 
         };
     }
@@ -169,7 +169,7 @@ internal class Program
 
 
         SubjectMenu();
-        InnerSubjectChoise = TakeChoise();
+        InnerSubjectChoise = TakeChoice();
         switch (InnerSubjectChoise)
         {
             case 1://add question
@@ -179,7 +179,7 @@ internal class Program
                 while (numberOfQuestions > 0)
                 {
                     QuestionTypesMenu();
-                    questionType = TakeChoise();
+                    questionType = TakeChoice();
                     switch (questionType)
                     {
                         case 1:
@@ -217,7 +217,7 @@ internal class Program
     #region StudentMode
     public static void StudentMode()
     {
-        int answerSympol;
+        int answerSymbol;
         double Score = 0;
 
         Console.Clear();
@@ -227,7 +227,7 @@ internal class Program
         subject.Questions.ReadQuestionsFromFile();
 
         ExamTypes();
-        int examType = TakeChoise();
+        int examType = TakeChoice();
         QuestionLevel ExamLevel = TakeQuestionLevel();
 
         List<Question> examQuestions = [];
@@ -252,10 +252,10 @@ internal class Program
             Console.WriteLine(examQuestions[i]);
 
             Console.Write("Enter Your Choise: ");
-            answerSympol = Convert.ToInt32(Console.ReadLine());
+            answerSymbol = Convert.ToInt32(Console.ReadLine());
 
 
-            if (examQuestions[i].Choices.ElementAt(answerSympol - 1).IsCorrect)
+            if (examQuestions[i].Choices.ElementAt(answerSymbol - 1).IsCorrect)
                 Score += examQuestions[i].Mark;
         }
         switch (examType)
@@ -297,7 +297,7 @@ internal class Program
         do
         {
             MainMenu();
-            MainChoise = TakeChoise();
+            MainChoise = TakeChoice();
 
             switch (MainChoise)
             {
@@ -310,7 +310,7 @@ internal class Program
                     break;
                 case 2:
                     Console.Clear();
-                    //StudentMode();
+                    StudentMode();
                     break;
                 case 0:
                     Console.WriteLine("Exit");
@@ -323,18 +323,3 @@ internal class Program
     }
     #endregion
 }
-/*
- * TODO refactor 
- * 
- * make Exception for
- * 1- read lines
- * 
- * make validation for 
- * 1- 
- */
-/*
- *  make answer class shorter
- *  edit tostring function in Question class 
- *  inhance UI in Types of questions
- *  enhance QuestionList 
- */

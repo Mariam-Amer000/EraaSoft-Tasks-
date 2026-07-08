@@ -3,8 +3,20 @@
   "WorkspaceRootPath": "E:\\programming\\Eraasoft\\Eraasoft\\EraaSoft-Tasks-\\task_5\\Examination_System\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{BDF78ABD-44C5-87C0-4A69-9A719D5EBA83}|Examination_System.csproj|e:\\programming\\eraasoft\\eraasoft\\eraasoft-tasks-\\task_5\\examination_system\\exams\\exam.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{BDF78ABD-44C5-87C0-4A69-9A719D5EBA83}|Examination_System.csproj|solutionrelative:exams\\exam.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{BDF78ABD-44C5-87C0-4A69-9A719D5EBA83}|Examination_System.csproj|e:\\programming\\eraasoft\\eraasoft\\eraasoft-tasks-\\task_5\\examination_system\\questions\\questionlist.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BDF78ABD-44C5-87C0-4A69-9A719D5EBA83}|Examination_System.csproj|solutionrelative:questions\\questionlist.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BDF78ABD-44C5-87C0-4A69-9A719D5EBA83}|Examination_System.csproj|e:\\programming\\eraasoft\\eraasoft\\eraasoft-tasks-\\task_5\\examination_system\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BDF78ABD-44C5-87C0-4A69-9A719D5EBA83}|Examination_System.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BDF78ABD-44C5-87C0-4A69-9A719D5EBA83}|Examination_System.csproj|e:\\programming\\eraasoft\\eraasoft\\eraasoft-tasks-\\task_5\\examination_system\\subjects\\subject.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BDF78ABD-44C5-87C0-4A69-9A719D5EBA83}|Examination_System.csproj|solutionrelative:subjects\\subject.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BDF78ABD-44C5-87C0-4A69-9A719D5EBA83}|Examination_System.csproj|e:\\programming\\eraasoft\\eraasoft\\eraasoft-tasks-\\task_5\\examination_system\\questions\\chooseallquestion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BDF78ABD-44C5-87C0-4A69-9A719D5EBA83}|Examination_System.csproj|solutionrelative:questions\\chooseallquestion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -14,24 +26,63 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 2,
           "Children": [
             {
-              "$type": "Bookmark",
-              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Subject.cs",
+              "DocumentMoniker": "E:\\programming\\Eraasoft\\Eraasoft\\EraaSoft-Tasks-\\task_5\\Examination_System\\Subjects\\Subject.cs",
+              "RelativeDocumentMoniker": "Subjects\\Subject.cs",
+              "ToolTip": "E:\\programming\\Eraasoft\\Eraasoft\\EraaSoft-Tasks-\\task_5\\Examination_System\\Subjects\\Subject.cs",
+              "RelativeToolTip": "Subjects\\Subject.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAeAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-08T23:25:16.22Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "ChooseAllQuestion.cs",
+              "DocumentMoniker": "E:\\programming\\Eraasoft\\Eraasoft\\EraaSoft-Tasks-\\task_5\\Examination_System\\Questions\\ChooseAllQuestion.cs",
+              "RelativeDocumentMoniker": "Questions\\ChooseAllQuestion.cs",
+              "ToolTip": "E:\\programming\\Eraasoft\\Eraasoft\\EraaSoft-Tasks-\\task_5\\Examination_System\\Questions\\ChooseAllQuestion.cs",
+              "RelativeToolTip": "Questions\\ChooseAllQuestion.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-08T23:21:46.161Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "Exam.cs",
-              "DocumentMoniker": "E:\\programming\\Eraasoft\\Eraasoft\\EraaSoft-Tasks-\\task_5\\Examination_System\\Exams\\Exam.cs",
-              "RelativeDocumentMoniker": "Exams\\Exam.cs",
-              "ToolTip": "E:\\programming\\Eraasoft\\Eraasoft\\EraaSoft-Tasks-\\task_5\\Examination_System\\Exams\\Exam.cs",
-              "RelativeToolTip": "Exams\\Exam.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
+              "Title": "QuestionList.cs",
+              "DocumentMoniker": "E:\\programming\\Eraasoft\\Eraasoft\\EraaSoft-Tasks-\\task_5\\Examination_System\\Questions\\QuestionList.cs",
+              "RelativeDocumentMoniker": "Questions\\QuestionList.cs",
+              "ToolTip": "E:\\programming\\Eraasoft\\Eraasoft\\EraaSoft-Tasks-\\task_5\\Examination_System\\Questions\\QuestionList.cs",
+              "RelativeToolTip": "Questions\\QuestionList.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-07-08T21:29:14.997Z",
+              "WhenOpened": "2026-07-08T23:20:36.114Z",
               "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Program.cs",
+              "DocumentMoniker": "E:\\programming\\Eraasoft\\Eraasoft\\EraaSoft-Tasks-\\task_5\\Examination_System\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "E:\\programming\\Eraasoft\\Eraasoft\\EraaSoft-Tasks-\\task_5\\Examination_System\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AgIAANcAAAAAAAAAAAAQwEkBAAAQAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-08T23:10:41.601Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
             }
           ]
         }
