@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="P01_StudentSystem/P01_StudentSystem.csproj" />
+  <Project Path="P02_SalesDatabase/P02_SalesDatabase.csproj" />
+</Solution>
