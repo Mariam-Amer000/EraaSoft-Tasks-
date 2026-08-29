@@ -1,8 +1,22 @@
 ﻿@* @model IQueryable<WebApplication1.Models.Doctor> *@
 <h1>Book Appointment</h1>
 
+
+<div>
+    <form action="BookAppointment">
+        <div class="row" style="margin-bottom:10px">
+            <div class="col-md-3">
+                <input type="text" class="form-control" placeholder="Name" name="name" value="@Model.Name">
+            </div>
+
+            <div class="col-md-2">
+                <button type="submit" class="btn btn-dark w-100">Filter</button>
+            </div>
+        </div>
+    </form>
+</div>
 <div class="row">
-     @foreach(var item in Model)
+     @foreach(var item in Model.Doctors)
      {
         <div class="col-md-4 mb-4">
                 <div class="card">

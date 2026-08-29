@@ -1,4 +1,5 @@
 using WebApplication1.Data;
+using WebApplication1.ModelView;
 
 namespace WebApplication1.Areas.Patient.Controllers;
 
@@ -10,11 +11,20 @@ public class HomeController : Controller
     {
         return View();
     }
-    public IActionResult BookAppointment()
+    public IActionResult BookAppointment(string?name)
     {
         IQueryable<Doctor> doctors = _db.Doctors
             .Include(d => d.Specialization);
-        return View(doctors);
+
+        if (!string.IsNullOrEmpty(name))
+        {
+            doctors = doctors.Where(d => d.Name.Contains(name));
+        }
+        return View(new DoctorWithFilter
+        {
+            Doctors = doctors,
+            Name = name ?? ""
+        });
     }
     public IActionResult CompleteAppointment()
     {
