@@ -2,21 +2,29 @@
     ViewData["Title"] = "Reservations Management";
 }
 
+@model IQueryable<Enrollment>
+
 <h1>Reservations Management</h1>
 
 <table class="table">
     <thead>
         <tr>
             <th>Doctor Name</th>
+            <th>Patient Name</th>
             <th>Appointment Date</th>
             <th>Appointment Time</th>
         </tr>
     </thead>
+
     <tbody>
-        <tr>
-            <td>PatientName</td>
-            <td>AppointmentDate</td>
-            <td>AppointmentTime</td>
-        </tr>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.Doctor.Name</td>
+                <td>@item.Patient.Name</td>
+                <td>@item.AppointmentDate</td>
+                <td>@item.AppointmentTime</td>
+            </tr>
+        }
     </tbody>
 </table>

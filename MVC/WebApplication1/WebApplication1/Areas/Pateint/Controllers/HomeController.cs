@@ -26,10 +26,43 @@ public class HomeController : Controller
             Name = name ?? ""
         });
     }
-    public IActionResult CompleteAppointment()
+    [HttpGet]
+    public IActionResult CompleteAppointment(int Id)
     {
-        return View();
+        return View(Id);
     }
+
+
+    [HttpPost]
+    public IActionResult CompleteAppointment(int DoctorId ,string PatientName, DateOnly AppointmentDate, TimeOnly AppointmentTime)
+    {
+        WebApplication1.Models.Patient? patient = _db.Patients
+         .SingleOrDefault(p => p.Name == PatientName);
+
+        if (patient is null)
+        {
+            patient = new WebApplication1.Models.Patient()
+            {
+                Name = PatientName
+            };
+
+            _db.Patients.Add(patient);
+            _db.SaveChanges();
+        }
+
+        _db.Enrollments.Add(new Enrollment()
+        {
+            DoctorId = DoctorId,
+            PatientId = patient.Id,
+            AppointmentDate = AppointmentDate,
+            AppointmentTime = AppointmentTime
+        }); 
+
+        _db.SaveChanges();
+        return RedirectToAction(nameof(BookAppointment));
+    }
+
+
 
     [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
     public IActionResult Error()

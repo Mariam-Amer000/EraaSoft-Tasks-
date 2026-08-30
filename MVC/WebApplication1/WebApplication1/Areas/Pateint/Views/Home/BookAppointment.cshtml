@@ -24,7 +24,10 @@
                     <div class="card-body">
                         <h5 class="card-title">@item.Name</h5>
                         <p class="card-text">Specialization: @item.Specialization.Name</p>
-                        <a href="CompleteAppointment" class="btn btn-primary">Book Appointment</a>
+                        <a href="/Pateint/Home/CompleteAppointment?Id=@item.Id"
+                           class="btn btn-primary">
+                            Book Appointment
+                        </a>
                     </div>
                 </div>
         </div>

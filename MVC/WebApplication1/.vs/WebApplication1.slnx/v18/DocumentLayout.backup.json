@@ -3,16 +3,20 @@
   "WorkspaceRootPath": "E:\\programming\\Eraasoft\\Eraasoft\\EraaSoft-Tasks-\\MVC\\WebApplication1\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{1139E486-A36B-6B58-4965-3753D45010A4}|WebApplication1\\WebApplication1.csproj|e:\\programming\\eraasoft\\eraasoft\\eraasoft-tasks-\\mvc\\webapplication1\\webapplication1\\areas\\pateint\\views\\home\\bookappointment.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{1139E486-A36B-6B58-4965-3753D45010A4}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\areas\\pateint\\views\\home\\bookappointment.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{1139E486-A36B-6B58-4965-3753D45010A4}|WebApplication1\\WebApplication1.csproj|e:\\programming\\eraasoft\\eraasoft\\eraasoft-tasks-\\mvc\\webapplication1\\webapplication1\\areas\\pateint\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{1139E486-A36B-6B58-4965-3753D45010A4}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\areas\\pateint\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1139E486-A36B-6B58-4965-3753D45010A4}|WebApplication1\\WebApplication1.csproj|e:\\programming\\eraasoft\\eraasoft\\eraasoft-tasks-\\mvc\\webapplication1\\webapplication1\\modelview\\doctorwithfilter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1139E486-A36B-6B58-4965-3753D45010A4}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\modelview\\doctorwithfilter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{1139E486-A36B-6B58-4965-3753D45010A4}|WebApplication1\\WebApplication1.csproj|e:\\programming\\eraasoft\\eraasoft\\eraasoft-tasks-\\mvc\\webapplication1\\webapplication1\\areas\\pateint\\views\\home\\bookappointment.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{1139E486-A36B-6B58-4965-3753D45010A4}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\areas\\pateint\\views\\home\\bookappointment.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1139E486-A36B-6B58-4965-3753D45010A4}|WebApplication1\\WebApplication1.csproj|e:\\programming\\eraasoft\\eraasoft\\eraasoft-tasks-\\mvc\\webapplication1\\webapplication1\\areas\\admin\\views\\home\\reservationsmanagement.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{1139E486-A36B-6B58-4965-3753D45010A4}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\areas\\admin\\views\\home\\reservationsmanagement.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1139E486-A36B-6B58-4965-3753D45010A4}|WebApplication1\\WebApplication1.csproj|e:\\programming\\eraasoft\\eraasoft\\eraasoft-tasks-\\mvc\\webapplication1\\webapplication1\\areas\\pateint\\views\\home\\completeappointment.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{1139E486-A36B-6B58-4965-3753D45010A4}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\areas\\pateint\\views\\home\\completeappointment.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{1139E486-A36B-6B58-4965-3753D45010A4}|WebApplication1\\WebApplication1.csproj|e:\\programming\\eraasoft\\eraasoft\\eraasoft-tasks-\\mvc\\webapplication1\\webapplication1\\models\\enrollment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -26,61 +30,76 @@
       "DocumentGroups": [
         {
           "DockedHeight": 161,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 0,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "HomeController.cs",
+              "DocumentMoniker": "E:\\programming\\Eraasoft\\Eraasoft\\EraaSoft-Tasks-\\MVC\\WebApplication1\\WebApplication1\\Areas\\Pateint\\Controllers\\HomeController.cs",
+              "RelativeDocumentMoniker": "WebApplication1\\Areas\\Pateint\\Controllers\\HomeController.cs",
+              "ToolTip": "E:\\programming\\Eraasoft\\Eraasoft\\EraaSoft-Tasks-\\MVC\\WebApplication1\\WebApplication1\\Areas\\Pateint\\Controllers\\HomeController.cs",
+              "RelativeToolTip": "WebApplication1\\Areas\\Pateint\\Controllers\\HomeController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAADoAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-28T13:26:38.438Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "ReservationsManagement.cshtml",
+              "DocumentMoniker": "E:\\programming\\Eraasoft\\Eraasoft\\EraaSoft-Tasks-\\MVC\\WebApplication1\\WebApplication1\\Areas\\Admin\\Views\\Home\\ReservationsManagement.cshtml",
+              "RelativeDocumentMoniker": "WebApplication1\\Areas\\Admin\\Views\\Home\\ReservationsManagement.cshtml",
+              "ToolTip": "E:\\programming\\Eraasoft\\Eraasoft\\EraaSoft-Tasks-\\MVC\\WebApplication1\\WebApplication1\\Areas\\Admin\\Views\\Home\\ReservationsManagement.cshtml",
+              "RelativeToolTip": "WebApplication1\\Areas\\Admin\\Views\\Home\\ReservationsManagement.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-08-30T14:01:35.032Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Enrollment.cs",
+              "DocumentMoniker": "E:\\programming\\Eraasoft\\Eraasoft\\EraaSoft-Tasks-\\MVC\\WebApplication1\\WebApplication1\\Models\\Enrollment.cs",
+              "RelativeDocumentMoniker": "WebApplication1\\Models\\Enrollment.cs",
+              "ToolTip": "E:\\programming\\Eraasoft\\Eraasoft\\EraaSoft-Tasks-\\MVC\\WebApplication1\\WebApplication1\\Models\\Enrollment.cs",
+              "RelativeToolTip": "WebApplication1\\Models\\Enrollment.cs",
+              "ViewState": "AgIAAAIAAAAAAAAAAAAxwAoAAAAxAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-30T13:58:22.91Z",
+              "EditorCaption": ""
+            },
             {
               "$type": "Bookmark",
               "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "DoctorWithFilter.cs",
-              "DocumentMoniker": "E:\\programming\\Eraasoft\\Eraasoft\\EraaSoft-Tasks-\\MVC\\WebApplication1\\WebApplication1\\ModelView\\DoctorWithFilter.cs",
-              "RelativeDocumentMoniker": "WebApplication1\\ModelView\\DoctorWithFilter.cs",
-              "ToolTip": "E:\\programming\\Eraasoft\\Eraasoft\\EraaSoft-Tasks-\\MVC\\WebApplication1\\WebApplication1\\ModelView\\DoctorWithFilter.cs",
-              "RelativeToolTip": "WebApplication1\\ModelView\\DoctorWithFilter.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-08-29T12:31:27.771Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "Enrollment.cs",
-              "DocumentMoniker": "E:\\programming\\Eraasoft\\Eraasoft\\EraaSoft-Tasks-\\MVC\\WebApplication1\\WebApplication1\\Models\\Enrollment.cs",
-              "RelativeDocumentMoniker": "WebApplication1\\Models\\Enrollment.cs",
-              "ToolTip": "E:\\programming\\Eraasoft\\Eraasoft\\EraaSoft-Tasks-\\MVC\\WebApplication1\\WebApplication1\\Models\\Enrollment.cs",
-              "RelativeToolTip": "WebApplication1\\Models\\Enrollment.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-08-28T13:27:22.034Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "BookAppointment.cshtml",
-              "DocumentMoniker": "E:\\programming\\Eraasoft\\Eraasoft\\EraaSoft-Tasks-\\MVC\\WebApplication1\\WebApplication1\\Areas\\Pateint\\Views\\Home\\BookAppointment.cshtml",
-              "RelativeDocumentMoniker": "WebApplication1\\Areas\\Pateint\\Views\\Home\\BookAppointment.cshtml",
-              "ToolTip": "E:\\programming\\Eraasoft\\Eraasoft\\EraaSoft-Tasks-\\MVC\\WebApplication1\\WebApplication1\\Areas\\Pateint\\Views\\Home\\BookAppointment.cshtml",
-              "RelativeToolTip": "WebApplication1\\Areas\\Pateint\\Views\\Home\\BookAppointment.cshtml",
-              "ViewState": "AgIAAAEAAAAAAAAAAAAmwBYAAAAnAAAAAAAAAA==",
+              "Title": "CompleteAppointment.cshtml",
+              "DocumentMoniker": "E:\\programming\\Eraasoft\\Eraasoft\\EraaSoft-Tasks-\\MVC\\WebApplication1\\WebApplication1\\Areas\\Pateint\\Views\\Home\\CompleteAppointment.cshtml",
+              "RelativeDocumentMoniker": "WebApplication1\\Areas\\Pateint\\Views\\Home\\CompleteAppointment.cshtml",
+              "ToolTip": "E:\\programming\\Eraasoft\\Eraasoft\\EraaSoft-Tasks-\\MVC\\WebApplication1\\WebApplication1\\Areas\\Pateint\\Views\\Home\\CompleteAppointment.cshtml",
+              "RelativeToolTip": "WebApplication1\\Areas\\Pateint\\Views\\Home\\CompleteAppointment.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-08-28T13:27:02.871Z",
+              "WhenOpened": "2026-08-30T11:43:16.819Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "HomeController.cs",
-              "DocumentMoniker": "E:\\programming\\Eraasoft\\Eraasoft\\EraaSoft-Tasks-\\MVC\\WebApplication1\\WebApplication1\\Areas\\Pateint\\Controllers\\HomeController.cs",
-              "RelativeDocumentMoniker": "WebApplication1\\Areas\\Pateint\\Controllers\\HomeController.cs",
-              "ToolTip": "E:\\programming\\Eraasoft\\Eraasoft\\EraaSoft-Tasks-\\MVC\\WebApplication1\\WebApplication1\\Areas\\Pateint\\Controllers\\HomeController.cs*",
-              "RelativeToolTip": "WebApplication1\\Areas\\Pateint\\Controllers\\HomeController.cs*",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAaAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-08-28T13:26:38.438Z",
+              "Title": "BookAppointment.cshtml",
+              "DocumentMoniker": "E:\\programming\\Eraasoft\\Eraasoft\\EraaSoft-Tasks-\\MVC\\WebApplication1\\WebApplication1\\Areas\\Pateint\\Views\\Home\\BookAppointment.cshtml",
+              "RelativeDocumentMoniker": "WebApplication1\\Areas\\Pateint\\Views\\Home\\BookAppointment.cshtml",
+              "ToolTip": "E:\\programming\\Eraasoft\\Eraasoft\\EraaSoft-Tasks-\\MVC\\WebApplication1\\WebApplication1\\Areas\\Pateint\\Views\\Home\\BookAppointment.cshtml",
+              "RelativeToolTip": "WebApplication1\\Areas\\Pateint\\Views\\Home\\BookAppointment.cshtml",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAmwCQAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-08-28T13:27:02.871Z",
               "EditorCaption": ""
             }
           ]
