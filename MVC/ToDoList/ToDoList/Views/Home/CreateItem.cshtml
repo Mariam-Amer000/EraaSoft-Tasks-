@@ -1,0 +1,27 @@
+﻿@model User
+<div class="container">
+  
+    <div class="row"><h1 class="display-6 mt-3 mb-3">Create New To-Do Item</h1></div>
+    <div class="row">
+        <form method="post" enctype="multipart/form-data">
+            <input type="hidden" name="userId" value="@Model.Id" />
+            <div class="mb-3">
+                <label for="Name" class="form-label">Title</label>
+                <input type="text" class="form-control" id="Name" name="Title" required>
+            </div>
+            <div class="mb-3">
+                <label for="Description" class="form-label">Description</label>
+                <input type="text" class="form-control" id="Description" name="Description">
+            </div>
+            <div class="mb-3">
+                <label class="form-label">File</label>
+                <input type="file" name="file" class="form-control">
+            </div>
+            <div class="mb-3">
+                <label for="Deadline" class="form-label">Deadline</label>
+                <input type="datetime" class="form-control" id="Deadline" name="Deadline">
+            </div>
+            <button href="/home/items" class="btn btn-primary" value="Model.Id">Create</button>
+        </form>
+    </div>
+</div>

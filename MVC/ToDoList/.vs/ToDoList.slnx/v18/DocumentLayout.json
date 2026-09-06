@@ -1,0 +1,109 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "E:\\programming\\Eraasoft\\Eraasoft\\EraaSoft-Tasks-\\MVC\\ToDoList\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{6CD40A2D-545E-C111-D437-1BE9E9C2C98C}|ToDoList\\ToDoList.csproj|e:\\programming\\eraasoft\\eraasoft\\eraasoft-tasks-\\mvc\\todolist\\todolist\\views\\home\\updateitem.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{6CD40A2D-545E-C111-D437-1BE9E9C2C98C}|ToDoList\\ToDoList.csproj|solutionrelative:todolist\\views\\home\\updateitem.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6CD40A2D-545E-C111-D437-1BE9E9C2C98C}|ToDoList\\ToDoList.csproj|e:\\programming\\eraasoft\\eraasoft\\eraasoft-tasks-\\mvc\\todolist\\todolist\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6CD40A2D-545E-C111-D437-1BE9E9C2C98C}|ToDoList\\ToDoList.csproj|solutionrelative:todolist\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6CD40A2D-545E-C111-D437-1BE9E9C2C98C}|ToDoList\\ToDoList.csproj|e:\\programming\\eraasoft\\eraasoft\\eraasoft-tasks-\\mvc\\todolist\\todolist\\views\\home\\createitem.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{6CD40A2D-545E-C111-D437-1BE9E9C2C98C}|ToDoList\\ToDoList.csproj|solutionrelative:todolist\\views\\home\\createitem.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6CD40A2D-545E-C111-D437-1BE9E9C2C98C}|ToDoList\\ToDoList.csproj|e:\\programming\\eraasoft\\eraasoft\\eraasoft-tasks-\\mvc\\todolist\\todolist\\views\\home\\items.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{6CD40A2D-545E-C111-D437-1BE9E9C2C98C}|ToDoList\\ToDoList.csproj|solutionrelative:todolist\\views\\home\\items.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6CD40A2D-545E-C111-D437-1BE9E9C2C98C}|ToDoList\\ToDoList.csproj|e:\\programming\\eraasoft\\eraasoft\\eraasoft-tasks-\\mvc\\todolist\\todolist\\models\\item.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6CD40A2D-545E-C111-D437-1BE9E9C2C98C}|ToDoList\\ToDoList.csproj|solutionrelative:todolist\\models\\item.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 1,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedHeight": 161,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "UpdateItem.cshtml",
+              "DocumentMoniker": "E:\\programming\\Eraasoft\\Eraasoft\\EraaSoft-Tasks-\\MVC\\ToDoList\\ToDoList\\Views\\Home\\UpdateItem.cshtml",
+              "RelativeDocumentMoniker": "ToDoList\\Views\\Home\\UpdateItem.cshtml",
+              "ToolTip": "E:\\programming\\Eraasoft\\Eraasoft\\EraaSoft-Tasks-\\MVC\\ToDoList\\ToDoList\\Views\\Home\\UpdateItem.cshtml",
+              "RelativeToolTip": "ToDoList\\Views\\Home\\UpdateItem.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAASAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-09-06T18:24:54.128Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "CreateItem.cshtml",
+              "DocumentMoniker": "E:\\programming\\Eraasoft\\Eraasoft\\EraaSoft-Tasks-\\MVC\\ToDoList\\ToDoList\\Views\\Home\\CreateItem.cshtml",
+              "RelativeDocumentMoniker": "ToDoList\\Views\\Home\\CreateItem.cshtml",
+              "ToolTip": "E:\\programming\\Eraasoft\\Eraasoft\\EraaSoft-Tasks-\\MVC\\ToDoList\\ToDoList\\Views\\Home\\CreateItem.cshtml",
+              "RelativeToolTip": "ToDoList\\Views\\Home\\CreateItem.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-09-05T13:22:32.525Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Item.cs",
+              "DocumentMoniker": "E:\\programming\\Eraasoft\\Eraasoft\\EraaSoft-Tasks-\\MVC\\ToDoList\\ToDoList\\Models\\Item.cs",
+              "RelativeDocumentMoniker": "ToDoList\\Models\\Item.cs",
+              "ToolTip": "E:\\programming\\Eraasoft\\Eraasoft\\EraaSoft-Tasks-\\MVC\\ToDoList\\ToDoList\\Models\\Item.cs",
+              "RelativeToolTip": "ToDoList\\Models\\Item.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAApAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-09-05T13:17:10.414Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "HomeController.cs",
+              "DocumentMoniker": "E:\\programming\\Eraasoft\\Eraasoft\\EraaSoft-Tasks-\\MVC\\ToDoList\\ToDoList\\Controllers\\HomeController.cs",
+              "RelativeDocumentMoniker": "ToDoList\\Controllers\\HomeController.cs",
+              "ToolTip": "E:\\programming\\Eraasoft\\Eraasoft\\EraaSoft-Tasks-\\MVC\\ToDoList\\ToDoList\\Controllers\\HomeController.cs",
+              "RelativeToolTip": "ToDoList\\Controllers\\HomeController.cs",
+              "ViewState": "AgIAAGYAAAAAAAAAAAAqwH8AAAAoAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-09-05T06:56:51.376Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Items.cshtml",
+              "DocumentMoniker": "E:\\programming\\Eraasoft\\Eraasoft\\EraaSoft-Tasks-\\MVC\\ToDoList\\ToDoList\\Views\\Home\\Items.cshtml",
+              "RelativeDocumentMoniker": "ToDoList\\Views\\Home\\Items.cshtml",
+              "ToolTip": "E:\\programming\\Eraasoft\\Eraasoft\\EraaSoft-Tasks-\\MVC\\ToDoList\\ToDoList\\Views\\Home\\Items.cshtml",
+              "RelativeToolTip": "ToDoList\\Views\\Home\\Items.cshtml",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAABQAAAAYAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-09-04T08:41:12.312Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

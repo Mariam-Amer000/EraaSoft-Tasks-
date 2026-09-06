@@ -1,0 +1,98 @@
+﻿
+@model UserWithItemsVM
+<div class="container">
+
+    <div class="row"><h1 class="display-6 fw-bold">Welcome,@Model.User.Name</h1></div>
+    <div class="row"><p>here is your to-do list: </p></div>
+    <div class="row"><a href="/home/createitem?userId=@Model.User.Id">Create new</a></div>
+    <div class="row">
+        <div class="col-12">
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th scope="col"class="col-md-2">Title</th>
+                        <th scope="col" class="col-md-2">Description</th>
+                        <th scope="col" class="col-md-2">File</th>
+                        <th scope="col" class="col-md-3">Deadline</th>
+                        <th scope="col" class="col-md-2">Actions</th>
+                        <th scope="col" class="col-md-1">Download</th>
+                        <th scope="col" class="col-md-1">Preview</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach(var item in Model.Items)
+                    {
+                        <tr>
+                            <td>@item.Title</td>
+                            <td>@item.Description</td>
+                            <td>@item.FilePath</td>
+                            @if (item.Deadline == DateTime.Today)
+                            {
+                                <td class="text-danger">@item.Deadline</td>
+                            }
+                            else
+                            {
+                                <td>@item.Deadline</td>
+                            }
+
+                            <td>
+                                <a href="/home/updateitem/@item.Id" class=" btn btn-success ">Edit</a>
+                                <a href="/home/deleteitem/@item.Id" class="btn btn-danger btn-delete" name="id">Delete</a>
+
+                            </td>
+                            <td>
+                                @if (!string.IsNullOrEmpty(item.FilePath))
+                                {
+                                    <a href="/home/download/@item.Id" class="text-secondary">Download</a>
+                                }
+                            </td>
+                            <td>
+                                @if (!string.IsNullOrEmpty(item.FilePath))
+                                {
+                                    <a href="/Files/@item.FilePath" target="_blank" class="text-secondary">Preview</a>
+                                }
+                            </td>
+                        </tr>
+                    }
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+                            
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const deleteButtons = document.querySelectorAll(".btn-delete");
+
+        deleteButtons.forEach(button => {
+            button.addEventListener("click", function (e) {
+                e.preventDefault(); // stop normal navigation
+
+                const url = this.getAttribute("href");
+
+                Swal.fire({
+                    title: "Are you sure?",
+                    text: "This action cannot be undone!",
+                    icon: "warning",
+                    showCancelButton: true,
+                    confirmButtonColor: "#d33",
+                    cancelButtonColor: "#3085d6",
+                    confirmButtonText: "Yes, delete it!"
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        Swal.fire({
+                            title: "Deleted!",
+                            text: "Your Category has been deleted.",
+                            icon: "success"
+                        }, 3000);
+
+                        // Redirect to delete URL
+                        window.location.href = url;
+                    }
+                });
+            });
+        });
+    });
+</script> 
