@@ -3,20 +3,16 @@
   "WorkspaceRootPath": "E:\\programming\\Eraasoft\\Eraasoft\\EraaSoft-Tasks-\\MVC\\CinemaDashboard\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{60E2A18D-55ED-1FB8-8249-3FE227E732DF}|CinemaDashboard\\CinemaDashboard.csproj|e:\\programming\\eraasoft\\eraasoft\\eraasoft-tasks-\\mvc\\cinemadashboard\\cinemadashboard\\areas\\admin\\controllers\\moviecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{60E2A18D-55ED-1FB8-8249-3FE227E732DF}|CinemaDashboard\\CinemaDashboard.csproj|solutionrelative:cinemadashboard\\areas\\admin\\controllers\\moviecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{60E2A18D-55ED-1FB8-8249-3FE227E732DF}|CinemaDashboard\\CinemaDashboard.csproj|e:\\programming\\eraasoft\\eraasoft\\eraasoft-tasks-\\mvc\\cinemadashboard\\cinemadashboard\\areas\\admin\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{60E2A18D-55ED-1FB8-8249-3FE227E732DF}|CinemaDashboard\\CinemaDashboard.csproj|solutionrelative:cinemadashboard\\areas\\admin\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{60E2A18D-55ED-1FB8-8249-3FE227E732DF}|CinemaDashboard\\CinemaDashboard.csproj|e:\\programming\\eraasoft\\eraasoft\\eraasoft-tasks-\\mvc\\cinemadashboard\\cinemadashboard\\areas\\admin\\views\\movie\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{60E2A18D-55ED-1FB8-8249-3FE227E732DF}|CinemaDashboard\\CinemaDashboard.csproj|solutionrelative:cinemadashboard\\areas\\admin\\views\\movie\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{60E2A18D-55ED-1FB8-8249-3FE227E732DF}|CinemaDashboard\\CinemaDashboard.csproj|e:\\programming\\eraasoft\\eraasoft\\eraasoft-tasks-\\mvc\\cinemadashboard\\cinemadashboard\\areas\\admin\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{60E2A18D-55ED-1FB8-8249-3FE227E732DF}|CinemaDashboard\\CinemaDashboard.csproj|solutionrelative:cinemadashboard\\areas\\admin\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{60E2A18D-55ED-1FB8-8249-3FE227E732DF}|CinemaDashboard\\CinemaDashboard.csproj|e:\\programming\\eraasoft\\eraasoft\\eraasoft-tasks-\\mvc\\cinemadashboard\\cinemadashboard\\areas\\admin\\views\\movie\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{60E2A18D-55ED-1FB8-8249-3FE227E732DF}|CinemaDashboard\\CinemaDashboard.csproj|solutionrelative:cinemadashboard\\areas\\admin\\views\\movie\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{60E2A18D-55ED-1FB8-8249-3FE227E732DF}|CinemaDashboard\\CinemaDashboard.csproj|e:\\programming\\eraasoft\\eraasoft\\eraasoft-tasks-\\mvc\\cinemadashboard\\cinemadashboard\\areas\\admin\\views\\movie\\update.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{60E2A18D-55ED-1FB8-8249-3FE227E732DF}|CinemaDashboard\\CinemaDashboard.csproj|solutionrelative:cinemadashboard\\areas\\admin\\views\\movie\\update.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{60E2A18D-55ED-1FB8-8249-3FE227E732DF}|CinemaDashboard\\CinemaDashboard.csproj|e:\\programming\\eraasoft\\eraasoft\\eraasoft-tasks-\\mvc\\cinemadashboard\\cinemadashboard\\viewmodel\\dashboardvm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{60E2A18D-55ED-1FB8-8249-3FE227E732DF}|CinemaDashboard\\CinemaDashboard.csproj|solutionrelative:cinemadashboard\\viewmodel\\dashboardvm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -26,7 +22,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Bookmark",
@@ -34,55 +30,40 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Update.cshtml",
-              "DocumentMoniker": "E:\\programming\\Eraasoft\\Eraasoft\\EraaSoft-Tasks-\\MVC\\CinemaDashboard\\CinemaDashboard\\Areas\\Admin\\Views\\Movie\\Update.cshtml",
-              "RelativeDocumentMoniker": "CinemaDashboard\\Areas\\Admin\\Views\\Movie\\Update.cshtml",
-              "ToolTip": "E:\\programming\\Eraasoft\\Eraasoft\\EraaSoft-Tasks-\\MVC\\CinemaDashboard\\CinemaDashboard\\Areas\\Admin\\Views\\Movie\\Update.cshtml",
-              "RelativeToolTip": "CinemaDashboard\\Areas\\Admin\\Views\\Movie\\Update.cshtml",
-              "ViewState": "AgIAADMAAAAAAAAAAAAAAEYAAAAKAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-09-10T14:37:33.984Z",
-              "EditorCaption": ""
+              "DocumentIndex": 2,
+              "Title": "DashboardVM.cs",
+              "DocumentMoniker": "E:\\programming\\Eraasoft\\Eraasoft\\EraaSoft-Tasks-\\MVC\\CinemaDashboard\\CinemaDashboard\\ViewModel\\DashboardVM.cs",
+              "RelativeDocumentMoniker": "CinemaDashboard\\ViewModel\\DashboardVM.cs",
+              "ToolTip": "E:\\programming\\Eraasoft\\Eraasoft\\EraaSoft-Tasks-\\MVC\\CinemaDashboard\\CinemaDashboard\\ViewModel\\DashboardVM.cs",
+              "RelativeToolTip": "CinemaDashboard\\ViewModel\\DashboardVM.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAkAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-09-10T15:06:57.69Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 0,
               "Title": "Index.cshtml",
-              "DocumentMoniker": "E:\\programming\\Eraasoft\\Eraasoft\\EraaSoft-Tasks-\\MVC\\CinemaDashboard\\CinemaDashboard\\Areas\\Admin\\Views\\Movie\\Index.cshtml",
-              "RelativeDocumentMoniker": "CinemaDashboard\\Areas\\Admin\\Views\\Movie\\Index.cshtml",
-              "ToolTip": "E:\\programming\\Eraasoft\\Eraasoft\\EraaSoft-Tasks-\\MVC\\CinemaDashboard\\CinemaDashboard\\Areas\\Admin\\Views\\Movie\\Index.cshtml",
-              "RelativeToolTip": "CinemaDashboard\\Areas\\Admin\\Views\\Movie\\Index.cshtml",
-              "ViewState": "AgIAAJUAAAAAAAAAAAAowKkAAAAzAAAAAAAAAA==",
+              "DocumentMoniker": "E:\\programming\\Eraasoft\\Eraasoft\\EraaSoft-Tasks-\\MVC\\CinemaDashboard\\CinemaDashboard\\Areas\\Admin\\Views\\Home\\Index.cshtml",
+              "RelativeDocumentMoniker": "CinemaDashboard\\Areas\\Admin\\Views\\Home\\Index.cshtml",
+              "ToolTip": "E:\\programming\\Eraasoft\\Eraasoft\\EraaSoft-Tasks-\\MVC\\CinemaDashboard\\CinemaDashboard\\Areas\\Admin\\Views\\Home\\Index.cshtml",
+              "RelativeToolTip": "CinemaDashboard\\Areas\\Admin\\Views\\Home\\Index.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMKAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-09-10T14:37:33.216Z",
+              "WhenOpened": "2026-09-10T15:02:42.949Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "Create.cshtml",
-              "DocumentMoniker": "E:\\programming\\Eraasoft\\Eraasoft\\EraaSoft-Tasks-\\MVC\\CinemaDashboard\\CinemaDashboard\\Areas\\Admin\\Views\\Movie\\Create.cshtml",
-              "RelativeDocumentMoniker": "CinemaDashboard\\Areas\\Admin\\Views\\Movie\\Create.cshtml",
-              "ToolTip": "E:\\programming\\Eraasoft\\Eraasoft\\EraaSoft-Tasks-\\MVC\\CinemaDashboard\\CinemaDashboard\\Areas\\Admin\\Views\\Movie\\Create.cshtml",
-              "RelativeToolTip": "CinemaDashboard\\Areas\\Admin\\Views\\Movie\\Create.cshtml",
-              "ViewState": "AgIAABUAAAAAAAAAAAAAAEoAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-09-10T14:37:31.993Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "MovieController.cs",
-              "DocumentMoniker": "E:\\programming\\Eraasoft\\Eraasoft\\EraaSoft-Tasks-\\MVC\\CinemaDashboard\\CinemaDashboard\\Areas\\Admin\\Controllers\\MovieController.cs",
-              "RelativeDocumentMoniker": "CinemaDashboard\\Areas\\Admin\\Controllers\\MovieController.cs",
-              "ToolTip": "E:\\programming\\Eraasoft\\Eraasoft\\EraaSoft-Tasks-\\MVC\\CinemaDashboard\\CinemaDashboard\\Areas\\Admin\\Controllers\\MovieController.cs",
-              "RelativeToolTip": "CinemaDashboard\\Areas\\Admin\\Controllers\\MovieController.cs",
-              "ViewState": "AgIAAMwAAAAAAAAAAAAiwPUAAAAAAAAAAAAAAA==",
+              "Title": "HomeController.cs",
+              "DocumentMoniker": "E:\\programming\\Eraasoft\\Eraasoft\\EraaSoft-Tasks-\\MVC\\CinemaDashboard\\CinemaDashboard\\Areas\\Admin\\Controllers\\HomeController.cs",
+              "RelativeDocumentMoniker": "CinemaDashboard\\Areas\\Admin\\Controllers\\HomeController.cs",
+              "ToolTip": "E:\\programming\\Eraasoft\\Eraasoft\\EraaSoft-Tasks-\\MVC\\CinemaDashboard\\CinemaDashboard\\Areas\\Admin\\Controllers\\HomeController.cs",
+              "RelativeToolTip": "CinemaDashboard\\Areas\\Admin\\Controllers\\HomeController.cs",
+              "ViewState": "AgIAAAUAAAAAAAAAAAAQwBIAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-09-10T14:37:28.365Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-09-10T15:02:40.097Z"
             }
           ]
         }

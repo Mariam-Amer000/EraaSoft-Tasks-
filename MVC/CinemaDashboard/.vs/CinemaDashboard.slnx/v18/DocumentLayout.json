@@ -38,8 +38,7 @@
               "RelativeToolTip": "CinemaDashboard\\ViewModel\\DashboardVM.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAkAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-09-10T15:06:57.69Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-09-10T15:06:57.69Z"
             },
             {
               "$type": "Document",
@@ -49,7 +48,7 @@
               "RelativeDocumentMoniker": "CinemaDashboard\\Areas\\Admin\\Views\\Home\\Index.cshtml",
               "ToolTip": "E:\\programming\\Eraasoft\\Eraasoft\\EraaSoft-Tasks-\\MVC\\CinemaDashboard\\CinemaDashboard\\Areas\\Admin\\Views\\Home\\Index.cshtml",
               "RelativeToolTip": "CinemaDashboard\\Areas\\Admin\\Views\\Home\\Index.cshtml",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAABMKAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMKAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2026-09-10T15:02:42.949Z",
               "EditorCaption": ""
@@ -64,8 +63,7 @@
               "RelativeToolTip": "CinemaDashboard\\Areas\\Admin\\Controllers\\HomeController.cs",
               "ViewState": "AgIAAAUAAAAAAAAAAAAQwBIAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-09-10T15:02:40.097Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-09-10T15:02:40.097Z"
             }
           ]
         }
