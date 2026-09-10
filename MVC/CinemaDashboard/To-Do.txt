@@ -1,0 +1,10 @@
+1- ERD and Mapping
+2- models and migration
+3- Data access file 
+4- CRUD Category
+5- CRUD Cinema
+6- CRUD Actor
+7- CRUD Movie
+8- Home page
+
+ 

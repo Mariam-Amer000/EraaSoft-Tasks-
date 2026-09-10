@@ -1,0 +1,75 @@
+﻿@model MovieWithDetalies
+
+<div class="container">
+    <div class="row">
+        <div class="my-2 display-4">Create Movie</div>
+    </div>
+    <div class="row">
+        <form method="post" enctype="multipart/form-data">
+            <div class="mb-3">
+                <label asp-for="Movie.Name" class="form-label">Name</label>
+                <input class="form-control" asp-for="Movie.Name">
+                <span asp-validation-for="Movie.Name" class="text-danger"></span>
+            </div>
+
+            <div class="mb-3">
+                <label asp-for="Movie.Description" class="form-label">Description</label>
+                <textarea class="form-control" asp-for="Movie.Description"></textarea>
+                <span asp-validation-for="Movie.Description" class="text-danger"></span>
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">Main Image</label>
+                <input type="file" class="form-control" name="Img">
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">Sub Images</label>
+                <input type="file" class="form-control" name="SubImgs" multiple>
+            </div>
+
+            <div class="mb-3">
+                <label asp-for="Movie.Price" class="form-label">Price</label>
+                <input class="form-control" asp-for="Movie.Price">
+                <span asp-validation-for="Movie.Price" class="text-danger"></span>
+            </div>
+
+            <div class="mb-3">
+                <label asp-for="Movie.Status" class="form-label">Status</label>
+                <select class="form-select" asp-for="Movie.Status">
+                    <option value="true">Active</option>
+                    <option value="false">InActive</option>
+                </select>
+                <span asp-validation-for="Movie.Status" class="text-danger"></span>
+            </div>
+
+            <div class="mb-3">
+                <label asp-for="Movie.DateTime" class="form-label">Date Time</label>
+                <input type="datetime-local" class="form-control" asp-for="Movie.DateTime">
+                <span asp-validation-for="Movie.DateTime" class="text-danger"></span>
+            </div>
+
+            <div class="mb-3">
+                <label asp-for="Movie.CinemaId" class="form-label">Cinema</label>
+                <select class="form-select" asp-for="Movie.CinemaId" asp-items="@(new SelectList(Model.Cinemas, "Id", "Name"))">
+                    <option value="">-- Select Cinema --</option>
+                </select>
+                <span asp-validation-for="Movie.CinemaId" class="text-danger"></span>
+            </div>
+
+            <div class="mb-3">
+                <label asp-for="Movie.CategoryId" class="form-label">Category</label>
+                <select class="form-select" asp-for="Movie.CategoryId" asp-items="@(new SelectList(Model.Categories, "Id", "Name"))">
+                    <option value="">-- Select Category --</option>
+                </select>
+                <span asp-validation-for="Movie.CategoryId" class="text-danger"></span>
+            </div>
+
+            <button type="submit" class="btn btn-primary my-3">Submit</button>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

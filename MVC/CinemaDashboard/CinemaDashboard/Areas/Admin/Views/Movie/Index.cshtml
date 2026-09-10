@@ -1,0 +1,176 @@
+﻿@model MovieWithFilterVM
+<div class="container">
+    <div class="row mb-3 align-items-center my-3">
+        <div class="col-md-6">
+            <h2 class="display-6">All Movies</h2>
+        </div>
+        <div class="col-md-6 text-md-end text-start mt-2 mt-md-0">
+            <a asp-area="Admin" asp-controller="Movie" asp-action="Create" class="btn btn-success">Create</a>
+        </div>
+    </div>
+
+    <!-- Filter Section -->
+    <section class="py-3 filter-bar">
+        <div class="container">
+            <div class="row" style="background-color: rgba(var(--bs-light-rgb), var(--bs-bg-opacity)) !important;">
+                <div class="col-12">
+                    <form>
+                        <div class="row">
+                            <div class="col-md-2">
+                                <input  class="form-control" placeholder="Name" asp-for="Name">
+                            </div>
+                            <div class="col-md-2">
+                                <input  class="form-control" placeholder="Max Price" asp-for="Maxprice">
+                            </div>
+                            <div class="col-md-2">
+                                <input  class="form-control" placeholder="Min Price" asp-for="Minprice">
+                            </div>
+                            <div class="col-md-2">
+                                <select class="form-select" asp-for="Status">
+                                    <option value="">All Status</option>
+                                    <option value="true"> @(Model.Status == true ? "selected" : "")Active</option> 
+                                     <option value="false"> @(Model.Status == false ? "selected" : "")Inactive</option> 
+                                </select>
+                            </div>
+                            <div class="col-md-3">
+                                <input type="datetime-local" class="form-control" placeholder="Date Time" asp-for="DateTime">
+                            </div>
+                        </div>
+                        <div class="row my-3">
+                            <div class="col-md-3">
+                                <select class="form-select" asp-for="CategoryId">
+                                    <option value="">All Categories</option>
+                                    @foreach (var category in Model.Categories)
+                                    {
+                                        <option value="@category.Id">@(Model.CategoryId == category.Id ? "selected" : "")@category.Name</option>
+                                    }
+                                </select>
+                            </div>
+                            <div class="col-md-3">
+                                <select class="form-select" asp-for="CinemaId">
+                                    <option value="">All Cinemas</option>
+                                    @foreach (var cinema in Model.Cinemas)
+                                    {
+                                         <option value="@cinema.Id"> @(Model.CinemaId == cinema.Id ? "selected" : "")@cinema.Name</option>
+                                    }
+                                </select>
+                            </div>
+                            <div class="col-md-2">
+                                <button type="submit" class="btn btn-dark w-100">Filter</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="row">
+        <div class="col-12">
+            <table class="table table-hover">
+                <thead>
+                    <tr class="">
+                        <th scope="col">#</th>
+                        <th scope="col">Name</th>
+                        <th scope="col">Description</th>
+                        <th scope="col">Price</th>
+                        <th scope="col">Status</th>
+                        <th scope="col">DateTime</th>
+                        <th scope="col">Cinema</th>
+                        <th scope="col">Category</th>
+                        <th scope="col">Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model.Movies)
+                    {
+                        <tr>
+                            <th scope="row" class="col-md-1">@item.Id</th>
+                            <td class="col-md-2">@item.Name</td>
+                            <td class="col-md-2 h6">@item.Description</td>
+                            <td class="col-md-1">@item.Price</td>
+                            @if (item.Status)
+                            {
+                                <td class="col-md-1"><span class="badge text-bg-success">Active</span></td>
+                            }
+                            else
+                            {
+                                <td class="col-md-1"><span class="badge text-bg-danger">In Active</span></td>
+                            }
+
+                            <td class="col-md-1 h6">@item.DateTime</td>
+                            <td class="col-md-1 h6">@item.Cinema.Name</td>
+                            <td class="col-md-1 h6">@item.Category.Name</td>
+                            <td class="col-md-2"> 
+                                <a asp-area="Admin" asp-controller="Movie" asp-action="Update" asp-route-id="@item.Id" class="btn btn-warning btn-sm" >Edit</a>
+                                <a asp-area="Admin" asp-controller="Movie" asp-action="Delete" asp-route-id="@item.Id" class="btn btn-danger btn-delete btn-sm" > Delete</a>
+                            </td>
+                        </tr>
+                    }
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-12 d-flex justify-content-center">
+
+            <nav aria-label="Page navigation example">
+                <ul class="pagination">
+                    <li class="page-item">
+                        <a class="page-link" href="#" aria-label="Previous">
+                            <span aria-hidden="true">&laquo;</span>
+                        </a>
+                    </li>
+                    @for (int i = 1; i <= Model.TotalPages; i++)
+                    {
+                        <li class="page-item"><a class="page-link" href="/admin/movie/index?page=@i">@i</a></li>
+                    }
+                    <li class="page-item">
+                        <a class="page-link" href="#" aria-label="Next">
+                            <span aria-hidden="true">&raquo;</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+    <a href="/Admin" type="button" class="btn btn-dark my-3" name="id"><i class="bi bi-pencil-square"></i>Home Page</a>
+</div>
+
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const deleteButtons = document.querySelectorAll(".btn-delete");
+
+        deleteButtons.forEach(button => {
+            button.addEventListener("click", function (e) {
+                e.preventDefault(); // stop normal navigation
+
+                const url = this.getAttribute("href");
+
+                Swal.fire({
+                    title: "Are you sure?",
+                    text: "This action cannot be undone!",
+                    icon: "warning",
+                    showCancelButton: true,
+                    confirmButtonColor: "#d33",
+                    cancelButtonColor: "#3085d6",
+                    confirmButtonText: "Yes, delete it!"
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        Swal.fire({
+                            title: "Deleted!",
+                            text: "Your Movie has been deleted.",
+                            icon: "success"
+                        }, 3000);
+
+                        // Redirect to delete URL
+                        window.location.href = url;
+                    }
+                });
+            });
+        });
+    });
+</script>

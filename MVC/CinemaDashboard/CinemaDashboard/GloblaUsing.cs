@@ -1,0 +1,9 @@
+﻿global using Microsoft.EntityFrameworkCore;
+global using Microsoft.AspNetCore.Mvc;
+global using System.Diagnostics;
+global using CinemaDashboard.Models;
+global using CinemaDashboard.DataAccess;
+global using CinemaDashboard.Helper;
+global using CinemaDashboard.ViewModel;
+global using System.ComponentModel.DataAnnotations;
+global using CinemaDashboard.Validations;
