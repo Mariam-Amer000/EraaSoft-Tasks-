@@ -5,11 +5,11 @@ namespace Ecommerce.Areas.Admin.Controllers;
 [Area("Admin")]
 public class ActorController : Controller
 {
-    private readonly ApplicationDbContext _db = new ApplicationDbContext();
+    private readonly Repository<Actor> _repository = new();
     IFileUpload fileUpload = new FileUpload();
     public IActionResult Index(string name, int page = 1, int size = 3)
     {
-        var actors = _db.Actors.AsQueryable();
+        var actors = _repository.Get();
 
         if (name is not null)
         {
@@ -32,7 +32,7 @@ public class ActorController : Controller
         return View(actor);
     }
     [HttpPost]
-    public IActionResult Create(Actor actor,IFormFile Img)
+    public async Task<IActionResult> Create(Actor actor,IFormFile Img,CancellationToken CT)
     {
         if(!ModelState.IsValid)
             return View(actor);
@@ -49,25 +49,25 @@ public class ActorController : Controller
 
             actor.Img = fileName;
         }
-        _db.Actors.Add(actor);
-        _db.SaveChanges();
+        await _repository.CreateAsync(actor, CT);
+        await _repository.CommitAsync(CT);
         return RedirectToAction("Index");
     }
     [HttpGet]
     public IActionResult Update(int id)
     {
-        var actor = _db.Actors.SingleOrDefault(c => c.Id == id);
+        var actor = _repository.GetOne(c => c.Id == id);
         if (actor is null) return NotFound();
         return View(actor);
     }
 
     [HttpPost]
-    public IActionResult Update(Actor actor,IFormFile Img)
+    public async Task<IActionResult> Update(Actor actor,IFormFile Img, CancellationToken CT)
     {
         if (!ModelState.IsValid)
             return View(actor);
 
-        var ActorInDb = _db.Actors.AsNoTracking().Where(e => e.Id == actor.Id).SingleOrDefault();
+        var ActorInDb = _repository.GetOne(e => e.Id == actor.Id, tracked: false);
         if(ActorInDb is null) return NotFound();
 
 
@@ -95,15 +95,15 @@ public class ActorController : Controller
         {
             actor.Img = ActorInDb.Img;
         }
-        _db.Actors.Update(actor);
-        _db.SaveChanges();
+         _repository.Update(actor);
+        await _repository.CommitAsync(CT);
         return RedirectToAction("Index");
     }
 
 
-    public IActionResult Delete(int id)
+    public async Task<IActionResult> Delete(int id,CancellationToken CT)
     {
-        var actor = _db.Actors.FirstOrDefault(c => c.Id == id);
+        var actor = _repository.GetOne(c => c.Id == id);
         if(actor is null)   return NotFound();
 
         if (!string.IsNullOrEmpty(actor.Img))
@@ -115,8 +115,8 @@ public class ActorController : Controller
             }
         }
 
-        _db.Actors.Remove(actor);
-        _db.SaveChanges();
+       _repository.Delete(actor);
+        await _repository.CommitAsync(CT);
         return RedirectToAction("Index");
     }
 }

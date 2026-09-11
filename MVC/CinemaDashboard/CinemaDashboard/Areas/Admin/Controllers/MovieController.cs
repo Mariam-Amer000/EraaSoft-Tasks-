@@ -1,18 +1,20 @@
-﻿namespace CinemaDashboard.Areas.Admin.Controllers;
+﻿
+
+namespace CinemaDashboard.Areas.Admin.Controllers;
 
 [Area("Admin")]
 public class MovieController : Controller
 {
-    private readonly ApplicationDbContext _db = new ApplicationDbContext();
+    private readonly Repository<Movie> _movieRepository = new();
+    private readonly MovieSubImgRepository _movieSubImgRepository = new();
+    private readonly Repository<Category> _categoryRepository = new();
+    private readonly Repository<Cinema> _cinemaRepository = new();
     IFileUpload fileUpload = new FileUpload();
     public IActionResult Index(MovieFilter filter, int page = 1, int size = 3)
     {
-        var movies = _db.Movies
-            .Include(e => e.Cinema)
-            .Include(e => e.Category)
-            .AsQueryable();
-        var cinemas = _db.Cinemas.AsQueryable();
-        var categories = _db.Categories.AsQueryable();
+        var movies = _movieRepository.Get(includes: [e => e.Cinema, e => e.Category]);
+        var cinemas = _cinemaRepository.Get();
+        var categories = _categoryRepository.Get();
 
         if (filter.Name is not null)
         {
@@ -58,8 +60,8 @@ public class MovieController : Controller
     [HttpGet]
     public IActionResult Create()
     {
-        var categories = _db.Categories.AsQueryable();
-        var cinemas = _db.Cinemas.AsQueryable();
+        var cinemas = _cinemaRepository.Get();
+        var categories = _categoryRepository.Get();
         return View(new MovieWithDetalies()
         {
            Categories = categories,
@@ -67,15 +69,15 @@ public class MovieController : Controller
         });
     }
     [HttpPost]
-    public IActionResult Create(Movie movie, IFormFile Img, List<IFormFile> subImgs)
+    public async Task<IActionResult> Create(Movie movie, IFormFile Img, List<IFormFile> subImgs,CancellationToken CT)
     {
         if(ModelState.IsValid)
         {
             return View(new MovieWithDetalies
             {
                 Movie = movie,
-                Categories = _db.Categories.ToList(),
-                Cinemas = _db.Cinemas.ToList()
+                Categories = _categoryRepository.Get(),
+                Cinemas = _cinemaRepository.Get()
             });
         }
         if (Img is not null && Img.Length > 0)
@@ -90,8 +92,8 @@ public class MovieController : Controller
 
             movie.MainImg = fileName;
         }
-        _db.Movies.Add(movie);
-        _db.SaveChanges();
+        await _movieRepository.CreateAsync(movie);
+        await _movieRepository.CommitAsync(CT);
 
         if (subImgs.Any())
         {
@@ -107,7 +109,7 @@ public class MovieController : Controller
                 fileUpload.UploadFileLocally(filePath, item);
 
                 // create in db
-                _db.MovieSubImgs.Add(new()
+                await _movieSubImgRepository.CreateAsync(new()
                 {
                     SubImg = fileName,
                     MovieId = movie.Id
@@ -116,17 +118,17 @@ public class MovieController : Controller
             }
 
         }
-        _db.SaveChanges();
+        await _movieRepository.CommitAsync();
         return RedirectToAction("Index");
     }
     [HttpGet]
     public IActionResult Update(int id)
     {
-        var movie = _db.Movies.SingleOrDefault(c => c.Id == id);
+        var movie = _movieRepository.GetOne(c => c.Id == id);
         if (movie is null) return NotFound();
 
-        var categories = _db.Categories.AsQueryable();
-        var cinemas = _db.Cinemas.AsQueryable();
+        var cinemas = _cinemaRepository.Get();
+        var categories = _categoryRepository.Get();
 
 
         return View(new MovieWithDetalies()
@@ -138,18 +140,18 @@ public class MovieController : Controller
     }
 
     [HttpPost]
-    public IActionResult Update(Movie movie,IFormFile Img ,List<IFormFile> subImgs)
+    public async Task<IActionResult> Update(Movie movie,IFormFile Img ,List<IFormFile> subImgs,CancellationToken CT)
     {
         if(!ModelState.IsValid)
         {
             return View(new MovieWithDetalies
             {
                 Movie = movie,
-                Categories = _db.Categories.ToList(),
-                Cinemas = _db.Cinemas.ToList()
+                Categories = _categoryRepository.Get(),
+                Cinemas = _cinemaRepository.Get()
             });
         }
-        var MovieInDb = _db.Movies.AsNoTracking().Where(e => e.Id == movie.Id).SingleOrDefault();
+        var MovieInDb = _movieRepository.GetOne(e => e.Id == movie.Id);
         if(MovieInDb is null) return NotFound();
 
 
@@ -178,7 +180,7 @@ public class MovieController : Controller
         if (subImgs.Any())
         {
             // delete old imgs form wwwroot and DB
-            var OldSubImgs = _db.MovieSubImgs.Where(e => e.MovieId == movie.Id);
+            var OldSubImgs = _movieSubImgRepository.Get(e => e.MovieId == movie.Id);
 
             foreach (var item in OldSubImgs)
             {
@@ -187,7 +189,7 @@ public class MovieController : Controller
 
                 fileUpload.DeleteFileLocally(oldFilePath);
             }
-            _db.MovieSubImgs.RemoveRange(OldSubImgs);
+            _movieSubImgRepository.DeleteRange(OldSubImgs);
 
             // create in wwwroot
             foreach (var item in subImgs)
@@ -201,24 +203,23 @@ public class MovieController : Controller
                 fileUpload.UploadFileLocally(filePath, item);
 
                 // create in db
-                _db.MovieSubImgs.Add(new()
+                await _movieSubImgRepository.CreateAsync(new()
                 {
                     SubImg = fileName,
                     MovieId = movie.Id
                 });
-
             }
 
         }
-        _db.Movies.Update(movie);
-        _db.SaveChanges();
+        _movieRepository.Update(movie);
+        await _movieRepository.CommitAsync();
         return RedirectToAction("Index");
     }
 
 
-    public IActionResult Delete(int id)
+    public async Task<IActionResult> Delete(int id)
     {
-        var movie = _db.Movies.FirstOrDefault(c => c.Id == id);
+        var movie = _movieRepository.GetOne(c => c.Id == id);
         if(movie is null)   return NotFound();
 
         var filePath = fileUpload.GenerateFullPath(FileType.Img, "Movies\\MainImg", movie.MainImg);
@@ -229,7 +230,7 @@ public class MovieController : Controller
 
 
 
-        var OldSubImgs = _db.MovieSubImgs.Where(e => e.MovieId == movie.Id);
+        var OldSubImgs = _movieSubImgRepository.Get(e => e.MovieId == movie.Id);
         foreach(var item in OldSubImgs)
         {
             var oldFilePath = fileUpload.GenerateFullPath(FileType.Img, "Movies\\SubImgs",item.SubImg);
@@ -237,9 +238,9 @@ public class MovieController : Controller
 
             fileUpload.DeleteFileLocally(oldFilePath);
         }
-        _db.MovieSubImgs.RemoveRange(OldSubImgs);
-        _db.Movies.Remove(movie);
-        _db.SaveChanges();
+        _movieSubImgRepository.DeleteRange(OldSubImgs);
+       _movieRepository.Delete(movie);
+        await _movieRepository.CommitAsync();
         return RedirectToAction("Index");
     }
 }

@@ -7,3 +7,4 @@ global using CinemaDashboard.Helper;
 global using CinemaDashboard.ViewModel;
 global using System.ComponentModel.DataAnnotations;
 global using CinemaDashboard.Validations;
+global using CinemaDashboard.Repositories;

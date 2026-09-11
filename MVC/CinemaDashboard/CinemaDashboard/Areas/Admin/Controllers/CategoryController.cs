@@ -3,10 +3,11 @@
 [Area("Admin")]
 public class CategoryController : Controller
 {
-    private readonly ApplicationDbContext _db = new ApplicationDbContext();
+    //private readonly ApplicationDbContext _db = new ApplicationDbContext();
+    private readonly Repository<Category> _repository = new();
     public IActionResult Index(string name, int page = 1, int size = 3)
     {
-        var categories = _db.Categories.AsQueryable();
+        var categories = _repository.Get();
 
         if (name is not null)
         {
@@ -30,43 +31,43 @@ public class CategoryController : Controller
         return View(category);
     }
     [HttpPost]
-    public IActionResult Create(Category category)
+    public async Task<IActionResult> Create(Category category,CancellationToken CT)
     {
         if(!ModelState.IsValid)
             return View(category);
-        
-        _db.Categories.Add(category);
-        _db.SaveChanges();
+
+        await _repository.CreateAsync(category,CT);
+        await _repository.CommitAsync(CT);
         return RedirectToAction("Index");
     }
     [HttpGet]
     public IActionResult Update(int id)
     {
-        var category = _db.Categories.SingleOrDefault(c => c.Id == id);
+        var category = _repository.GetOne(c => c.Id == id);
         if (category is null) return NotFound();
         return View(category);
     }
 
     [HttpPost]
-    public IActionResult Update(Category category)
+    public async Task<IActionResult> Update(Category category, CancellationToken CT)
     {
         if (!ModelState.IsValid)
             return View(category);
 
-        _db.Categories.Update(category);
-        _db.SaveChanges();
+        _repository.Update(category);
+        await _repository.CommitAsync(CT);
         return RedirectToAction("Index");
     }
 
 
-    public IActionResult Delete(int id)
+    public async Task<IActionResult> Delete(int id, CancellationToken CT)
     {
-        var category = _db.Categories.FirstOrDefault(c => c.Id == id);
+        var category = _repository.GetOne(c => c.Id == id);
 
         if (category is null) return NotFound();
 
-        _db.Categories.Remove(category);
-        _db.SaveChanges();
+        _repository.Delete(category);
+        await _repository.CommitAsync(CT);
         return RedirectToAction("Index");
     }
 }

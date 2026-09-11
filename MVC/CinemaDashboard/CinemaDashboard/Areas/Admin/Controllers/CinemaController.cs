@@ -1,16 +1,14 @@
-﻿using CinemaDashboard.DataAccess;
-using CinemaDashboard.Helper;
-
-namespace Ecommerce.Areas.Admin.Controllers;
+﻿namespace Ecommerce.Areas.Admin.Controllers;
 
 [Area("Admin")]
 public class CinemaController : Controller
 {
-    private readonly ApplicationDbContext _db = new ApplicationDbContext();
+    //private readonly ApplicationDbContext _db = new ApplicationDbContext();
+    private readonly Repository<Cinema> _repository = new();
     IFileUpload fileUpload = new FileUpload();
     public IActionResult Index(string name, int page = 1, int size = 3)
     {
-        var cinemas = _db.Cinemas.AsQueryable();
+        var cinemas = _repository.Get();
 
         if (name is not null)
         {
@@ -33,7 +31,7 @@ public class CinemaController : Controller
         return View();
     }
     [HttpPost]
-    public IActionResult Create(Cinema cinema,IFormFile Img)
+    public async Task<IActionResult> Create(Cinema cinema,IFormFile Img,CancellationToken CT)
     {
         if(!ModelState.IsValid)
             return View(cinema);
@@ -50,25 +48,25 @@ public class CinemaController : Controller
 
             cinema.Img = fileName;
         }
-        _db.Cinemas.Add(cinema);
-        _db.SaveChanges();
+        await _repository.CreateAsync(cinema, CT);
+        await _repository.CommitAsync(CT);
         return RedirectToAction("Index");
     }
     [HttpGet]
     public IActionResult Update(int id)
     {
-        var cinema = _db.Cinemas.SingleOrDefault(c => c.Id == id);
+        var cinema = _repository.GetOne(c => c.Id == id);
         if (cinema is null) return NotFound();
         return View(cinema);
     }
 
     [HttpPost]
-    public IActionResult Update(Cinema cinema,IFormFile Img)
+    public async Task<IActionResult> Update(Cinema cinema,IFormFile Img, CancellationToken CT)
     {
         if (!ModelState.IsValid)
             return View(cinema);
 
-        var CinemaInDb = _db.Cinemas.AsNoTracking().Where(e => e.Id == cinema.Id).SingleOrDefault();
+        var CinemaInDb = _repository.GetOne(e => e.Id == cinema.Id, tracked: false);
         if(CinemaInDb is null) return NotFound();
 
 
@@ -96,15 +94,15 @@ public class CinemaController : Controller
         {
             cinema.Img = CinemaInDb.Img;
         }
-        _db.Cinemas.Update(cinema);
-        _db.SaveChanges();
+       _repository.Update(cinema);
+        await _repository.CommitAsync(CT);
         return RedirectToAction("Index");
     }
 
 
-    public IActionResult Delete(int id)
+    public async Task<IActionResult> Delete(int id,CancellationToken CT)
     {
-        var cinema = _db.Cinemas.FirstOrDefault(c => c.Id == id);
+        var cinema = _repository.GetOne(c => c.Id == id);
         if(cinema is null)   return NotFound();
 
         if (!string.IsNullOrEmpty(cinema.Img))
@@ -114,8 +112,8 @@ public class CinemaController : Controller
                 fileUpload.DeleteFileLocally(filePath);
         }
 
-        _db.Cinemas.Remove(cinema);
-        _db.SaveChanges();
+        _repository.Delete(cinema);
+        await _repository.CommitAsync(CT);
         return RedirectToAction("Index");
     }
 }
