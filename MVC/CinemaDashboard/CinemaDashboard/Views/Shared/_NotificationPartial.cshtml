@@ -1,0 +1,7 @@
+﻿@using CinemaDashboard.Utility
+@if (TempData[NotificationConstant.SUCCESS_NOTIFICATION] is not null)
+{
+    <script>
+        toastr.success('@TempData[$"{NotificationConstant.SUCCESS_NOTIFICATION}"]')
+    </script>
+}

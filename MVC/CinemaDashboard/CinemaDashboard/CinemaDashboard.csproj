@@ -20,6 +20,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="Areas\Identity\Views\" />
     <Folder Include="wwwroot\imgs\Movies\MainImg\" />
     <Folder Include="wwwroot\imgs\Movies\SubImgs\" />
   </ItemGroup>

@@ -1,14 +1,28 @@
 ﻿
 
+using CinemaDashboard.Utility;
+
 namespace CinemaDashboard.Areas.Admin.Controllers;
 
 [Area("Admin")]
 public class MovieController : Controller
 {
-    private readonly Repository<Movie> _movieRepository = new();
-    private readonly MovieSubImgRepository _movieSubImgRepository = new();
-    private readonly Repository<Category> _categoryRepository = new();
-    private readonly Repository<Cinema> _cinemaRepository = new();
+    private readonly IRepository<Movie> _movieRepository ;
+    private readonly IBulkRepository<MovieSubImg> _movieSubImgRepository ;
+    private readonly IRepository<Category> _categoryRepository ;
+    private readonly IRepository<Cinema> _cinemaRepository;
+     public MovieController(
+         IRepository<Movie> movieRepository,
+         IBulkRepository<MovieSubImg> movieSubImgRepository,
+         IRepository<Category> categoryRepository,
+         IRepository<Cinema> cinemaRepository)
+    {
+        _movieRepository = movieRepository ;
+        _movieSubImgRepository = movieSubImgRepository ;
+        _categoryRepository= categoryRepository ;
+        _cinemaRepository = cinemaRepository;
+    }
+
     IFileUpload fileUpload = new FileUpload();
     public IActionResult Index(MovieFilter filter, int page = 1, int size = 3)
     {
@@ -119,6 +133,7 @@ public class MovieController : Controller
 
         }
         await _movieRepository.CommitAsync();
+        TempData[NotificationConstant.SUCCESS_NOTIFICATION] = "Create Movie Successfuly";
         return RedirectToAction("Index");
     }
     [HttpGet]
@@ -213,6 +228,7 @@ public class MovieController : Controller
         }
         _movieRepository.Update(movie);
         await _movieRepository.CommitAsync();
+        TempData[NotificationConstant.SUCCESS_NOTIFICATION] = "Update Movie Successfuly";
         return RedirectToAction("Index");
     }
 
@@ -241,6 +257,7 @@ public class MovieController : Controller
         _movieSubImgRepository.DeleteRange(OldSubImgs);
        _movieRepository.Delete(movie);
         await _movieRepository.CommitAsync();
+        TempData[NotificationConstant.SUCCESS_NOTIFICATION] = "Delete Movie Successfuly";
         return RedirectToAction("Index");
     }
 }

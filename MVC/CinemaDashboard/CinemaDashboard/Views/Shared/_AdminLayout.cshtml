@@ -52,7 +52,8 @@
         userLinkRTL.setAttribute('disabled', true);
       }
     </script>
-  </head>
+    <link href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" rel="stylesheet" />
+</head>
 
 
   <body>
@@ -196,7 +197,9 @@
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="~/vendors/echarts/echarts.min.js"></script>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
     @RenderSection("Scripts", required: false)
+    @RenderSection("Toaster", required: false)
   </body>
 
 </html>

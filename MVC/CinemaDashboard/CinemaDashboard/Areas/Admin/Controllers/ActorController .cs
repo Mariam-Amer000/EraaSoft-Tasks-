@@ -1,11 +1,17 @@
 ﻿
 
+using CinemaDashboard.Utility;
+
 namespace Ecommerce.Areas.Admin.Controllers;
 
 [Area("Admin")]
 public class ActorController : Controller
 {
-    private readonly Repository<Actor> _repository = new();
+    private readonly IRepository<Actor> _repository;
+    public ActorController(IRepository<Actor> repository)
+    {
+        _repository = repository;
+    }
     IFileUpload fileUpload = new FileUpload();
     public IActionResult Index(string name, int page = 1, int size = 3)
     {
@@ -51,6 +57,8 @@ public class ActorController : Controller
         }
         await _repository.CreateAsync(actor, CT);
         await _repository.CommitAsync(CT);
+
+        TempData[NotificationConstant.SUCCESS_NOTIFICATION] = "Create Actor Successfuly";
         return RedirectToAction("Index");
     }
     [HttpGet]
@@ -97,6 +105,7 @@ public class ActorController : Controller
         }
          _repository.Update(actor);
         await _repository.CommitAsync(CT);
+        TempData[NotificationConstant.SUCCESS_NOTIFICATION] = "Update Actor Successfuly";
         return RedirectToAction("Index");
     }
 
@@ -117,6 +126,7 @@ public class ActorController : Controller
 
        _repository.Delete(actor);
         await _repository.CommitAsync(CT);
+        TempData[NotificationConstant.SUCCESS_NOTIFICATION] = "Delete Actor Successfuly";
         return RedirectToAction("Index");
     }
 }

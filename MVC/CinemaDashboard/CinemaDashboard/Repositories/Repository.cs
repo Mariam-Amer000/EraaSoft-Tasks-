@@ -2,12 +2,13 @@
 
 namespace CinemaDashboard.Repositories;
 
-public class Repository<T> where T : class
+public class Repository<T> : IRepository<T> where T : class
 {
-    private readonly ApplicationDbContext _context = new ApplicationDbContext();
-    protected readonly DbSet<T> _db;
-   public Repository()
+    private readonly ApplicationDbContext _context;
+    private readonly DbSet<T> _db;
+   public Repository(ApplicationDbContext context)
     {
+        _context = context;
         _db = _context.Set<T>();
     }
     //CRUD

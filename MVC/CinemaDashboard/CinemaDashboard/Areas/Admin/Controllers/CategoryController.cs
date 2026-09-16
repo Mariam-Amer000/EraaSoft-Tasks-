@@ -1,10 +1,17 @@
-﻿namespace CinemaDashboard.Areas.Admin.Controllers;
+﻿using CinemaDashboard.Utility;
+
+namespace CinemaDashboard.Areas.Admin.Controllers;
 
 [Area("Admin")]
 public class CategoryController : Controller
 {
     //private readonly ApplicationDbContext _db = new ApplicationDbContext();
-    private readonly Repository<Category> _repository = new();
+
+    private readonly IRepository<Category> _repository;
+    public CategoryController(IRepository<Category> repository)
+    {
+        _repository = repository;
+    }
     public IActionResult Index(string name, int page = 1, int size = 3)
     {
         var categories = _repository.Get();
@@ -38,6 +45,7 @@ public class CategoryController : Controller
 
         await _repository.CreateAsync(category,CT);
         await _repository.CommitAsync(CT);
+        TempData[NotificationConstant.SUCCESS_NOTIFICATION] = "Create Category Successfuly";
         return RedirectToAction("Index");
     }
     [HttpGet]
@@ -45,6 +53,7 @@ public class CategoryController : Controller
     {
         var category = _repository.GetOne(c => c.Id == id);
         if (category is null) return NotFound();
+
         return View(category);
     }
 
@@ -56,6 +65,7 @@ public class CategoryController : Controller
 
         _repository.Update(category);
         await _repository.CommitAsync(CT);
+        TempData[NotificationConstant.SUCCESS_NOTIFICATION] = "Update Category Successfuly";
         return RedirectToAction("Index");
     }
 
@@ -68,6 +78,7 @@ public class CategoryController : Controller
 
         _repository.Delete(category);
         await _repository.CommitAsync(CT);
+        TempData[NotificationConstant.SUCCESS_NOTIFICATION] = "Delete Category Successfuly";
         return RedirectToAction("Index");
     }
 }
