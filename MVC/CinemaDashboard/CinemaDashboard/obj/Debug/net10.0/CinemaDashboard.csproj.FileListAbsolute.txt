@@ -668,3 +668,6 @@ E:\programming\Eraasoft\Eraasoft\EraaSoft-Tasks-\MVC\CinemaDashboard\CinemaDashb
 E:\programming\Eraasoft\Eraasoft\EraaSoft-Tasks-\MVC\CinemaDashboard\CinemaDashboard\obj\Debug\net10.0\compressed\frvc4vlae0-{0}-mn3rex2m91-mn3rex2m91.gz
 E:\programming\Eraasoft\Eraasoft\EraaSoft-Tasks-\MVC\CinemaDashboard\CinemaDashboard\obj\Debug\net10.0\compressed\eekkm6h4uj-{0}-sn86lzzga5-sn86lzzga5.gz
 E:\programming\Eraasoft\Eraasoft\EraaSoft-Tasks-\MVC\CinemaDashboard\CinemaDashboard\obj\Debug\net10.0\compressed\w6tsmxyuss-{0}-3rfncn7613-3rfncn7613.gz
+E:\programming\Eraasoft\Eraasoft\EraaSoft-Tasks-\MVC\CinemaDashboard\CinemaDashboard\bin\Debug\net10.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
+E:\programming\Eraasoft\Eraasoft\EraaSoft-Tasks-\MVC\CinemaDashboard\CinemaDashboard\bin\Debug\net10.0\Mapster.dll
+E:\programming\Eraasoft\Eraasoft\EraaSoft-Tasks-\MVC\CinemaDashboard\CinemaDashboard\bin\Debug\net10.0\Mapster.Core.dll

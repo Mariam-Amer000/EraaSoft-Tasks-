@@ -1,13 +1,16 @@
-﻿namespace CinemaDashboard.DataAccess;
+﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 
-public class ApplicationDbContext:DbContext
+namespace CinemaDashboard.DataAccess;
+
+public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
 {
     public DbSet<Category> Categories { get; set; } 
     public DbSet<Cinema> Cinemas { get; set; } 
     public DbSet<Movie> Movies { get; set; } 
     public DbSet<Actor> Actors { get; set; } 
     public DbSet<MovieActor> MovieActors { get; set; } 
-    public DbSet<MovieSubImg> MovieSubImgs { get; set; } 
+    public DbSet<MovieSubImg> MovieSubImgs { get; set; }
+    public DbSet<ApplicationUserOTP> ApplicationUserOTPs { get; set; }
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {

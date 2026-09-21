@@ -95,6 +95,34 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
+[E:/programming/Eraasoft/Eraasoft/EraaSoft-Tasks-/MVC/CinemaDashboard/CinemaDashboard/Areas/Identity/Views/Account/ForgetPassword.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcVmlld3NcQWNjb3VudFxGb3JnZXRQYXNzd29yZC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/programming/Eraasoft/Eraasoft/EraaSoft-Tasks-/MVC/CinemaDashboard/CinemaDashboard/Areas/Identity/Views/Account/Login.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcVmlld3NcQWNjb3VudFxMb2dpbi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/programming/Eraasoft/Eraasoft/EraaSoft-Tasks-/MVC/CinemaDashboard/CinemaDashboard/Areas/Identity/Views/Account/NewPassword.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcVmlld3NcQWNjb3VudFxOZXdQYXNzd29yZC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/programming/Eraasoft/Eraasoft/EraaSoft-Tasks-/MVC/CinemaDashboard/CinemaDashboard/Areas/Identity/Views/Account/Register.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcVmlld3NcQWNjb3VudFxSZWdpc3Rlci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/programming/Eraasoft/Eraasoft/EraaSoft-Tasks-/MVC/CinemaDashboard/CinemaDashboard/Areas/Identity/Views/Account/ValidateOTP.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcVmlld3NcQWNjb3VudFxWYWxpZGF0ZU9UUC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/programming/Eraasoft/Eraasoft/EraaSoft-Tasks-/MVC/CinemaDashboard/CinemaDashboard/Areas/Identity/Views/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcVmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/programming/Eraasoft/Eraasoft/EraaSoft-Tasks-/MVC/CinemaDashboard/CinemaDashboard/Areas/Identity/Views/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcVmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [E:/programming/Eraasoft/Eraasoft/EraaSoft-Tasks-/MVC/CinemaDashboard/CinemaDashboard/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 

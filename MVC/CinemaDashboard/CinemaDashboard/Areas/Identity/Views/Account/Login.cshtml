@@ -1,0 +1,36 @@
+@model CinemaDashboard.ViewModel.LoginVM
+
+<div class="container">
+    <div class="row">
+        <div class="my-2 display-4">Login</div>
+    </div>
+
+    <div class="row">
+        <form asp-action="Login" method="post">
+            <div asp-validation-summary="All" class="text-danger"></div>
+            <div class="mb-3">
+                <label asp-for="EmailOrUserName" class="form-label"></label>
+                <input asp-for="EmailOrUserName" class="form-control" />
+                <span asp-validation-for="EmailOrUserName" class="text-danger"></span>
+            </div>
+
+            <div class="mb-3">
+                <label asp-for="Password" class="form-label"></label>
+                <input asp-for="Password" class="form-control" type="password" />
+                <span asp-validation-for="Password" class="text-danger"></span>
+            </div>
+
+            <div class="mb-3 form-check">
+                <input asp-for="RememberMe" class="form-check-input" />
+                <label asp-for="RememberMe" class="form-check-label"></label>
+            </div>
+
+            <button type="submit" class="btn btn-primary my-3">Login</button>
+        </form>
+    </div>
+
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

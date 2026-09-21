@@ -8,3 +8,6 @@ global using CinemaDashboard.ViewModel;
 global using System.ComponentModel.DataAnnotations;
 global using CinemaDashboard.Validations;
 global using CinemaDashboard.Repositories;
+global using Microsoft.AspNetCore.Identity;
+global using Microsoft.AspNetCore.Identity.UI.Services;
+global using CinemaDashboard.Utility;
