@@ -83,7 +83,7 @@ public class AccountController : Controller
     public IActionResult Login()
     {
         if (User.Identity is not null && User.Identity.IsAuthenticated)
-            return RedirectToAction(nameof(Index), ControllerConstants.HOME_CONTROLLER, new { area = AreaConstants.CUSTOMER_AREA });
+            return RedirectToAction(nameof(Index), ControllerConstants.HOME_CONTROLLER, new { area = AreaConstants.ADMIN_AREA });
 
         return View();
     }
@@ -127,7 +127,7 @@ public class AccountController : Controller
 
         TempData[NotificationConstant.SUCCESS_NOTIFICATION] = $"Welcome Back {user.FirstName} {user.LastName}";
 
-        return RedirectToAction(nameof(Index), ControllerConstants.HOME_CONTROLLER, new { area = AreaConstants.CUSTOMER_AREA });
+        return RedirectToAction(nameof(Index), ControllerConstants.HOME_CONTROLLER, new { area = AreaConstants.ADMIN_AREA });
     }
     public async Task<IActionResult> Logout()
     {

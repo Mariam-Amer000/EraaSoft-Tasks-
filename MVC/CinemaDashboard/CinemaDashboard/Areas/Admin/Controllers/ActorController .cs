@@ -1,8 +1,4 @@
-﻿
-
-using CinemaDashboard.Utility;
-
-namespace Ecommerce.Areas.Admin.Controllers;
+﻿namespace CinemaDashboard.Areas.Admin.Controllers;
 
 [Area("Admin")]
 public class ActorController : Controller

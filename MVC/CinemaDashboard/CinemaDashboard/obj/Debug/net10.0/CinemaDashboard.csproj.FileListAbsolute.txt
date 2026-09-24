@@ -230,8 +230,6 @@ E:\programming\Eraasoft\Eraasoft\EraaSoft-Tasks-\MVC\CinemaDashboard\CinemaDashb
 E:\programming\Eraasoft\Eraasoft\EraaSoft-Tasks-\MVC\CinemaDashboard\CinemaDashboard\bin\Debug\net10.0\runtimes\win-x64\native\msalruntime.dll
 E:\programming\Eraasoft\Eraasoft\EraaSoft-Tasks-\MVC\CinemaDashboard\CinemaDashboard\bin\Debug\net10.0\runtimes\win-x86\native\msalruntime_x86.dll
 E:\programming\Eraasoft\Eraasoft\EraaSoft-Tasks-\MVC\CinemaDashboard\CinemaDashboard\obj\Debug\net10.0\scopedcss\Views\Shared\_AdminLayout.cshtml.rz.scp.css
-E:\programming\Eraasoft\Eraasoft\EraaSoft-Tasks-\MVC\CinemaDashboard\CinemaDashboard\obj\Debug\net10.0\compressed\dtlmr3y6uf-{0}-zjatbibqu6-zjatbibqu6.gz
-E:\programming\Eraasoft\Eraasoft\EraaSoft-Tasks-\MVC\CinemaDashboard\CinemaDashboard\obj\Debug\net10.0\compressed\ui7eyjbzb8-{0}-zjatbibqu6-zjatbibqu6.gz
 E:\programming\Eraasoft\Eraasoft\EraaSoft-Tasks-\MVC\CinemaDashboard\CinemaDashboard\obj\Debug\net10.0\compressed\1pv59pym78-{0}-v5ewvs1mr6-v5ewvs1mr6.gz
 E:\programming\Eraasoft\Eraasoft\EraaSoft-Tasks-\MVC\CinemaDashboard\CinemaDashboard\obj\Debug\net10.0\compressed\ak3ee3vjcm-{0}-kxewn0i91e-kxewn0i91e.gz
 E:\programming\Eraasoft\Eraasoft\EraaSoft-Tasks-\MVC\CinemaDashboard\CinemaDashboard\obj\Debug\net10.0\compressed\lf11etwlx5-{0}-2a1tnmqems-2a1tnmqems.gz
@@ -671,3 +669,6 @@ E:\programming\Eraasoft\Eraasoft\EraaSoft-Tasks-\MVC\CinemaDashboard\CinemaDashb
 E:\programming\Eraasoft\Eraasoft\EraaSoft-Tasks-\MVC\CinemaDashboard\CinemaDashboard\bin\Debug\net10.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
 E:\programming\Eraasoft\Eraasoft\EraaSoft-Tasks-\MVC\CinemaDashboard\CinemaDashboard\bin\Debug\net10.0\Mapster.dll
 E:\programming\Eraasoft\Eraasoft\EraaSoft-Tasks-\MVC\CinemaDashboard\CinemaDashboard\bin\Debug\net10.0\Mapster.Core.dll
+E:\programming\Eraasoft\Eraasoft\EraaSoft-Tasks-\MVC\CinemaDashboard\CinemaDashboard\obj\Debug\net10.0\scopedcss\Areas\Identity\Views\Profille\Index.cshtml.rz.scp.css
+E:\programming\Eraasoft\Eraasoft\EraaSoft-Tasks-\MVC\CinemaDashboard\CinemaDashboard\obj\Debug\net10.0\compressed\dtlmr3y6uf-{0}-1o7ul608id-1o7ul608id.gz
+E:\programming\Eraasoft\Eraasoft\EraaSoft-Tasks-\MVC\CinemaDashboard\CinemaDashboard\obj\Debug\net10.0\compressed\ui7eyjbzb8-{0}-1o7ul608id-1o7ul608id.gz

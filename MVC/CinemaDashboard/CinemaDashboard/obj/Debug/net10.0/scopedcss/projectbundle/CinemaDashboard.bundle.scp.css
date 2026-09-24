@@ -1,3 +1,74 @@
+/* /Areas/Identity/Views/Profille/Index.cshtml.rz.scp.css */
+body[b-rosrvpeqjl] {
+    margin: 0;
+    padding-top: 40px;
+    color: #2e323c;
+    background: #f5f6fa;
+    position: relative;
+    height: 100%;
+}
+
+.account-settings .user-profile[b-rosrvpeqjl] {
+    margin: 0 0 1rem 0;
+    padding-bottom: 1rem;
+    text-align: center;
+}
+
+    .account-settings .user-profile .user-avatar[b-rosrvpeqjl] {
+        margin: 0 0 1rem 0;
+    }
+
+        .account-settings .user-profile .user-avatar img[b-rosrvpeqjl] {
+            width: 90px;
+            height: 90px;
+            -webkit-border-radius: 100px;
+            -moz-border-radius: 100px;
+            border-radius: 100px;
+        }
+
+    .account-settings .user-profile h5.user-name[b-rosrvpeqjl] {
+        margin: 0 0 0.5rem 0;
+    }
+
+    .account-settings .user-profile h6.user-email[b-rosrvpeqjl] {
+        margin: 0;
+        font-size: 0.8rem;
+        font-weight: 400;
+        color: #9fa8b9;
+    }
+
+.account-settings .about[b-rosrvpeqjl] {
+    margin: 2rem 0 0 0;
+    text-align: center;
+}
+
+    .account-settings .about h5[b-rosrvpeqjl] {
+        margin: 0 0 15px 0;
+        color: #007ae1;
+    }
+
+    .account-settings .about p[b-rosrvpeqjl] {
+        font-size: 0.825rem;
+    }
+
+.form-control[b-rosrvpeqjl] {
+    border: 1px solid #cfd1d8;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    border-radius: 2px;
+    font-size: .825rem;
+    background: #ffffff;
+    color: #2e323c;
+}
+
+.card[b-rosrvpeqjl] {
+    background: #ffffff;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    border: 0;
+    margin-bottom: 1rem;
+}
 /* /Views/Shared/_AdminLayout.cshtml.rz.scp.css */
 /* Please see documentation at https://learn.microsoft.com/aspnet/core/client-side/bundling-and-minification
 for details on configuring this project to bundle and minify static web assets. */
