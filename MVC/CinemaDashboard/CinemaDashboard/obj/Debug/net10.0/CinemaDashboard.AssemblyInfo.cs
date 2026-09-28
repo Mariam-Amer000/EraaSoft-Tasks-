@@ -11,10 +11,11 @@
 using System;
 using System.Reflection;
 
+[assembly: Microsoft.Extensions.Configuration.UserSecrets.UserSecretsIdAttribute("1082165d-b555-463c-bb7e-f06674d41640")]
 [assembly: System.Reflection.AssemblyCompanyAttribute("CinemaDashboard")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+773d9b1921cbd0e8ab9af4a8dfcaf2f8ae52d506")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+18df802f0cecf778be3d5aa02b167afaee753af1")]
 [assembly: System.Reflection.AssemblyProductAttribute("CinemaDashboard")]
 [assembly: System.Reflection.AssemblyTitleAttribute("CinemaDashboard")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -1,0 +1,38 @@
+﻿@model IEnumerable<OrderItem>
+
+@{
+    ViewData["Title"] = "تفاصيل الحجز";
+    var firstItem = Model.FirstOrDefault();
+}
+
+<div class="container my-5">
+    <div class="card shadow-lg border-0 p-4">
+        <div class="d-flex justify-content-between align-items-center mb-4">
+            <h3 class="fw-bold">تفاصيل التذكرة رقم #@firstItem?.OrderId</h3>
+            <a asp-area="Customer" asp-controller="Order" asp-action="Index" class="btn btn-outline-secondary">
+                العودة للحجوزات
+            </a>
+        </div>
+
+        <div class="row g-4">
+            @foreach (var item in Model)
+            {
+                <div class="col-md-6">
+                    <div class="card border-primary h-100 shadow-sm">
+                        <div class="card-header bg-primary text-white d-flex justify-content-between">
+                            <span class="fw-bold">تذكرة سينما</span>
+                            <span>المقعد: @item.SeatNumber</span>
+                        </div>
+                        <div class="card-body">
+                            <h4 class="card-title fw-bold text-dark mb-3">@item.Movie?.Name</h4>
+                            <p class="mb-2"><strong>السينما:</strong> @item.Cinema?.Name</p>
+                            <p class="mb-2"><strong>موعد العرض:</strong> @item.Showtime.ToString("yyyy-MM-dd hh:mm tt")</p>
+                            <p class="mb-2"><strong>عدد التذاكر:</strong> @item.Count</p>
+                            <h5 class="text-success fw-bold mt-3">السعر: @item.Price.ToString("C")</h5>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</div>

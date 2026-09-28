@@ -672,3 +672,4 @@ E:\programming\Eraasoft\Eraasoft\EraaSoft-Tasks-\MVC\CinemaDashboard\CinemaDashb
 E:\programming\Eraasoft\Eraasoft\EraaSoft-Tasks-\MVC\CinemaDashboard\CinemaDashboard\obj\Debug\net10.0\scopedcss\Areas\Identity\Views\Profille\Index.cshtml.rz.scp.css
 E:\programming\Eraasoft\Eraasoft\EraaSoft-Tasks-\MVC\CinemaDashboard\CinemaDashboard\obj\Debug\net10.0\compressed\dtlmr3y6uf-{0}-1o7ul608id-1o7ul608id.gz
 E:\programming\Eraasoft\Eraasoft\EraaSoft-Tasks-\MVC\CinemaDashboard\CinemaDashboard\obj\Debug\net10.0\compressed\ui7eyjbzb8-{0}-1o7ul608id-1o7ul608id.gz
+E:\programming\Eraasoft\Eraasoft\EraaSoft-Tasks-\MVC\CinemaDashboard\CinemaDashboard\bin\Debug\net10.0\Stripe.net.dll

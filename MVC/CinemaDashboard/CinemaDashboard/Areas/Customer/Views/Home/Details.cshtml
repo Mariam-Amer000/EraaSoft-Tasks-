@@ -1,0 +1,58 @@
+﻿@model Movie
+
+@{
+    ViewData["Title"] = Model.Name;
+}
+
+<div class="container my-5">
+    <div class="card shadow-lg border-0 p-4">
+        <div class="row g-4">
+            <div class="col-md-5">
+                <img src="@Model.MainImg" class="img-fluid rounded shadow" alt="@Model.Name" style="width: 100%; max-height: 500px; object-fit: cover;" />
+            </div>
+
+            <div class="col-md-7">
+                <h1 class="fw-bold text-primary mb-3">@Model.Name</h1>
+                <p class="lead text-secondary">@Model.Description</p>
+
+                <hr class="my-4" />
+
+                <div class="d-flex align-items-center mb-4">
+                    <h3 class="text-success mb-0 me-3">سعر التذكرة: @Model.Price.ToString("C")</h3>
+                    <span class="badge bg-secondary p-2">@Model.Category?.Name</span>
+                </div>
+
+                <form asp-area="Customer" asp-controller="Cart" asp-action="AddToCart" method="post" class="card p-3 bg-light border-0">
+                    <input type="hidden" name="movieId" value="@Model.Id" />
+
+                    <div class="mb-3">
+                        <label class="form-label fw-bold">اختر السينما</label>
+                        <select name="cinemaId" class="form-select form-select-lg" asp-items="@(new SelectList(ViewBag.Cinemas, "Id", "Name"))" required>
+                            <option value="">-- اختر السينما المتاحة --</option>
+                        </select>
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label fw-bold">موعد العرض</label>
+                        <input type="datetime-local" name="showtime" class="form-control form-control-lg" required />
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label fw-bold">رقم الكرسي / المقعد</label>
+                        <input type="text" name="seatNumber" class="form-control form-control-lg" placeholder="مثال: A-12" required />
+                    </div>
+
+                    <button type="submit" class="btn btn-primary btn-lg w-100 mt-2">
+                        <i class="bi bi-cart-plus me-2"></i> إتمام الحجز والإضافة للسلة
+                    </button>
+                </form>
+
+                <div class="mt-3">
+                    <a asp-area="Customer" asp-controller="Home" asp-action="Index" class="btn btn-link text-decoration-none text-muted">
+                        <i class="bi bi-arrow-right"></i> العودة للرئيسية
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

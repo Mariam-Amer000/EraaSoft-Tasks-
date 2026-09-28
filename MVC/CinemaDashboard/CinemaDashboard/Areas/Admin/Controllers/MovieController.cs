@@ -85,7 +85,7 @@ public class MovieController : Controller
     [HttpPost]
     public async Task<IActionResult> Create(Movie movie, IFormFile Img, List<IFormFile> subImgs,CancellationToken CT)
     {
-        if(ModelState.IsValid)
+        if(!ModelState.IsValid)
         {
             return View(new MovieWithDetalies
             {
@@ -139,6 +139,7 @@ public class MovieController : Controller
     [HttpGet]
     public IActionResult Update(int id)
     {
+
         var movie = _movieRepository.GetOne(c => c.Id == id);
         if (movie is null) return NotFound();
 
@@ -155,9 +156,9 @@ public class MovieController : Controller
     }
 
     [HttpPost]
-    public async Task<IActionResult> Update(Movie movie,IFormFile Img ,List<IFormFile> subImgs,CancellationToken CT)
+    public async Task<IActionResult> Update(Movie movie, IFormFile? Img, List<IFormFile> subImgs, CancellationToken CT)
     {
-        if(!ModelState.IsValid)
+        if (!ModelState.IsValid)
         {
             return View(new MovieWithDetalies
             {
@@ -167,23 +168,26 @@ public class MovieController : Controller
             });
         }
         var MovieInDb = _movieRepository.GetOne(e => e.Id == movie.Id);
-        if(MovieInDb is null) return NotFound();
-
+        if (MovieInDb is null) return NotFound();
 
         if (Img is not null && Img.Length > 0)
         {
-            // create new img 
             var fileName = fileUpload.GenerateFileName(Img.FileName);
             if (fileName is null) return BadRequest();
 
-            var filePath = fileUpload.GenerateFullPath(FileType.Img, "Movies", fileName);
+            var filePath = fileUpload.GenerateFullPath(FileType.Img, "Movies\\MainImg", fileName);
             if (filePath is null) return BadRequest();
 
             fileUpload.UploadFileLocally(filePath, Img);
 
-            var oldFilePath= fileUpload.GenerateFullPath(FileType.Img, "Movies", MovieInDb.MainImg);
-            //delete old img form wwwroot
-            fileUpload.DeleteFileLocally(oldFilePath);
+            if (!string.IsNullOrEmpty(MovieInDb.MainImg))
+            {
+                var oldFilePath = fileUpload.GenerateFullPath(FileType.Img, "Movies\\MainImg", MovieInDb.MainImg);
+                if (oldFilePath is not null)
+                {
+                    fileUpload.DeleteFileLocally(oldFilePath);
+                }
+            }
 
             movie.MainImg = fileName;
         }
@@ -191,22 +195,20 @@ public class MovieController : Controller
         {
             movie.MainImg = MovieInDb.MainImg;
         }
-
-        if (subImgs.Any())
+        if (subImgs != null && subImgs.Any())
         {
-            // delete old imgs form wwwroot and DB
-            var OldSubImgs = _movieSubImgRepository.Get(e => e.MovieId == movie.Id);
+            var OldSubImgs = _movieSubImgRepository.Get(e => e.MovieId == movie.Id).ToList();
 
             foreach (var item in OldSubImgs)
             {
                 var oldFilePath = fileUpload.GenerateFullPath(FileType.Img, "Movies\\SubImgs", item.SubImg);
-                if (oldFilePath is null) return BadRequest();
-
-                fileUpload.DeleteFileLocally(oldFilePath);
+                if (oldFilePath is not null)
+                {
+                    fileUpload.DeleteFileLocally(oldFilePath);
+                }
             }
             _movieSubImgRepository.DeleteRange(OldSubImgs);
 
-            // create in wwwroot
             foreach (var item in subImgs)
             {
                 var fileName = fileUpload.GenerateFileName(item.FileName);
@@ -217,18 +219,18 @@ public class MovieController : Controller
 
                 fileUpload.UploadFileLocally(filePath, item);
 
-                // create in db
-                await _movieSubImgRepository.CreateAsync(new()
+                await _movieSubImgRepository.CreateAsync(new MovieSubImg
                 {
                     SubImg = fileName,
                     MovieId = movie.Id
                 });
             }
-
         }
+
         _movieRepository.Update(movie);
-        await _movieRepository.CommitAsync();
-        TempData[NotificationConstant.SUCCESS_NOTIFICATION] = "Update Movie Successfuly";
+        await _movieRepository.CommitAsync(CT);
+
+        TempData[NotificationConstant.SUCCESS_NOTIFICATION] = "Update Movie Successfully";
         return RedirectToAction("Index");
     }
 

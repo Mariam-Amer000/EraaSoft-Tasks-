@@ -1,4 +1,5 @@
 using CinemaDashboard.Services;
+using Stripe;
 
 namespace CinemaDashboard
 {
@@ -20,6 +21,10 @@ namespace CinemaDashboard
             builder.Services.AddScoped<IRepository<ApplicationUserOTP>, Repository<ApplicationUserOTP>>();
             builder.Services.AddScoped<IDbInitializer, DbInitializer>();
             builder.Services.AddDbContext<ApplicationDbContext>();
+            builder.Services.AddScoped<IRepository<Cart>, Repository<Cart>>();
+            builder.Services.AddScoped<IRepository<Promotion>, Repository<Promotion>>();
+            builder.Services.AddScoped<IRepository<Order>, Repository<Order>>();
+            builder.Services.AddScoped<IRepository<OrderItem>, Repository<OrderItem>>();
 
             builder.Services.AddIdentity<ApplicationUser, IdentityRole>(options =>
             {
@@ -40,13 +45,18 @@ namespace CinemaDashboard
                 option.LoginPath = "/identity/account/login";
                 option.AccessDeniedPath = "/identity/account/AccessDenied";
             });
+
+            StripeConfiguration.ApiKey = builder.Configuration["Stripe:SecretKey"];
+
+            builder.Services.Configure<StripeSettings>(builder.Configuration.GetSection("Stripe"));
+
             var app = builder.Build();
 
             // Configure the HTTP request pipeline.
             if (!app.Environment.IsDevelopment())
             {
                 app.UseExceptionHandler("/Home/Error");
-                // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
+                // The default HSTS value is 30 days. Y.ou may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
                 app.UseHsts();
             }
 

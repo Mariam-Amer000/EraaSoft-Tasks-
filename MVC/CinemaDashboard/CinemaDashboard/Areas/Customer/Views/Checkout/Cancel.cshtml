@@ -1,0 +1,23 @@
+﻿@{
+    ViewData["Title"] = "تم إلغاء العملية";
+}
+
+<div class="container my-5 text-center">
+    <div class="card shadow-lg p-5 border-0 mx-auto" style="max-width: 600px; border-radius: 15px;">
+        <div class="mb-4 text-warning">
+            <i class="bi bi-exclamation-triangle-fill display-1"></i>
+        </div>
+        <h2 class="fw-bold text-danger mb-3">لم تتم عملية الدفع</h2>
+        <p class="text-muted fs-5 mb-4">
+            لقد قمت بطلب إلغاء عملية الدفع، أو حدثت مشكلة أثناء المعاملة. التذاكر ما زالت محفوظة في سلتك.
+        </p>
+        <div class="d-flex justify-content-center gap-3">
+            <a asp-area="Customer" asp-controller="Cart" asp-action="Index" class="btn btn-warning btn-lg text-white">
+                <i class="bi bi-cart me-1"></i> العودة للسلة
+            </a>
+            <a asp-area="Customer" asp-controller="Home" asp-action="Index" class="btn btn-outline-secondary btn-lg">
+                الرئيسية
+            </a>
+        </div>
+    </div>
+</div>

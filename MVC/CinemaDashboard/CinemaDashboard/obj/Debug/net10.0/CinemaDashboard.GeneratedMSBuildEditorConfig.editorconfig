@@ -95,6 +95,42 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
+[E:/programming/Eraasoft/Eraasoft/EraaSoft-Tasks-/MVC/CinemaDashboard/CinemaDashboard/Areas/Customer/Views/Cart/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQ3VzdG9tZXJcVmlld3NcQ2FydFxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/programming/Eraasoft/Eraasoft/EraaSoft-Tasks-/MVC/CinemaDashboard/CinemaDashboard/Areas/Customer/Views/Checkout/Cancel.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQ3VzdG9tZXJcVmlld3NcQ2hlY2tvdXRcQ2FuY2VsLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/programming/Eraasoft/Eraasoft/EraaSoft-Tasks-/MVC/CinemaDashboard/CinemaDashboard/Areas/Customer/Views/Checkout/Success.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQ3VzdG9tZXJcVmlld3NcQ2hlY2tvdXRcU3VjY2Vzcy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/programming/Eraasoft/Eraasoft/EraaSoft-Tasks-/MVC/CinemaDashboard/CinemaDashboard/Areas/Customer/Views/Home/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQ3VzdG9tZXJcVmlld3NcSG9tZVxEZXRhaWxzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/programming/Eraasoft/Eraasoft/EraaSoft-Tasks-/MVC/CinemaDashboard/CinemaDashboard/Areas/Customer/Views/Home/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQ3VzdG9tZXJcVmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/programming/Eraasoft/Eraasoft/EraaSoft-Tasks-/MVC/CinemaDashboard/CinemaDashboard/Areas/Customer/Views/Order/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQ3VzdG9tZXJcVmlld3NcT3JkZXJcRGV0YWlscy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/programming/Eraasoft/Eraasoft/EraaSoft-Tasks-/MVC/CinemaDashboard/CinemaDashboard/Areas/Customer/Views/Order/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQ3VzdG9tZXJcVmlld3NcT3JkZXJcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/programming/Eraasoft/Eraasoft/EraaSoft-Tasks-/MVC/CinemaDashboard/CinemaDashboard/Areas/Customer/Views/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQ3VzdG9tZXJcVmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/programming/Eraasoft/Eraasoft/EraaSoft-Tasks-/MVC/CinemaDashboard/CinemaDashboard/Areas/Customer/Views/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQ3VzdG9tZXJcVmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [E:/programming/Eraasoft/Eraasoft/EraaSoft-Tasks-/MVC/CinemaDashboard/CinemaDashboard/Areas/Identity/Views/Account/ForgetPassword.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcVmlld3NcQWNjb3VudFxGb3JnZXRQYXNzd29yZC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 

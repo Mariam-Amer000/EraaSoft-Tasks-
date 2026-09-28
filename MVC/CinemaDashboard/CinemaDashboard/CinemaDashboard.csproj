@@ -4,6 +4,7 @@
     <TargetFramework>net10.0</TargetFramework>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
+    <UserSecretsId>1082165d-b555-463c-bb7e-f06674d41640</UserSecretsId>
   </PropertyGroup>
 
   <ItemGroup>
@@ -19,10 +20,10 @@
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
+    <PackageReference Include="Stripe.net" Version="52.4.2" />
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="wwwroot\imgs\Movies\MainImg\" />
     <Folder Include="wwwroot\imgs\Movies\SubImgs\" />
   </ItemGroup>
 

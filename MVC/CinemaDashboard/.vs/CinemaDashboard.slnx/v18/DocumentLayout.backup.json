@@ -3,16 +3,15 @@
   "WorkspaceRootPath": "E:\\programming\\Eraasoft\\Eraasoft\\EraaSoft-Tasks-\\MVC\\CinemaDashboard\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{60E2A18D-55ED-1FB8-8249-3FE227E732DF}|CinemaDashboard\\CinemaDashboard.csproj|e:\\programming\\eraasoft\\eraasoft\\eraasoft-tasks-\\mvc\\cinemadashboard\\cinemadashboard\\viewmodel\\changepasswordvm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{60E2A18D-55ED-1FB8-8249-3FE227E732DF}|CinemaDashboard\\CinemaDashboard.csproj|solutionrelative:cinemadashboard\\viewmodel\\changepasswordvm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{60E2A18D-55ED-1FB8-8249-3FE227E732DF}|CinemaDashboard\\CinemaDashboard.csproj|e:\\programming\\eraasoft\\eraasoft\\eraasoft-tasks-\\mvc\\cinemadashboard\\cinemadashboard\\areas\\admin\\controllers\\moviecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{60E2A18D-55ED-1FB8-8249-3FE227E732DF}|CinemaDashboard\\CinemaDashboard.csproj|solutionrelative:cinemadashboard\\areas\\admin\\controllers\\moviecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{60E2A18D-55ED-1FB8-8249-3FE227E732DF}|CinemaDashboard\\CinemaDashboard.csproj|e:\\programming\\eraasoft\\eraasoft\\eraasoft-tasks-\\mvc\\cinemadashboard\\cinemadashboard\\areas\\identity\\controllers\\profillecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{60E2A18D-55ED-1FB8-8249-3FE227E732DF}|CinemaDashboard\\CinemaDashboard.csproj|solutionrelative:cinemadashboard\\areas\\identity\\controllers\\profillecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{60E2A18D-55ED-1FB8-8249-3FE227E732DF}|CinemaDashboard\\CinemaDashboard.csproj|e:\\programming\\eraasoft\\eraasoft\\eraasoft-tasks-\\mvc\\cinemadashboard\\cinemadashboard\\areas\\admin\\views\\movie\\update.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{60E2A18D-55ED-1FB8-8249-3FE227E732DF}|CinemaDashboard\\CinemaDashboard.csproj|solutionrelative:cinemadashboard\\areas\\admin\\views\\movie\\update.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{60E2A18D-55ED-1FB8-8249-3FE227E732DF}|CinemaDashboard\\CinemaDashboard.csproj|e:\\programming\\eraasoft\\eraasoft\\eraasoft-tasks-\\mvc\\cinemadashboard\\cinemadashboard\\areas\\identity\\views\\profille\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{60E2A18D-55ED-1FB8-8249-3FE227E732DF}|CinemaDashboard\\CinemaDashboard.csproj|solutionrelative:cinemadashboard\\areas\\identity\\views\\profille\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|ViewDataWindow_MSSQL__/./CinemaProject/True/SqlTable/dbo.Movies.sql||{0058A1F7-65F3-4DB9-B3D0-CA7E64DD73CD}"
     }
   ],
   "DocumentGroupContainers": [
@@ -22,50 +21,48 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 2,
           "Children": [
             {
-              "$type": "Bookmark",
-              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
-            },
-            {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "ChangePasswordVM.cs",
-              "DocumentMoniker": "E:\\programming\\Eraasoft\\Eraasoft\\EraaSoft-Tasks-\\MVC\\CinemaDashboard\\CinemaDashboard\\ViewModel\\ChangePasswordVM.cs",
-              "RelativeDocumentMoniker": "CinemaDashboard\\ViewModel\\ChangePasswordVM.cs",
-              "ToolTip": "E:\\programming\\Eraasoft\\Eraasoft\\EraaSoft-Tasks-\\MVC\\CinemaDashboard\\CinemaDashboard\\ViewModel\\ChangePasswordVM.cs",
-              "RelativeToolTip": "CinemaDashboard\\ViewModel\\ChangePasswordVM.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-09-24T11:50:32.605Z",
+              "DocumentIndex": 2,
+              "Title": "dbo.Movies [Data]",
+              "DocumentMoniker": "ViewDataWindow_MSSQL__/./CinemaProject/True/SqlTable/dbo.Movies.sql",
+              "ToolTip": "dbo.Movies [Data]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000826|",
+              "WhenOpened": "2026-09-28T17:56:44.358Z",
+              "IsPinned": true,
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "ProfilleController.cs",
-              "DocumentMoniker": "E:\\programming\\Eraasoft\\Eraasoft\\EraaSoft-Tasks-\\MVC\\CinemaDashboard\\CinemaDashboard\\Areas\\Identity\\Controllers\\ProfilleController.cs",
-              "RelativeDocumentMoniker": "CinemaDashboard\\Areas\\Identity\\Controllers\\ProfilleController.cs",
-              "ToolTip": "E:\\programming\\Eraasoft\\Eraasoft\\EraaSoft-Tasks-\\MVC\\CinemaDashboard\\CinemaDashboard\\Areas\\Identity\\Controllers\\ProfilleController.cs",
-              "RelativeToolTip": "CinemaDashboard\\Areas\\Identity\\Controllers\\ProfilleController.cs",
-              "ViewState": "AgIAAB0AAAAAAAAAAAAIwCYAAAAsAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-09-24T11:27:49.231Z",
+              "Title": "Update.cshtml",
+              "DocumentMoniker": "E:\\programming\\Eraasoft\\Eraasoft\\EraaSoft-Tasks-\\MVC\\CinemaDashboard\\CinemaDashboard\\Areas\\Admin\\Views\\Movie\\Update.cshtml",
+              "RelativeDocumentMoniker": "CinemaDashboard\\Areas\\Admin\\Views\\Movie\\Update.cshtml",
+              "ToolTip": "E:\\programming\\Eraasoft\\Eraasoft\\EraaSoft-Tasks-\\MVC\\CinemaDashboard\\CinemaDashboard\\Areas\\Admin\\Views\\Movie\\Update.cshtml",
+              "RelativeToolTip": "CinemaDashboard\\Areas\\Admin\\Views\\Movie\\Update.cshtml",
+              "ViewState": "AgIAAC4AAAAAAAAAAAAowEkAAAAwAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-09-28T17:59:44.205Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "E:\\programming\\Eraasoft\\Eraasoft\\EraaSoft-Tasks-\\MVC\\CinemaDashboard\\CinemaDashboard\\Areas\\Identity\\Views\\Profille\\Index.cshtml",
-              "RelativeDocumentMoniker": "CinemaDashboard\\Areas\\Identity\\Views\\Profille\\Index.cshtml",
-              "ToolTip": "E:\\programming\\Eraasoft\\Eraasoft\\EraaSoft-Tasks-\\MVC\\CinemaDashboard\\CinemaDashboard\\Areas\\Identity\\Views\\Profille\\Index.cshtml",
-              "RelativeToolTip": "CinemaDashboard\\Areas\\Identity\\Views\\Profille\\Index.cshtml",
-              "ViewState": "AgIAAGAAAAAAAAAAAAAAAGwAAABnAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-09-24T11:27:44.092Z",
+              "DocumentIndex": 0,
+              "Title": "MovieController.cs",
+              "DocumentMoniker": "E:\\programming\\Eraasoft\\Eraasoft\\EraaSoft-Tasks-\\MVC\\CinemaDashboard\\CinemaDashboard\\Areas\\Admin\\Controllers\\MovieController.cs",
+              "RelativeDocumentMoniker": "CinemaDashboard\\Areas\\Admin\\Controllers\\MovieController.cs",
+              "ToolTip": "E:\\programming\\Eraasoft\\Eraasoft\\EraaSoft-Tasks-\\MVC\\CinemaDashboard\\CinemaDashboard\\Areas\\Admin\\Controllers\\MovieController.cs",
+              "RelativeToolTip": "CinemaDashboard\\Areas\\Admin\\Controllers\\MovieController.cs",
+              "ViewState": "AgIAANAAAAAAAAAAAAAowMQAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-09-28T17:59:38.77Z",
               "EditorCaption": ""
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
             }
           ]
         }

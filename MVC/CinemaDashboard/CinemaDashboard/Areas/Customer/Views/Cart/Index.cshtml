@@ -1,0 +1,108 @@
+﻿@model IEnumerable<Cart>
+
+@{
+    ViewData["Title"] = "سلة الحجوزات";
+}
+
+<div class="container my-5">
+    <h2 class="mb-4 fw-bold">سلة تذاكر السينما</h2>
+
+    @if (!Model.Any())
+    {
+        <div class="alert alert-info text-center p-5 rounded shadow-sm">
+            <h4>سلة الحجوزات فارغة حالياً</h4>
+            <p class="mb-3">لم تقم بإضافة أي تذاكر حتى الآن.</p>
+            <a asp-area="Customer" asp-controller="Home" asp-action="Index" class="btn btn-primary">
+                تصفح الأفلام المتاحة
+            </a>
+        </div>
+    }
+    else
+    {
+        <div class="row g-4">
+
+            <!-- قائمة التذاكر في السلة -->
+            <div class="col-lg-8">
+                @foreach (var item in Model)
+                {
+                    <div class="card mb-3 shadow-sm border-0">
+                        <div class="card-body">
+                            <div class="row align-items-center">
+                                <div class="col-md-2 text-center">
+                                    <img src="~/images/movies/MainImg/@item.Movie?.MainImg" class="img-fluid rounded" alt="@item.Movie?.Name" style="max-height: 100px; object-fit: cover;" />
+                                </div>
+                                <div class="col-md-5">
+                                    <h5 class="fw-bold mb-1">@item.Movie?.Name</h5>
+                                    <p class="text-muted small mb-1">السينما: @item.Cinema?.Name</p>
+                                    <p class="text-muted small mb-1">الموعد: @item.Showtime.ToString("yyyy-MM-dd hh:mm tt")</p>
+                                    <span class="badge bg-secondary">المقعد: @item.SeatNumber</span>
+                                </div>
+                                <div class="col-md-3 text-center my-2 my-md-0">
+                                    <div class="d-flex justify-content-center align-items-center gap-2">
+                                        <a asp-area="Customer" asp-controller="Cart" asp-action="DecrementQuantity" asp-route-id="@item.Id" class="btn btn-sm btn-outline-secondary">-</a>
+                                        <span class="fw-bold fs-5 px-2">@item.Count</span>
+                                        <a asp-area="Customer" asp-controller="Cart" asp-action="IncrementQuantity" asp-route-id="@item.Id" class="btn btn-sm btn-outline-secondary">+</a>
+                                    </div>
+                                    <div class="mt-2 text-primary fw-bold">
+                                        @((item.CurrentPrice * item.Count).ToString("C"))
+                                    </div>
+                                </div>
+                                <div class="col-md-2 text-end">
+                                    <a asp-area="Customer" asp-controller="Cart" asp-action="DeleteProduct" asp-route-id="@item.Id" class="btn btn-outline-danger btn-sm">
+                                        <i class="bi bi-trash"></i> حذف
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                }
+
+                <!-- زر العودة واختيار أفلام أخرى -->
+                <div class="mt-3">
+                    <a asp-area="Customer" asp-controller="Home" asp-action="Index" class="btn btn-outline-primary">
+                        <i class="bi bi-cart-plus me-1"></i> متابعة التسوق / إضافة أفلام أخرى
+                    </a>
+                </div>
+            </div>
+
+            <!-- الجانب الأيسر: كود الخصم وملخص الحجز -->
+            <div class="col-lg-4">
+                <!-- كود الخصم -->
+                <div class="card border-0 shadow-sm mb-4">
+                    <div class="card-body">
+                        <h5 class="fw-bold mb-3">كود الخصم (Promotion)</h5>
+                        <form asp-area="Customer" asp-controller="Cart" asp-action="Index" method="get">
+                            <div class="input-group">
+                                <input type="text" name="promo" class="form-control" placeholder="أدخل البروموكود..." />
+                                <button type="submit" class="btn btn-success">تطبيق</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+                <!-- ملخص الحجز والدفع -->
+                <div class="card border-0 shadow-sm p-3">
+                    <h5 class="fw-bold mb-3">ملخص الحجز</h5>
+                    <ul class="list-group list-group-flush mb-3">
+                        <li class="list-group-item d-flex justify-content-between align-items-center px-0">
+                            عدد التذاكر
+                            <span>@Model.Sum(x => x.Count)</span>
+                        </li>
+                        <li class="list-group-item d-flex justify-content-between align-items-center px-0 fw-bold fs-5">
+                            الإجمالي الكلي
+                            <span class="text-primary">@Model.Sum(x => x.CurrentPrice * x.Count).ToString("C")</span>
+                        </li>
+                    </ul>
+
+                    <!-- نمط إرسال الحجز (Checkout) -->
+                    <form asp-area="Customer" asp-controller="Cart" asp-action="Pay" method="post">
+                        <button type="submit" class="btn btn-success btn-lg w-100">
+                            متابعة عملية الدفع <i class="bi bi-credit-card ms-1"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+
+        </div>
+    }
+</div>
