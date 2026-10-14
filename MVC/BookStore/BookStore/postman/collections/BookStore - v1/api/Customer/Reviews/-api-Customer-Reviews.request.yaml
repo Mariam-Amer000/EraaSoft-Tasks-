@@ -1,0 +1,11 @@
+$kind: http-request
+name: /api/Customer/Reviews
+url: "{{baseUrl}}/api/Customer/Reviews?query=string&page=1&size=4"
+method: GET
+queryParams:
+  query: string
+  page: "1"
+  size: "4"
+settings: {}
+examples: ./.resources/-api-Customer-Reviews.resources/examples
+order: 4000

@@ -1,0 +1,15 @@
+$kind: http-request
+name: /api/Identity/Account/ValidateOTP
+url: "{{baseUrl}}/api/Identity/Account/ValidateOTP"
+method: POST
+headers:
+  Content-Type: application/json
+body:
+  type: json
+  content: |-
+    {
+      "otp": "string"
+    }
+settings: {}
+examples: ./.resources/-api-Identity-Account-ValidateOTP.resources/examples
+order: 1000

@@ -1,0 +1,9 @@
+$kind: http-request
+name: /api/Admin/Authors/GetOne
+url: "{{baseUrl}}/api/Admin/Authors/GetOne?id=4605828"
+method: GET
+queryParams:
+  id: "4605828"
+settings: {}
+examples: ./.resources/-api-Admin-Authors-GetOne.resources/examples
+order: 1000

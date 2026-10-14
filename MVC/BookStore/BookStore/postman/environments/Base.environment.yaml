@@ -1,0 +1,4 @@
+name: Base
+values:
+  - key: baseUrl
+    value: ''

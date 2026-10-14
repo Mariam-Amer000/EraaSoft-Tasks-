@@ -1,0 +1,17 @@
+$kind: http-request
+name: /api/Customer/Reviews/Reply
+url: "{{baseUrl}}/api/Customer/Reviews/Reply"
+method: POST
+headers:
+  Content-Type: application/json
+body:
+  type: json
+  content: |-
+    {
+      "reviewId": "-0",
+      "reply": "string",
+      "bookId": "-0"
+    }
+settings: {}
+examples: ./.resources/-api-Customer-Reviews-Reply.resources/examples
+order: 1000

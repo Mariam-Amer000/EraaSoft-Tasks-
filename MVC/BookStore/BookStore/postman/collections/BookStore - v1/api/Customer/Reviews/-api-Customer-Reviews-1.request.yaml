@@ -1,0 +1,17 @@
+$kind: http-request
+name: /api/Customer/Reviews
+url: "{{baseUrl}}/api/Customer/Reviews"
+method: PUT
+headers:
+  Content-Type: application/json
+body:
+  type: json
+  content: |-
+    {
+      "reviewId": "4731134903",
+      "newRate": "0",
+      "newComment": "string"
+    }
+settings: {}
+examples: ./.resources/-api-Customer-Reviews-1.resources/examples
+order: 5000

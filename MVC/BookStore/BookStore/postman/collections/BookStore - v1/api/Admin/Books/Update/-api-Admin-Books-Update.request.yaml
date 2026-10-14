@@ -1,0 +1,46 @@
+$kind: http-request
+name: /api/Admin/Books/Update
+url: "{{baseUrl}}/api/Admin/Books/Update?id=4605828"
+method: PUT
+headers:
+  Content-Type: application/json
+queryParams:
+  id: "4605828"
+body:
+  type: json
+  content: |-
+    {
+      "id": "0",
+      "name": "string",
+      "year": "9",
+      "image": "string",
+      "description": null,
+      "price": "-6775103",
+      "discount": "0",
+      "salesNumber": "5055025140",
+      "finalPrice": "-0.5364207343",
+      "stock": "-8004",
+      "flashSale": true,
+      "flashSaleFinalPrice": "15",
+      "authorId": "33",
+      "author": {
+        "value": "<Circular reference to #/components/schemas/Author detected>"
+      },
+      "categoryId": "-383431655",
+      "category": {
+        "id": "27189",
+        "name": "string",
+        "description": null,
+        "books": [
+          {
+            "value": "<Circular reference to #/components/schemas/Book detected>"
+          },
+          {
+            "value": "<Circular reference to #/components/schemas/Book detected>"
+          }
+        ]
+      }
+    }
+settings: {}
+examples: ./.resources/-api-Admin-Books-Update.resources/examples
+order: 1000

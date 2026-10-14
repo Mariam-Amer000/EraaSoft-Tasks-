@@ -12,7 +12,7 @@ namespace BookStore.Services
             {
                 EnableSsl = true,
                 UseDefaultCredentials = false,
-                Credentials = new NetworkCredential("mariamamerwork@gmail.com", "wpcf witt djww etir")
+                Credentials = new NetworkCredential("mariamamerwork@gmail.com", "ewyv fldu gdvg qoqa")
             };
 
             return client.SendMailAsync(

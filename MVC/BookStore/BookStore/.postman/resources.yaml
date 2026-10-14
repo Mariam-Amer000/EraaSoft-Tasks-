@@ -1,0 +1,13 @@
+# Use this workspace to collaborate
+workspace:
+  id: f86dba4c-7413-461e-8127-d4e491476a47
+
+localResources:
+  specs:
+    - ../obj/Debug/net10.0/EndpointInfo/BookStore.json
+
+# Each entry here maps a local resource to one or more corresponding objects in Postman Cloud
+
+cloudResources:
+  collections:
+    ../postman/collections/BookStore - v1: 32cd1f3a-48cf-449a-aba6-4391ff8ebb06

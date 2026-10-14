@@ -1,0 +1,27 @@
+$kind: http-request
+name: /api/Admin/Categories/Update
+url: "{{baseUrl}}/api/Admin/Categories/Update?id=4605828"
+method: PUT
+headers:
+  Content-Type: application/json
+queryParams:
+  id: "4605828"
+body:
+  type: json
+  content: |-
+    {
+      "id": "-637157536",
+      "name": "string",
+      "description": null,
+      "books": [
+        {
+          "value": "<Circular reference to #/components/schemas/Book detected>"
+        },
+        {
+          "value": "<Circular reference to #/components/schemas/Book detected>"
+        }
+      ]
+    }
+settings: {}
+examples: ./.resources/-api-Admin-Categories-Update.resources/examples
+order: 1000

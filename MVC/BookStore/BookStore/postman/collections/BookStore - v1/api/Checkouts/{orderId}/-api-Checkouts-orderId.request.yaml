@@ -1,0 +1,9 @@
+$kind: http-request
+name: /api/Checkouts/:orderId
+url: "{{baseUrl}}/api/Checkouts/:orderId"
+method: GET
+pathVariables:
+  orderId: "4605828"
+settings: {}
+examples: ./.resources/-api-Checkouts-orderId.resources/examples
+order: 1000

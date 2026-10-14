@@ -1,0 +1,83 @@
+$kind: http-request
+name: /api/Admin/Authors/Create
+url: "{{baseUrl}}/api/Admin/Authors/Create"
+method: POST
+headers:
+  Content-Type: application/json
+body:
+  type: json
+  content: |-
+    {
+      "id": "0",
+      "name": "string",
+      "birthYear": "1965-12-12",
+      "books": [
+        {
+          "id": "-45",
+          "name": "string",
+          "year": "-7992977501",
+          "image": "string",
+          "description": "string",
+          "price": "0",
+          "discount": "-3",
+          "salesNumber": "10191",
+          "finalPrice": "0",
+          "stock": "3398731",
+          "flashSale": true,
+          "flashSaleFinalPrice": "73976668.38660728677",
+          "authorId": "-0",
+          "author": {
+            "value": "<Circular reference to #/components/schemas/Author detected>"
+          },
+          "categoryId": "-0",
+          "category": {
+            "id": "-0",
+            "name": "string",
+            "description": "string",
+            "books": [
+              {
+                "value": "<Circular reference to #/components/schemas/Book detected>"
+              },
+              {
+                "value": "<Circular reference to #/components/schemas/Book detected>"
+              }
+            ]
+          }
+        },
+        {
+          "id": "0",
+          "name": "string",
+          "year": "6729320",
+          "image": "string",
+          "description": null,
+          "price": "-0.31631304",
+          "discount": "-0",
+          "salesNumber": "-317800786",
+          "finalPrice": "0.4917185651",
+          "stock": "-0",
+          "flashSale": true,
+          "flashSaleFinalPrice": "-9916320679",
+          "authorId": "-50",
+          "author": {
+            "value": "<Circular reference to #/components/schemas/Author detected>"
+          },
+          "categoryId": "-364",
+          "category": {
+            "id": "5239",
+            "name": "string",
+            "description": null,
+            "books": [
+              {
+                "value": "<Circular reference to #/components/schemas/Book detected>"
+              },
+              {
+                "value": "<Circular reference to #/components/schemas/Book detected>"
+              }
+            ]
+          }
+        }
+      ]
+    }
+settings: {}
+examples: ./.resources/-api-Admin-Authors-Create.resources/examples
+order: 1000

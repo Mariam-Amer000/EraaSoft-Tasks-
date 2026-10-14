@@ -1,0 +1,7 @@
+$kind: http-request
+name: /api/Customer/Home/BestSeller
+url: "{{baseUrl}}/api/Customer/Home/BestSeller"
+method: GET
+settings: {}
+examples: ./.resources/-api-Customer-Home-BestSeller.resources/examples
+order: 1000

@@ -1,0 +1,9 @@
+$kind: http-request
+name: /api/Customer/Carts
+url: "{{baseUrl}}/api/Customer/Carts?promo=string"
+method: GET
+queryParams:
+  promo: string
+settings: {}
+examples: ./.resources/-api-Customer-Carts-1.resources/examples
+order: 5000

@@ -1,0 +1,11 @@
+$kind: http-request
+name: /api/Admin/Books/Get
+url: "{{baseUrl}}/api/Admin/Books/Get?name=string&page=1&size=5"
+method: GET
+queryParams:
+  name: string
+  page: "1"
+  size: "5"
+settings: {}
+examples: ./.resources/-api-Admin-Books-Get.resources/examples
+order: 1000

@@ -1,0 +1,17 @@
+$kind: http-request
+name: /api/Customer/Reviews/Comment
+url: "{{baseUrl}}/api/Customer/Reviews/Comment"
+method: POST
+headers:
+  Content-Type: application/json
+body:
+  type: json
+  content: |-
+    {
+      "rate": "0",
+      "bookId": "-4089",
+      "comment": null
+    }
+settings: {}
+examples: ./.resources/-api-Customer-Reviews-Comment.resources/examples
+order: 1000

@@ -1,0 +1,9 @@
+$kind: http-request
+name: /api/Admin/Categories/GetOne
+url: "{{baseUrl}}/api/Admin/Categories/GetOne?id=4605828"
+method: GET
+queryParams:
+  id: "4605828"
+settings: {}
+examples: ./.resources/-api-Admin-Categories-GetOne.resources/examples
+order: 1000

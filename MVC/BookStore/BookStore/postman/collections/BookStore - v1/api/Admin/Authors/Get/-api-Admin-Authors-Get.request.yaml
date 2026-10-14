@@ -1,0 +1,9 @@
+$kind: http-request
+name: /api/Admin/Authors/Get
+url: "{{baseUrl}}/api/Admin/Authors/Get?name=string"
+method: GET
+queryParams:
+  name: string
+settings: {}
+examples: ./.resources/-api-Admin-Authors-Get.resources/examples
+order: 1000

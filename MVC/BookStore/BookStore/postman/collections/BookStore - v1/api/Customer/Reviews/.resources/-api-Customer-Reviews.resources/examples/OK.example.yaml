@@ -1,0 +1,15 @@
+$kind: http-example
+request:
+  url: "{{baseUrl}}/api/Customer/Reviews?query=string&page=1&size=4"
+  method: GET
+  queryParams:
+    query: string
+    page: "1"
+    size: "4"
+response:
+  statusCode: 200
+  statusText: OK
+  body:
+    type: text
+    content: ""
+order: 1000

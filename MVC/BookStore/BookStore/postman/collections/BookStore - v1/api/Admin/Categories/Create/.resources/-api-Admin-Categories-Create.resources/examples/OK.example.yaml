@@ -1,0 +1,29 @@
+$kind: http-example
+request:
+  url: "{{baseUrl}}/api/Admin/Categories/Create"
+  method: POST
+  headers:
+    Content-Type: application/json
+  body:
+    type: json
+    content: |-
+      {
+        "id": "-637157536",
+        "name": "string",
+        "description": null,
+        "books": [
+          {
+            "value": "<Circular reference to #/components/schemas/Book detected>"
+          },
+          {
+            "value": "<Circular reference to #/components/schemas/Book detected>"
+          }
+        ]
+      }
+response:
+  statusCode: 200
+  statusText: OK
+  body:
+    type: text
+    content: ""
+order: 1000

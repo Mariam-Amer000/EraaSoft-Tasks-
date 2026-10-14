@@ -1,0 +1,25 @@
+$kind: http-request
+name: /api/Admin/Categories/Create
+url: "{{baseUrl}}/api/Admin/Categories/Create"
+method: POST
+headers:
+  Content-Type: application/json
+body:
+  type: json
+  content: |-
+    {
+      "id": "-637157536",
+      "name": "string",
+      "description": null,
+      "books": [
+        {
+          "value": "<Circular reference to #/components/schemas/Book detected>"
+        },
+        {
+          "value": "<Circular reference to #/components/schemas/Book detected>"
+        }
+      ]
+    }
+settings: {}
+examples: ./.resources/-api-Admin-Categories-Create.resources/examples
+order: 1000

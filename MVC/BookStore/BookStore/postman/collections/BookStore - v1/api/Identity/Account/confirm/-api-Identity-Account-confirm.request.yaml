@@ -1,0 +1,10 @@
+$kind: http-request
+name: /api/Identity/Account/confirm
+url: "{{baseUrl}}/api/Identity/Account/confirm?id=string&token=string"
+method: GET
+queryParams:
+  id: string
+  token: string
+settings: {}
+examples: ./.resources/-api-Identity-Account-confirm.resources/examples
+order: 1000

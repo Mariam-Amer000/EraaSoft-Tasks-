@@ -1,0 +1,25 @@
+$kind: http-example
+request:
+  url: "{{baseUrl}}/api/Identity/Account/register"
+  method: POST
+  headers:
+    Content-Type: application/json
+  body:
+    type: json
+    content: |-
+      {
+        "firstName": "string",
+        "lastName": "string",
+        "email": "string",
+        "userName": "string",
+        "password": "string",
+        "confirmPassword": "string",
+        "address": null
+      }
+response:
+  statusCode: 200
+  statusText: OK
+  body:
+    type: text
+    content: ""
+order: 1000

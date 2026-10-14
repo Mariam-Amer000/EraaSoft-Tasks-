@@ -1,0 +1,9 @@
+$kind: http-request
+name: /api/Customer/Home/Search
+url: "{{baseUrl}}/api/Customer/Home/Search?searchString=string"
+method: GET
+queryParams:
+  searchString: string
+settings: {}
+examples: ./.resources/-api-Customer-Home-Search.resources/examples
+order: 1000

@@ -1,0 +1,9 @@
+$kind: http-request
+name: /api/Admin/Categories/Get
+url: "{{baseUrl}}/api/Admin/Categories/Get?name=string"
+method: GET
+queryParams:
+  name: string
+settings: {}
+examples: ./.resources/-api-Admin-Categories-Get.resources/examples
+order: 1000

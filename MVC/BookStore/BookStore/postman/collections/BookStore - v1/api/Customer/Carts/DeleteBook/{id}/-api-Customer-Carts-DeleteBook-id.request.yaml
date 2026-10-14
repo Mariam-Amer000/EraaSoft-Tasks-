@@ -1,0 +1,9 @@
+$kind: http-request
+name: /api/Customer/Carts/DeleteBook/:id
+url: "{{baseUrl}}/api/Customer/Carts/DeleteBook/:id"
+method: DELETE
+pathVariables:
+  id: "4605828"
+settings: {}
+examples: ./.resources/-api-Customer-Carts-DeleteBook-id.resources/examples
+order: 1000
