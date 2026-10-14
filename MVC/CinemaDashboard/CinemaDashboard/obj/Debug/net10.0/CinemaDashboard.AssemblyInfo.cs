@@ -15,7 +15,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("CinemaDashboard")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+18df802f0cecf778be3d5aa02b167afaee753af1")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+eed876e565894ac4f17166dd3beb5a8053615421")]
 [assembly: System.Reflection.AssemblyProductAttribute("CinemaDashboard")]
 [assembly: System.Reflection.AssemblyTitleAttribute("CinemaDashboard")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

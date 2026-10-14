@@ -1,0 +1,15 @@
+﻿global using BookStore.Models;
+global using Microsoft.EntityFrameworkCore;
+global using Microsoft.AspNetCore.Identity;
+global using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+global using BookStore.DataAccess;
+global using BookStore.Enums;
+global using BookStore.Repositories.IRepositories;
+global using BookStore.DTOs.Requests;
+global using BookStore.DTOs.Responses;
+global using Microsoft.AspNetCore.Identity.UI.Services;
+global using BookStore.Repositories;
+global using BookStore.Services;
+global using BookStore.Utility;
+global using Microsoft.AspNetCore.Authorization;
+global using Microsoft.AspNetCore.Mvc;

@@ -489,6 +489,7 @@ wwwroot\imgs\Cinemas\Raj Mandir Cinema.jpg
 wwwroot\imgs\Cinemas\TCL Chinese Theatre.jpg
 wwwroot\imgs\Cinemas\The Eden Theatre.jpg
 wwwroot\imgs\Cinemas\Zawya Cinema.jpg
+wwwroot\imgs\Movies\MainImg\Oppenheimer.jpg
 wwwroot\js\site.js
 wwwroot\lib\bootstrap\dist\css\bootstrap-grid.css
 wwwroot\lib\bootstrap\dist\css\bootstrap-grid.css.map
