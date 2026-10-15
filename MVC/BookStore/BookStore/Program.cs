@@ -86,10 +86,20 @@ public class Program
             var roleManager = scope.ServiceProvider
                 .GetRequiredService<RoleManager<IdentityRole>>();
 
-            if (!await roleManager.RoleExistsAsync(RoleConstants.CUSTOMER))
+            var roles = new[]
             {
-                await roleManager.CreateAsync(
-                    new IdentityRole(RoleConstants.CUSTOMER));
+                RoleConstants.SUPER_ADMIN,
+                RoleConstants.ADMIN,
+                RoleConstants.EMPLOYEE,
+                RoleConstants.CUSTOMER
+            };
+
+            foreach (var role in roles)
+            {
+                if (!await roleManager.RoleExistsAsync(role))
+                {
+                    await roleManager.CreateAsync(new IdentityRole(role));
+                }
             }
         }
 
@@ -100,6 +110,8 @@ public class Program
         }
 
         app.UseHttpsRedirection();
+
+        app.UseStaticFiles();
 
         app.UseAuthentication();
         app.UseAuthorization();
