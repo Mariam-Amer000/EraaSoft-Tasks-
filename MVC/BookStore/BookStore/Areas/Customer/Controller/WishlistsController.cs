@@ -73,11 +73,17 @@ public class WishlistsController : ControllerBase
             });
         }
 
-        await _wishlistRepository.CreateAsync(new Wishlist
+        var created = await _wishlistRepository.CreateAsync(new Wishlist
         {
             ApplicationUserId = user.Id,
             BookId = bookId
         });
+
+        if (!created)
+            return StatusCode(500, new ErrorResponse
+            {
+                ErrorNotification = "Could not add book to wishlist."
+            });
 
         await _wishlistRepository.CommitAsync();
 
