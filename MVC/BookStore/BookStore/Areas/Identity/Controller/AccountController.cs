@@ -163,6 +163,7 @@ public class AccountController : ControllerBase
         var claims = new List<Claim>
         {
             new(JwtRegisteredClaimNames.Sub, user.Id),
+            new(ClaimTypes.NameIdentifier, user.Id),
             new(ClaimTypes.Name, user.UserName!),
             new(
                 JwtRegisteredClaimNames.Iat,
