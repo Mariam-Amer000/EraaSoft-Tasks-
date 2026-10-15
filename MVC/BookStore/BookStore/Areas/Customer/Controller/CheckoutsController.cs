@@ -1,4 +1,3 @@
-﻿
 using Stripe.Checkout;
 using System.Security.Claims;
 
@@ -82,13 +81,11 @@ public class CheckoutsController : ControllerBase
             {
                 return BadRequest(new ErrorResponse
                 {
-                    ErrorNotification =
-                        $"Not enough stock for book: {item.Book.Name}"
+                    ErrorNotification = $"Not enough stock for book: {item.Book.Name}"
                 });
             }
 
-            item.TotalPrice =
-                GetBookPrice(item.Book) * item.Quantity;
+            item.TotalPrice = GetBookPrice(item.Book) * item.Quantity;
         }
 
         var subtotal = carts.Sum(e => e.TotalPrice);
@@ -113,10 +110,7 @@ public class CheckoutsController : ControllerBase
             discountPercentage = promotion.DiscountPercentage;
         }
 
-        var discountAmount =
-            subtotal * discountPercentage / 100m;
-
-        var totalPrice = subtotal - discountAmount;
+        var totalPrice = subtotal - subtotal * discountPercentage / 100m;
 
         if (totalPrice <= 0)
         {
@@ -145,19 +139,46 @@ public class CheckoutsController : ControllerBase
             });
         }
 
-        await _orderRepository.CommitAsync(ct);
+        if (await _orderRepository.CommitAsync(ct) == 0)
+        {
+            return StatusCode(500, new ErrorResponse
+            {
+                ErrorNotification = "Could not save the order."
+            });
+        }
+
+        var priceRatio = subtotal > 0 ? totalPrice / subtotal : 1m;
+
+        foreach (var item in carts)
+        {
+            var createdItem = await _orderItemRepository.CreateAsync(new OrderItem
+            {
+                OrderId = order.Id,
+                Quantity = item.Quantity,
+                Price = item.TotalPrice * priceRatio,
+                BookId = item.BookId
+            }, ct);
+
+            if (!createdItem)
+                return StatusCode(500, new ErrorResponse
+                {
+                    ErrorNotification = "Could not save the order items."
+                });
+        }
+
+        if (await _orderItemRepository.CommitAsync(ct) == 0)
+            return StatusCode(500, new ErrorResponse
+            {
+                ErrorNotification = "Could not save the order items."
+            });
 
         try
         {
-            var currency =
-                _configuration["Stripe:Currency"] ?? "usd";
+            var currency = _configuration["Stripe:Currency"] ?? "usd";
 
             var options = new SessionCreateOptions
             {
-                PaymentMethodTypes = new List<string>
-                {
-                    "card"
-                },
+                PaymentMethodTypes = new List<string> { "card" },
                 Mode = "payment",
                 LineItems = new List<SessionLineItemOptions>
                 {
@@ -193,7 +214,8 @@ public class CheckoutsController : ControllerBase
 
             order.SessionId = session.Id;
 
-            await _orderRepository.CommitAsync(ct);
+            if (await _orderRepository.CommitAsync(ct) == 0)
+                throw new InvalidOperationException("Could not save Stripe session ID.");
 
             return Ok(new
             {
@@ -207,6 +229,7 @@ public class CheckoutsController : ControllerBase
             _logger.LogError(ex, "Could not create Stripe checkout session.");
 
             order.OrderStatus = OrderStatus.Cancelled;
+            order.PaymentStatus = PaymentStatus.Canceled;
             await _orderRepository.CommitAsync(ct);
 
             return StatusCode(500, new ErrorResponse
@@ -217,24 +240,13 @@ public class CheckoutsController : ControllerBase
     }
 
     [HttpGet("{orderId}")]
+    [AllowAnonymous]
     public async Task<IActionResult> Success(
         int orderId,
         string session_id,
         CancellationToken ct = default)
     {
-        var userId = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
-
-        if (userId is null)
-            return Unauthorized();
-
-        var user = await _userManager.FindByIdAsync(userId);
-
-        if (user is null)
-            return NotFound();
-
-        var order = _orderRepository.GetOne(
-            e => e.Id == orderId &&
-                 e.ApplicationUserId == user.Id);
+        var order = _orderRepository.GetOne(e => e.Id == orderId);
 
         if (order is null)
             return NotFound();
@@ -266,7 +278,10 @@ public class CheckoutsController : ControllerBase
                 !session.Metadata.TryGetValue("OrderId", out var metadataOrderId) ||
                 metadataOrderId != order.Id.ToString() ||
                 !session.Metadata.TryGetValue("UserId", out var metadataUserId) ||
-                metadataUserId != user.Id)
+                metadataUserId != order.ApplicationUserId ||
+                session.AmountTotal != (long)Math.Round(
+                    order.TotalPrice * 100m,
+                    MidpointRounding.AwayFromZero))
             {
                 return BadRequest(new ErrorResponse
                 {
@@ -277,65 +292,59 @@ public class CheckoutsController : ControllerBase
             await using var transaction =
                 await _applicationDbContext.Database.BeginTransactionAsync(ct);
 
-            var carts = _cartRepository.Get(
-                e => e.ApplicationUserId == user.Id,
+            var orderItems = _orderItemRepository.Get(
+                e => e.OrderId == order.Id,
                 includes: [e => e.Book]).ToList();
 
-            if (!carts.Any())
+            if (!orderItems.Any())
             {
                 return BadRequest(new ErrorResponse
                 {
-                    ErrorNotification = "Your cart is empty."
+                    ErrorNotification = "The order has no items."
                 });
             }
 
-            foreach (var item in carts)
+            foreach (var item in orderItems)
             {
                 if (item.Book.Stock < item.Quantity)
                 {
-                    return BadRequest(new ErrorResponse
+                    _logger.LogError(
+                        "Paid order {OrderId} has insufficient stock for book {BookId}.",
+                        order.Id,
+                        item.BookId);
+
+                    return Conflict(new ErrorResponse
                     {
-                        ErrorNotification =
-                            $"Not enough stock for book: {item.Book.Name}"
+                        ErrorNotification = "Payment received, but stock must be reviewed by support."
                     });
                 }
             }
-
-            var subtotal = carts.Sum(
-                e => GetBookPrice(e.Book) * e.Quantity);
-
-            var priceRatio = subtotal > 0
-                ? order.TotalPrice / subtotal
-                : 1m;
 
             order.PaymentDate = DateTime.Now;
             order.PaymentStatus = PaymentStatus.Succussed;
             order.OrderStatus = OrderStatus.Processing;
             order.TransactionId = session.PaymentIntentId;
 
-            await _orderRepository.CommitAsync(ct);
-
-            foreach (var item in carts)
+            foreach (var item in orderItems)
             {
-                var itemPrice =
-                    GetBookPrice(item.Book) *
-                    item.Quantity *
-                    priceRatio;
-
-                await _orderItemRepository.CreateAsync(new OrderItem
-                {
-                    OrderId = order.Id,
-                    Quantity = item.Quantity,
-                    Price = itemPrice,
-                    BookId = item.BookId
-                }, ct);
-
                 item.Book.Stock -= item.Quantity;
                 item.Book.SalesNumber += item.Quantity;
-
-                _cartRepository.Delete(item);
             }
 
+            var carts = _cartRepository.Get(
+                e => e.ApplicationUserId == order.ApplicationUserId).ToList();
+
+            foreach (var item in orderItems)
+            {
+                var cart = carts.FirstOrDefault(e =>
+                    e.BookId == item.BookId &&
+                    e.Quantity == item.Quantity);
+
+                if (cart is not null)
+                    _cartRepository.Delete(cart);
+            }
+
+            await _orderRepository.CommitAsync(ct);
             await _orderItemRepository.CommitAsync(ct);
             await _bookRepository.CommitAsync(ct);
             await _cartRepository.CommitAsync(ct);
@@ -359,31 +368,17 @@ public class CheckoutsController : ControllerBase
     }
 
     [HttpGet("Cancel/{orderId}")]
-    public async Task<IActionResult> Cancel(int orderId)
+    [AllowAnonymous]
+    public IActionResult Cancel(int orderId)
     {
-        var userId = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
-
-        if (userId is null)
-            return Unauthorized();
-
-        var order = _orderRepository.GetOne(
-            e => e.Id == orderId &&
-                 e.ApplicationUserId == userId);
+        var order = _orderRepository.GetOne(e => e.Id == orderId);
 
         if (order is null)
             return NotFound();
 
-        if (order.OrderStatus == OrderStatus.Pending)
-        {
-            order.OrderStatus = OrderStatus.Cancelled;
-            order.PaymentStatus = PaymentStatus.Canceled;
-
-            await _orderRepository.CommitAsync();
-        }
-
         return Ok(new SuccessResponse
         {
-            SuccessNotification = "Checkout cancelled."
+            SuccessNotification = "Checkout was cancelled. Your cart has been kept; you can try again."
         });
     }
 }
