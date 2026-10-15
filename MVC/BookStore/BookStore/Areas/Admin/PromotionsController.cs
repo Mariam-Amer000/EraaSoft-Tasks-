@@ -41,6 +41,21 @@ public class PromotionsController : ControllerBase
         if (!ModelState.IsValid)
             return BadRequest(ModelState);
 
+        if (string.IsNullOrWhiteSpace(promotion.Code) ||
+            promotion.DiscountPercentage <= 0 ||
+            promotion.DiscountPercentage > 100 ||
+            promotion.EndDate <= promotion.StartDate)
+            return BadRequest(new ErrorResponse
+            {
+                ErrorNotification = "Promotion data is invalid."
+            });
+
+        if (_promotionRepository.GetOne(e => e.Code == promotion.Code) is not null)
+            return BadRequest(new ErrorResponse
+            {
+                ErrorNotification = "Promotion code already exists."
+            });
+
         var result = await _promotionRepository.CreateAsync(promotion, CT);
 
         if (!result)
@@ -67,6 +82,21 @@ public class PromotionsController : ControllerBase
     {
         if (!ModelState.IsValid)
             return BadRequest(ModelState);
+
+        if (string.IsNullOrWhiteSpace(promotion.Code) ||
+            promotion.DiscountPercentage <= 0 ||
+            promotion.DiscountPercentage > 100 ||
+            promotion.EndDate <= promotion.StartDate)
+            return BadRequest(new ErrorResponse
+            {
+                ErrorNotification = "Promotion data is invalid."
+            });
+
+        if (_promotionRepository.GetOne(e => e.Code == promotion.Code && e.Id != id) is not null)
+            return BadRequest(new ErrorResponse
+            {
+                ErrorNotification = "Promotion code already exists."
+            });
 
         var promotionInDb = _promotionRepository.GetOne(e => e.Id == id);
 
