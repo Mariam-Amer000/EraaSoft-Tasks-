@@ -1,4 +1,4 @@
-﻿using System.Security.Claims;
+using System.Security.Claims;
 
 namespace BookStore.Areas.Customer.Controller;
 
@@ -29,13 +29,14 @@ public class ReviewsController : ControllerBase
     }
 
     [HttpGet]
+    [AllowAnonymous]
     public IActionResult Get(string? query, int page = 1, int size = 4)
     {
         var reviews = _userBookReviewRepository.Get();
 
         if (query is not null)
             reviews = reviews.Where(e =>
-                e.Comment!.ToLower().Contains(query.ToLower()));
+                e.Comment != null && e.Comment.ToLower().Contains(query.ToLower()));
 
         var totalPages = Math.Ceiling(reviews.Count() / (double)size);
         reviews = reviews.Skip((page - 1) * size).Take(size);
@@ -50,6 +51,7 @@ public class ReviewsController : ControllerBase
     }
 
     [HttpGet("{id}")]
+    [AllowAnonymous]
     public IActionResult GetOne(int id)
     {
         var review = _userBookReviewRepository.GetOne(
@@ -70,12 +72,27 @@ public class ReviewsController : ControllerBase
         var userId = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
 
         if (userId is null)
-            return NotFound();
+            return Unauthorized();
 
         var user = await _userManager.FindByIdAsync(userId);
 
         if (user is null)
             return NotFound();
+
+        var book = _book.GetOne(e => e.Id == createNewReview.bookId);
+
+        if (book is null)
+            return NotFound();
+
+        var existingReview = _userBookReviewRepository.GetOne(
+            e => e.ApplicationUserId == userId &&
+                 e.BookId == createNewReview.bookId);
+
+        if (existingReview is not null)
+            return BadRequest(new ErrorResponse
+            {
+                ErrorNotification = "You have already reviewed this book."
+            });
 
         var userOrders = _orderRepository.Get(
             e => e.ApplicationUserId == userId &&
@@ -89,13 +106,19 @@ public class ReviewsController : ControllerBase
 
             if (userOrderItems.Any())
             {
-                await _userBookReviewRepository.CreateAsync(new()
+                var created = await _userBookReviewRepository.CreateAsync(new()
                 {
                     ApplicationUserId = userId,
                     Comment = createNewReview.comment,
                     Rate = createNewReview.rate,
                     BookId = createNewReview.bookId,
                 }, ct);
+
+                if (!created)
+                    return StatusCode(500, new ErrorResponse
+                    {
+                        ErrorNotification = "Could not create review."
+                    });
 
                 await _userBookReviewRepository.CommitAsync(ct);
 
@@ -113,18 +136,9 @@ public class ReviewsController : ControllerBase
     }
 
     [HttpPost("Reply")]
+    [Authorize(Roles = $"{RoleConstants.SUPER_ADMIN},{RoleConstants.ADMIN},{RoleConstants.EMPLOYEE}")]
     public async Task<IActionResult> Reply(CreateNewReply createNewReply)
     {
-        var userId = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
-
-        if (userId is null)
-            return NotFound();
-
-        var user = await _userManager.FindByIdAsync(userId);
-
-        if (user is null)
-            return NotFound();
-
         var book = _book.GetOne(e => e.Id == createNewReply.bookId);
 
         if (book is null)
@@ -135,6 +149,12 @@ public class ReviewsController : ControllerBase
 
         if (review is null)
             return NotFound();
+
+        if (review.BookId != createNewReply.bookId)
+            return BadRequest(new ErrorResponse
+            {
+                ErrorNotification = "The review does not belong to this book."
+            });
 
         review.Reply = createNewReply.reply;
 
@@ -153,7 +173,7 @@ public class ReviewsController : ControllerBase
         var userId = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
 
         if (userId is null)
-            return NotFound();
+            return Unauthorized();
 
         var user = await _userManager.FindByIdAsync(userId);
 
@@ -165,6 +185,9 @@ public class ReviewsController : ControllerBase
 
         if (review is null)
             return NotFound();
+
+        if (review.ApplicationUserId != userId)
+            return Forbid();
 
         if (review.Reply is not null)
             return BadRequest(new ErrorResponse()
