@@ -26,27 +26,62 @@ public class CartsController : ControllerBase
         _promotionRepository = promotionRepository;
     }
 
+    private decimal GetBookPrice(Book book)
+    {
+        if (book.FlashSale && book.FlashSaleFinalPrice.HasValue)
+            return book.FlashSaleFinalPrice.Value;
+
+        return book.FinalPrice;
+    }
+
     [HttpPost]
     public async Task<IActionResult> AddToCart(
-        int bookId, int quantity, CancellationToken ct = default)
+        int bookId,
+        int quantity,
+        CancellationToken ct = default)
     {
+        if (quantity <= 0)
+            return BadRequest(new ErrorResponse
+            {
+                ErrorNotification = "Quantity must be greater than zero."
+            });
+
         var userId = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
-        if (userId is null) return NotFound();
+
+        if (userId is null)
+            return Unauthorized();
 
         var user = await _userManager.FindByIdAsync(userId);
-        if (user is null) return NotFound();
+
+        if (user is null)
+            return NotFound();
 
         var book = _bookRepository.GetOne(e => e.Id == bookId);
-        if (book is null) return NotFound();
+
+        if (book is null)
+            return NotFound(new ErrorResponse
+            {
+                ErrorNotification = "Book not found."
+            });
 
         var cartInDB = _cartRepository.GetOne(
             e => e.BookId == bookId &&
                  e.ApplicationUserId == user.Id);
 
+        var currentQuantity = cartInDB?.Quantity ?? 0;
+
+        if (book.Stock < currentQuantity + quantity)
+            return BadRequest(new ErrorResponse
+            {
+                ErrorNotification = "The requested quantity is not available in stock."
+            });
+
+        var bookPrice = GetBookPrice(book);
+
         if (cartInDB is not null)
         {
             cartInDB.Quantity += quantity;
-            cartInDB.TotalPrice = book.Price * cartInDB.Quantity;
+            cartInDB.TotalPrice = bookPrice * cartInDB.Quantity;
         }
         else
         {
@@ -55,7 +90,7 @@ public class CartsController : ControllerBase
                 ApplicationUserId = user.Id,
                 Quantity = quantity,
                 BookId = bookId,
-                TotalPrice = book.Price * quantity
+                TotalPrice = bookPrice * quantity
             }, ct);
         }
 
@@ -71,16 +106,24 @@ public class CartsController : ControllerBase
     public async Task<IActionResult> Get(string? promo = null)
     {
         var userId = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
-        if (userId is null) return NotFound();
+
+        if (userId is null)
+            return Unauthorized();
 
         var user = await _userManager.FindByIdAsync(userId);
-        if (user is null) return NotFound();
+
+        if (user is null)
+            return NotFound();
 
         var carts = _cartRepository.Get(
             e => e.ApplicationUserId == user.Id,
             includes: [e => e.Book]).ToList();
 
-        if (promo is not null)
+        var subtotal = carts.Sum(e => e.TotalPrice);
+        var discountPercentage = 0m;
+        var promoCode = (string?)null;
+
+        if (!string.IsNullOrWhiteSpace(promo))
         {
             var promotion = _promotionRepository.GetOne(e =>
                 e.Code == promo &&
@@ -90,102 +133,129 @@ public class CartsController : ControllerBase
 
             if (promotion is null)
             {
-                return Ok(new ErrorResponse
+                return BadRequest(new ErrorResponse
                 {
-                    ErrorNotification =
-                        "Invalid promo code or expired"
+                    ErrorNotification = "Invalid promo code or expired."
                 });
             }
 
-            var subtotal = carts.Sum(e => e.TotalPrice);
-
-            var discountAmount =
-                subtotal * (promotion.DiscountPercentage / 100m);
-
-            var totalAfterDiscount = subtotal - discountAmount;
-
-            return Ok(new
-            {
-                Carts = carts,
-                Subtotal = subtotal,
-                DiscountPercentage = promotion.DiscountPercentage,
-                DiscountAmount = discountAmount,
-                TotalPrice = totalAfterDiscount,
-                PromoCode = promotion.Code
-            });
+            discountPercentage = promotion.DiscountPercentage;
+            promoCode = promotion.Code;
         }
 
-        return Ok(carts);
+        var discountAmount = subtotal * discountPercentage / 100m;
+        var totalPrice = subtotal - discountAmount;
+
+        return Ok(new
+        {
+            Carts = carts,
+            Subtotal = subtotal,
+            DiscountPercentage = discountPercentage,
+            DiscountAmount = discountAmount,
+            TotalPrice = totalPrice,
+            PromoCode = promoCode
+        });
     }
 
     [HttpGet("IncrementQuantity/{id}")]
     public async Task<IActionResult> IncrementQuantity(int id)
     {
         var userId = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
-        if (userId is null) return NotFound();
+
+        if (userId is null)
+            return Unauthorized();
 
         var user = await _userManager.FindByIdAsync(userId);
-        if (user is null) return NotFound();
+
+        if (user is null)
+            return NotFound();
 
         var cartInDB = _cartRepository.GetOne(
             e => e.ApplicationUserId == user.Id && e.Id == id,
             includes: [e => e.Book]);
 
-        if (cartInDB is null) return NotFound();
+        if (cartInDB is null)
+            return NotFound();
 
-        cartInDB.Quantity += 1;
+        if (cartInDB.Quantity >= cartInDB.Book.Stock)
+            return BadRequest(new ErrorResponse
+            {
+                ErrorNotification = "The requested quantity is not available in stock."
+            });
+
+        cartInDB.Quantity++;
         cartInDB.TotalPrice =
-            cartInDB.Book.Price * cartInDB.Quantity;
+            GetBookPrice(cartInDB.Book) * cartInDB.Quantity;
 
         await _cartRepository.CommitAsync();
 
-        return Ok();
+        return Ok(new SuccessResponse
+        {
+            SuccessNotification = "Quantity increased successfully."
+        });
     }
 
     [HttpGet("DecrementQuantity/{id}")]
     public async Task<IActionResult> DecrementQuantity(int id)
     {
         var userId = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
-        if (userId is null) return NotFound();
+
+        if (userId is null)
+            return Unauthorized();
 
         var user = await _userManager.FindByIdAsync(userId);
-        if (user is null) return NotFound();
+
+        if (user is null)
+            return NotFound();
 
         var cartInDB = _cartRepository.GetOne(
             e => e.ApplicationUserId == user.Id && e.Id == id,
             includes: [e => e.Book]);
 
-        if (cartInDB is null) return NotFound();
+        if (cartInDB is null)
+            return NotFound();
 
         if (cartInDB.Quantity > 1)
         {
-            cartInDB.Quantity -= 1;
+            cartInDB.Quantity--;
             cartInDB.TotalPrice =
-                cartInDB.Book.Price * cartInDB.Quantity;
+                GetBookPrice(cartInDB.Book) * cartInDB.Quantity;
 
             await _cartRepository.CommitAsync();
         }
 
-        return Ok();
+        return Ok(new SuccessResponse
+        {
+            SuccessNotification = "Quantity decreased successfully."
+        });
     }
 
     [HttpDelete("DeleteBook/{id}")]
     public async Task<IActionResult> DeleteBook(int id)
     {
         var userId = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
-        if (userId is null) return NotFound();
+
+        if (userId is null)
+            return Unauthorized();
 
         var user = await _userManager.FindByIdAsync(userId);
-        if (user is null) return NotFound();
+
+        if (user is null)
+            return NotFound();
 
         var cartInDB = _cartRepository.GetOne(
             e => e.ApplicationUserId == user.Id && e.Id == id);
 
-        if (cartInDB is null) return NotFound();
+        if (cartInDB is null)
+            return NotFound();
 
         _cartRepository.Delete(cartInDB);
+
         await _cartRepository.CommitAsync();
 
-        return Ok();
+        return Ok(new SuccessResponse
+        {
+            SuccessNotification = "Book removed from cart successfully."
+        });
     }
 }

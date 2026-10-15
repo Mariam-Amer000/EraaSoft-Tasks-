@@ -1,5 +1,5 @@
 ﻿
-using Microsoft.AspNetCore.Mvc;
+using BookStore.Helper;
 
 namespace BookStore.Areas.Admin;
 
@@ -8,12 +8,17 @@ namespace BookStore.Areas.Admin;
 [Area("Admin")]
 public class BooksController : ControllerBase
 {
-    public IRepository<Book> _bookRepository;
+    private readonly IRepository<Book> _bookRepository;
+    private readonly IFileUpload _fileUpload;
 
-    public BooksController(IRepository<Book> bookRepository)
+    public BooksController(
+        IRepository<Book> bookRepository,
+        IFileUpload fileUpload)
     {
         _bookRepository = bookRepository;
+        _fileUpload = fileUpload;
     }
+
     [HttpGet]
     [Route(nameof(Get))]
     [Authorize(Roles = $"{RoleConstants.SUPER_ADMIN},{RoleConstants.ADMIN},{RoleConstants.EMPLOYEE},{RoleConstants.CUSTOMER}")]
@@ -25,8 +30,8 @@ public class BooksController : ControllerBase
             books = books.Where(b => b.Name.Contains(name));
 
         int totalPages = (int)Math.Ceiling((double)books.Count() / size);
-        books = books.Skip((page - 1) * size).Take(size);
 
+        books = books.Skip((page - 1) * size).Take(size);
 
         return Ok(new BookWithFilterResponse
         {
@@ -36,6 +41,7 @@ public class BooksController : ControllerBase
             CurrentPage = page
         });
     }
+
     [HttpGet]
     [Route(nameof(GetOne))]
     [Authorize(Roles = $"{RoleConstants.SUPER_ADMIN},{RoleConstants.ADMIN},{RoleConstants.EMPLOYEE},{RoleConstants.CUSTOMER}")]
@@ -48,15 +54,37 @@ public class BooksController : ControllerBase
 
         return Ok(book);
     }
+
     [HttpPost]
     [Route(nameof(Create))]
     [Authorize(Roles = $"{RoleConstants.SUPER_ADMIN},{RoleConstants.ADMIN}")]
-    public async Task<IActionResult> Create(Book book,CancellationToken CT)
+    public async Task<IActionResult> Create(Book book, IFormFile Img, CancellationToken CT)
     {
         if (!ModelState.IsValid)
             return BadRequest(ModelState);
 
+        if (Img is not null && Img.Length > 0)
+        {
+            var fileName = _fileUpload.GenerateFileName(Img.FileName);
+
+            var path = _fileUpload.GenerateFullPath(
+                FileType.Img, "Books", fileName);
+
+            if (path is not null)
+            {
+                var directory = Path.GetDirectoryName(path);
+
+                if (!Directory.Exists(directory))
+                    Directory.CreateDirectory(directory!);
+
+                _fileUpload.UploadFileLocally(path, Img);
+
+                book.Image = fileName;
+            }
+        }
+
         var result = await _bookRepository.CreateAsync(book, CT);
+
         if (result)
             await _bookRepository.CommitAsync(CT);
 
@@ -65,43 +93,89 @@ public class BooksController : ControllerBase
             SuccessNotification = "Create Book Successfully"
         });
     }
+
     [HttpPut]
     [Route(nameof(Update))]
     [Authorize(Roles = $"{RoleConstants.SUPER_ADMIN},{RoleConstants.ADMIN}")]
-    public async Task<IActionResult> Update(int id, Book book,CancellationToken CT)
-    {
-        if(!ModelState.IsValid)
-            return BadRequest(ModelState);
-
-        var bookInDb = _bookRepository.Get(e => e.Id == id).FirstOrDefault();
-        if(bookInDb is null)
-            return NotFound();
-
-        bookInDb.Name = book.Name;
-        bookInDb.Author = book.Author;
-        bookInDb.Price = book.Price;
-        bookInDb.CategoryId = book.CategoryId;
-        bookInDb.Description = book.Description;
-
-        await _bookRepository.CommitAsync(CT);
-        return Ok(new SuccessResponse()
-        {
-            SuccessNotification = "Update Book Successfully"
-        });
-    }
-    [HttpDelete]
-    [Route(nameof(Delete))]
-    [Authorize(Roles = $"{RoleConstants.SUPER_ADMIN},{RoleConstants.ADMIN}")]
-    public async Task<IActionResult> Delete(int id,CancellationToken CT)
+    public async Task<IActionResult> Update(int id, Book book, IFormFile? Img, CancellationToken CT)
     {
         if (!ModelState.IsValid)
             return BadRequest(ModelState);
 
         var bookInDb = _bookRepository.Get(e => e.Id == id).FirstOrDefault();
+
         if (bookInDb is null)
             return NotFound();
 
+        bookInDb.Name = book.Name;
+        bookInDb.AuthorId = book.AuthorId;
+        bookInDb.Price = book.Price;
+        bookInDb.CategoryId = book.CategoryId;
+        bookInDb.Description = book.Description;
+        bookInDb.Year = book.Year;
+        bookInDb.Discount = book.Discount;
+        bookInDb.Stock = book.Stock;
+        bookInDb.FlashSale = book.FlashSale;
+        bookInDb.FlashSaleFinalPrice = book.FlashSaleFinalPrice;
+
+        if (Img is not null && Img.Length > 0)
+        {
+            var fileName = _fileUpload.GenerateFileName(Img.FileName);
+
+            var path = _fileUpload.GenerateFullPath(
+                FileType.Img, "Books", fileName);
+
+            if (path is not null)
+            {
+                var directory = Path.GetDirectoryName(path);
+
+                if (!Directory.Exists(directory))
+                    Directory.CreateDirectory(directory!);
+
+                _fileUpload.UploadFileLocally(path, Img);
+
+                if (!string.IsNullOrEmpty(bookInDb.Image))
+                {
+                    var oldImagePath = _fileUpload.GenerateFullPath(
+                        FileType.Img, "Books", bookInDb.Image);
+
+                    if (oldImagePath is not null)
+                        _fileUpload.DeleteFileLocally(oldImagePath);
+                }
+
+                bookInDb.Image = fileName;
+            }
+        }
+
+        await _bookRepository.CommitAsync(CT);
+
+        return Ok(new SuccessResponse()
+        {
+            SuccessNotification = "Update Book Successfully"
+        });
+    }
+
+    [HttpDelete]
+    [Route(nameof(Delete))]
+    [Authorize(Roles = $"{RoleConstants.SUPER_ADMIN},{RoleConstants.ADMIN}")]
+    public async Task<IActionResult> Delete(int id, CancellationToken CT)
+    {
+        var bookInDb = _bookRepository.Get(e => e.Id == id).FirstOrDefault();
+
+        if (bookInDb is null)
+            return NotFound();
+
+        if (!string.IsNullOrEmpty(bookInDb.Image))
+        {
+            var path = _fileUpload.GenerateFullPath(
+                FileType.Img, "Books", bookInDb.Image);
+
+            if (path is not null)
+                _fileUpload.DeleteFileLocally(path);
+        }
+
         _bookRepository.Delete(bookInDb);
+
         await _bookRepository.CommitAsync(CT);
 
         return Ok(new SuccessResponse()
@@ -109,6 +183,4 @@ public class BooksController : ControllerBase
             SuccessNotification = "Delete Book Successfully"
         });
     }
-
-
 }

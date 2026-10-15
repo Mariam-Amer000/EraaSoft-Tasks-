@@ -1,6 +1,4 @@
-﻿using Microsoft.AspNetCore.Mvc;
-
-namespace BookStore.Areas.Admin
+﻿namespace BookStore.Areas.Admin
 {
     [Route("api/[area]/[controller]")]
     [ApiController]
@@ -70,6 +68,7 @@ namespace BookStore.Areas.Admin
                 return BadRequest(ModelState);
 
             var authorInDb = _authorRepository.Get(e => e.Id == id).FirstOrDefault();
+
             if (authorInDb is null)
                 return NotFound();
 

@@ -1,6 +1,4 @@
-﻿using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
-
+﻿
 namespace BookStore.Areas.Admin
 {
     [Route("api/[area]/[controller]")]
@@ -29,6 +27,7 @@ namespace BookStore.Areas.Admin
 
             return Ok(categories);
         }
+
         [HttpGet]
         [Route(nameof(GetOne))]
         [Authorize(Roles = $"{RoleConstants.SUPER_ADMIN},{RoleConstants.ADMIN},{RoleConstants.EMPLOYEE},{RoleConstants.CUSTOMER}")]
@@ -41,6 +40,7 @@ namespace BookStore.Areas.Admin
 
             return Ok(category);
         }
+
         [HttpPost]
         [Route(nameof(Create))]
         [Authorize(Roles = $"{RoleConstants.SUPER_ADMIN},{RoleConstants.ADMIN}")]
@@ -69,6 +69,7 @@ namespace BookStore.Areas.Admin
                 return BadRequest(ModelState);
 
             var categoryInDb = _categoryRepository.Get(e => e.Id == id).FirstOrDefault();
+
             if (categoryInDb is null)
                 return NotFound();
 
@@ -104,4 +105,3 @@ namespace BookStore.Areas.Admin
         }
     }
 }
-

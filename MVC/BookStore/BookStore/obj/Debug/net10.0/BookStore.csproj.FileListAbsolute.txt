@@ -179,3 +179,4 @@ E:\programming\Eraasoft\Eraasoft\EraaSoft-Tasks-\MVC\BookStore\BookStore\obj\Deb
 E:\programming\Eraasoft\Eraasoft\EraaSoft-Tasks-\MVC\BookStore\BookStore\obj\Debug\net10.0\BookStore.csproj.GenerateResource.cache
 E:\programming\Eraasoft\Eraasoft\EraaSoft-Tasks-\MVC\BookStore\BookStore\obj\Debug\net10.0\ar\BookStore.resources.dll
 E:\programming\Eraasoft\Eraasoft\EraaSoft-Tasks-\MVC\BookStore\BookStore\obj\Debug\net10.0\en\BookStore.resources.dll
+E:\programming\Eraasoft\Eraasoft\EraaSoft-Tasks-\MVC\BookStore\BookStore\bin\Debug\net10.0\BookStore.staticwebassets.runtime.json
