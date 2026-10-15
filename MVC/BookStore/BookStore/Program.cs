@@ -101,6 +101,51 @@ public class Program
                     await roleManager.CreateAsync(new IdentityRole(role));
                 }
             }
+
+            var userManager = scope.ServiceProvider
+                .GetRequiredService<UserManager<ApplicationUser>>();
+
+            var adminEmail = builder.Configuration["SeedAdmin:Email"];
+            var adminPassword = builder.Configuration["SeedAdmin:Password"];
+
+            if (!string.IsNullOrWhiteSpace(adminEmail) &&
+                !string.IsNullOrWhiteSpace(adminPassword))
+            {
+                var admin = await userManager.FindByEmailAsync(adminEmail);
+
+                if (admin is null)
+                {
+                    admin = new ApplicationUser
+                    {
+                        UserName = builder.Configuration["SeedAdmin:UserName"] ?? adminEmail,
+                        Email = adminEmail,
+                        EmailConfirmed = true,
+                        FirstName = builder.Configuration["SeedAdmin:FirstName"] ?? "Super",
+                        LastName = builder.Configuration["SeedAdmin:LastName"] ?? "Admin"
+                    };
+
+                    var createAdmin = await userManager.CreateAsync(admin, adminPassword);
+
+                    if (!createAdmin.Succeeded)
+                    {
+                        throw new InvalidOperationException(
+                            "Could not create the configured SuperAdmin account.");
+                    }
+                }
+
+                if (!await userManager.IsInRoleAsync(admin, RoleConstants.SUPER_ADMIN))
+                {
+                    var addRole = await userManager.AddToRoleAsync(
+                        admin,
+                        RoleConstants.SUPER_ADMIN);
+
+                    if (!addRole.Succeeded)
+                    {
+                        throw new InvalidOperationException(
+                            "Could not assign the SuperAdmin role to the configured account.");
+                    }
+                }
+            }
         }
 
         // Configure the HTTP request pipeline.
