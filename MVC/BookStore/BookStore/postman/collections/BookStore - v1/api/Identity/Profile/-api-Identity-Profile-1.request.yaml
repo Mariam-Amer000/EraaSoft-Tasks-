@@ -1,0 +1,17 @@
+$kind: http-request
+name: /api/Identity/Profile
+url: "{{baseUrl}}/api/Identity/Profile"
+method: PUT
+headers:
+  Content-Type: application/json
+body:
+  type: json
+  content: |-
+    {
+      "firstName": "string",
+      "lastName": "string",
+      "address": null
+    }
+settings: {}
+examples: ./.resources/-api-Identity-Profile-1.resources/examples
+order: 2000

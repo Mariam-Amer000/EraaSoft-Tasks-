@@ -3,42 +3,58 @@ name: /api/Admin/Books/Create
 url: "{{baseUrl}}/api/Admin/Books/Create"
 method: POST
 headers:
-  Content-Type: application/json
+  Content-Type: multipart/form-data
 body:
-  type: json
-  content: |-
-    {
-      "id": "0",
-      "name": "string",
-      "year": "9",
-      "image": "string",
-      "description": null,
-      "price": "-6775103",
-      "discount": "0",
-      "salesNumber": "5055025140",
-      "finalPrice": "-0.5364207343",
-      "stock": "-8004",
-      "flashSale": true,
-      "flashSaleFinalPrice": "15",
-      "authorId": "33",
-      "author": {
-        "value": "<Circular reference to #/components/schemas/Author detected>"
-      },
-      "categoryId": "-383431655",
-      "category": {
-        "id": "27189",
-        "name": "string",
-        "description": null,
-        "books": [
-          {
-            "value": "<Circular reference to #/components/schemas/Book detected>"
-          },
-          {
-            "value": "<Circular reference to #/components/schemas/Book detected>"
-          }
-        ]
-      }
-    }
+  type: formdata
+  content:
+    - type: text
+      key: id
+      value: "32407333221"
+    - type: text
+      key: name
+      value: string
+    - type: text
+      key: year
+      value: "-5795330571"
+    - type: text
+      key: image
+      value: string
+    - type: text
+      key: description
+      value: string
+    - type: text
+      key: price
+      value: "-2798185"
+    - type: text
+      key: discount
+      value: "0"
+    - type: text
+      key: salesNumber
+      value: "-0"
+    - type: text
+      key: finalPrice
+      value: "-32692742.36005041424"
+    - type: text
+      key: stock
+      value: "-149568889"
+    - type: text
+      key: flashSale
+      value: "false"
+    - type: text
+      key: flashSaleFinalPrice
+      value: "-615139713.634306361"
+    - type: text
+      key: authorId
+      value: "-0"
+    - type: text
+      key: author
+      value: "[object Object]"
+    - type: text
+      key: categoryId
+      value: "-71"
+    - type: text
+      key: category
+      value: "[object Object]"
 settings: {}
 examples: ./.resources/-api-Admin-Books-Create.resources/examples
 order: 1000

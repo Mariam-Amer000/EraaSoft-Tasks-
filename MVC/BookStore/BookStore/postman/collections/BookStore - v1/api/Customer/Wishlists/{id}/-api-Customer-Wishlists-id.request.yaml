@@ -1,0 +1,9 @@
+$kind: http-request
+name: /api/Customer/Wishlists/:id
+url: "{{baseUrl}}/api/Customer/Wishlists/:id"
+method: DELETE
+pathVariables:
+  id: "-785498108"
+settings: {}
+examples: ./.resources/-api-Customer-Wishlists-id.resources/examples
+order: 1000

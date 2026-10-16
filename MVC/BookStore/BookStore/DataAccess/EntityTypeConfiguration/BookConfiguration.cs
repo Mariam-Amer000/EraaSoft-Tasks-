@@ -30,6 +30,10 @@ public class BookConfiguration : IEntityTypeConfiguration<Book>
         builder.Property(b => b.FlashSale)
             .HasDefaultValue(false);
 
+        builder.Property(b => b.FlashSaleFinalPrice)
+            .HasPrecision(18, 2);
+
+
         builder.ToTable(t =>
             t.HasCheckConstraint(
                 "CK_Book_Discount",

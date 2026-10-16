@@ -1,0 +1,9 @@
+$kind: http-request
+name: /api/Checkouts
+url: "{{baseUrl}}/api/Checkouts?promo=string"
+method: POST
+queryParams:
+  promo: string
+settings: {}
+examples: ./.resources/-api-Checkouts.resources/examples
+order: 3000

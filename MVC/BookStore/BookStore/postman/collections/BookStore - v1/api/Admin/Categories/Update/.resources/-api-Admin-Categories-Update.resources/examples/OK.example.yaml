@@ -1,18 +1,18 @@
 $kind: http-example
 request:
-  url: "{{baseUrl}}/api/Admin/Categories/Update?id=4605828"
+  url: "{{baseUrl}}/api/Admin/Categories/Update?id=-785498108"
   method: PUT
   headers:
     Content-Type: application/json
   queryParams:
-    id: "4605828"
+    id: "-785498108"
   body:
     type: json
     content: |-
       {
-        "id": "-637157536",
+        "id": "363",
         "name": "string",
-        "description": null,
+        "description": "string",
         "books": [
           {
             "value": "<Circular reference to #/components/schemas/Book detected>"

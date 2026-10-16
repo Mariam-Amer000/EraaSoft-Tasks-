@@ -3,7 +3,7 @@ name: /api/Customer/Reviews/:id
 url: "{{baseUrl}}/api/Customer/Reviews/:id"
 method: DELETE
 pathVariables:
-  id: "4605828"
+  id: "-785498108"
 settings: {}
 examples: ./.resources/-api-Customer-Reviews-id-1.resources/examples
 order: 2000

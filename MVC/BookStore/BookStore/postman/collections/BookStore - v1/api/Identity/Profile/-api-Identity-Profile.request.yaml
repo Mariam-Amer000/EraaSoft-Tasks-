@@ -1,0 +1,7 @@
+$kind: http-request
+name: /api/Identity/Profile
+url: "{{baseUrl}}/api/Identity/Profile"
+method: GET
+settings: {}
+examples: ./.resources/-api-Identity-Profile.resources/examples
+order: 1000

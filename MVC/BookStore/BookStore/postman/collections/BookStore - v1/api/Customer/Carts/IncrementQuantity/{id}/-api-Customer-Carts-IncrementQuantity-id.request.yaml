@@ -3,7 +3,7 @@ name: /api/Customer/Carts/IncrementQuantity/:id
 url: "{{baseUrl}}/api/Customer/Carts/IncrementQuantity/:id"
 method: GET
 pathVariables:
-  id: "4605828"
+  id: "-785498108"
 settings: {}
 examples: ./.resources/-api-Customer-Carts-IncrementQuantity-id.resources/examples
 order: 1000

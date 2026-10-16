@@ -8,8 +8,8 @@ request:
     type: json
     content: |-
       {
-        "reviewId": "4731134903",
-        "newRate": "0",
+        "reviewId": "0",
+        "newRate": "-0",
         "newComment": "string"
       }
 response:

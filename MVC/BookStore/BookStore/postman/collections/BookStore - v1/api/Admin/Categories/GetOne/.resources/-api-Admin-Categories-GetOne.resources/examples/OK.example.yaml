@@ -1,9 +1,9 @@
 $kind: http-example
 request:
-  url: "{{baseUrl}}/api/Admin/Categories/GetOne?id=4605828"
+  url: "{{baseUrl}}/api/Admin/Categories/GetOne?id=-785498108"
   method: GET
   queryParams:
-    id: "4605828"
+    id: "-785498108"
 response:
   statusCode: 200
   statusText: OK

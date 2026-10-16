@@ -1,0 +1,7 @@
+$kind: http-request
+name: /api/Admin/Promotions/Get
+url: "{{baseUrl}}/api/Admin/Promotions/Get"
+method: GET
+settings: {}
+examples: ./.resources/-api-Admin-Promotions-Get.resources/examples
+order: 1000

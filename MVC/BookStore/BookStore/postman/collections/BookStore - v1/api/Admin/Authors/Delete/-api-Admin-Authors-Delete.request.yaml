@@ -1,9 +1,9 @@
 $kind: http-request
 name: /api/Admin/Authors/Delete
-url: "{{baseUrl}}/api/Admin/Authors/Delete?id=4605828"
+url: "{{baseUrl}}/api/Admin/Authors/Delete?id=-785498108"
 method: DELETE
 queryParams:
-  id: "4605828"
+  id: "-785498108"
 settings: {}
 examples: ./.resources/-api-Admin-Authors-Delete.resources/examples
 order: 1000

@@ -1,7 +1,48 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "E:\\programming\\Eraasoft\\Eraasoft\\EraaSoft-Tasks-\\MVC\\BookStore\\",
-  "Documents": [],
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{D85B35C4-3A78-CA70-0C4C-E06B9F4D61DB}|BookStore\\BookStore.csproj|e:\\programming\\eraasoft\\eraasoft\\eraasoft-tasks-\\mvc\\bookstore\\bookstore\\helper\\dbinitializer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D85B35C4-3A78-CA70-0C4C-E06B9F4D61DB}|BookStore\\BookStore.csproj|solutionrelative:bookstore\\helper\\dbinitializer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D85B35C4-3A78-CA70-0C4C-E06B9F4D61DB}|BookStore\\BookStore.csproj|e:\\programming\\eraasoft\\eraasoft\\eraasoft-tasks-\\mvc\\bookstore\\bookstore\\dataaccess\\entitytypeconfiguration\\bookconfiguration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D85B35C4-3A78-CA70-0C4C-E06B9F4D61DB}|BookStore\\BookStore.csproj|solutionrelative:bookstore\\dataaccess\\entitytypeconfiguration\\bookconfiguration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D85B35C4-3A78-CA70-0C4C-E06B9F4D61DB}|BookStore\\BookStore.csproj|e:\\programming\\eraasoft\\eraasoft\\eraasoft-tasks-\\mvc\\bookstore\\bookstore\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D85B35C4-3A78-CA70-0C4C-E06B9F4D61DB}|BookStore\\BookStore.csproj|solutionrelative:bookstore\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D85B35C4-3A78-CA70-0C4C-E06B9F4D61DB}|BookStore\\BookStore.csproj|e:\\programming\\eraasoft\\eraasoft\\eraasoft-tasks-\\mvc\\bookstore\\bookstore\\helper\\idbinitializer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D85B35C4-3A78-CA70-0C4C-E06B9F4D61DB}|BookStore\\BookStore.csproj|solutionrelative:bookstore\\helper\\idbinitializer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D85B35C4-3A78-CA70-0C4C-E06B9F4D61DB}|BookStore\\BookStore.csproj|e:\\programming\\eraasoft\\eraasoft\\eraasoft-tasks-\\mvc\\bookstore\\bookstore\\areas\\customer\\controller\\cartscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D85B35C4-3A78-CA70-0C4C-E06B9F4D61DB}|BookStore\\BookStore.csproj|solutionrelative:bookstore\\areas\\customer\\controller\\cartscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D85B35C4-3A78-CA70-0C4C-E06B9F4D61DB}|BookStore\\BookStore.csproj|e:\\programming\\eraasoft\\eraasoft\\eraasoft-tasks-\\mvc\\bookstore\\bookstore\\services\\emailsender.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D85B35C4-3A78-CA70-0C4C-E06B9F4D61DB}|BookStore\\BookStore.csproj|solutionrelative:bookstore\\services\\emailsender.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D85B35C4-3A78-CA70-0C4C-E06B9F4D61DB}|BookStore\\BookStore.csproj|e:\\programming\\eraasoft\\eraasoft\\eraasoft-tasks-\\mvc\\bookstore\\bookstore\\areas\\identity\\controller\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D85B35C4-3A78-CA70-0C4C-E06B9F4D61DB}|BookStore\\BookStore.csproj|solutionrelative:bookstore\\areas\\identity\\controller\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D85B35C4-3A78-CA70-0C4C-E06B9F4D61DB}|BookStore\\BookStore.csproj|e:\\programming\\eraasoft\\eraasoft\\eraasoft-tasks-\\mvc\\bookstore\\bookstore\\areas\\customer\\controller\\orderscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D85B35C4-3A78-CA70-0C4C-E06B9F4D61DB}|BookStore\\BookStore.csproj|solutionrelative:bookstore\\areas\\customer\\controller\\orderscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D85B35C4-3A78-CA70-0C4C-E06B9F4D61DB}|BookStore\\BookStore.csproj|e:\\programming\\eraasoft\\eraasoft\\eraasoft-tasks-\\mvc\\bookstore\\bookstore\\areas\\customer\\controller\\checkoutscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D85B35C4-3A78-CA70-0C4C-E06B9F4D61DB}|BookStore\\BookStore.csproj|solutionrelative:bookstore\\areas\\customer\\controller\\checkoutscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D85B35C4-3A78-CA70-0C4C-E06B9F4D61DB}|BookStore\\BookStore.csproj|e:\\programming\\eraasoft\\eraasoft\\eraasoft-tasks-\\mvc\\bookstore\\bookstore\\areas\\customer\\controller\\wishlistscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D85B35C4-3A78-CA70-0C4C-E06B9F4D61DB}|BookStore\\BookStore.csproj|solutionrelative:bookstore\\areas\\customer\\controller\\wishlistscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
@@ -9,11 +50,140 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": -1,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Bookmark",
               "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "BookConfiguration.cs",
+              "DocumentMoniker": "E:\\programming\\Eraasoft\\Eraasoft\\EraaSoft-Tasks-\\MVC\\BookStore\\BookStore\\DataAccess\\EntityTypeConfiguration\\BookConfiguration.cs",
+              "RelativeDocumentMoniker": "BookStore\\DataAccess\\EntityTypeConfiguration\\BookConfiguration.cs",
+              "ToolTip": "E:\\programming\\Eraasoft\\Eraasoft\\EraaSoft-Tasks-\\MVC\\BookStore\\BookStore\\DataAccess\\EntityTypeConfiguration\\BookConfiguration.cs",
+              "RelativeToolTip": "BookStore\\DataAccess\\EntityTypeConfiguration\\BookConfiguration.cs",
+              "ViewState": "AgIAAA8AAAAAAAAAAAAkwCIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-16T09:40:12.223Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "IDbInitializer.cs",
+              "DocumentMoniker": "E:\\programming\\Eraasoft\\Eraasoft\\EraaSoft-Tasks-\\MVC\\BookStore\\BookStore\\Helper\\IDbInitializer.cs",
+              "RelativeDocumentMoniker": "BookStore\\Helper\\IDbInitializer.cs",
+              "ToolTip": "E:\\programming\\Eraasoft\\Eraasoft\\EraaSoft-Tasks-\\MVC\\BookStore\\BookStore\\Helper\\IDbInitializer.cs",
+              "RelativeToolTip": "BookStore\\Helper\\IDbInitializer.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-16T09:27:18.932Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "DbInitializer.cs",
+              "DocumentMoniker": "E:\\programming\\Eraasoft\\Eraasoft\\EraaSoft-Tasks-\\MVC\\BookStore\\BookStore\\Helper\\DbInitializer.cs",
+              "RelativeDocumentMoniker": "BookStore\\Helper\\DbInitializer.cs",
+              "ToolTip": "E:\\programming\\Eraasoft\\Eraasoft\\EraaSoft-Tasks-\\MVC\\BookStore\\BookStore\\Helper\\DbInitializer.cs",
+              "RelativeToolTip": "BookStore\\Helper\\DbInitializer.cs",
+              "ViewState": "AgIAABEAAAAAAAAAAAAIwC0AAAAoAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-16T09:27:18.644Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "CartsController.cs",
+              "DocumentMoniker": "E:\\programming\\Eraasoft\\Eraasoft\\EraaSoft-Tasks-\\MVC\\BookStore\\BookStore\\Areas\\Customer\\Controller\\CartsController.cs",
+              "RelativeDocumentMoniker": "BookStore\\Areas\\Customer\\Controller\\CartsController.cs",
+              "ToolTip": "E:\\programming\\Eraasoft\\Eraasoft\\EraaSoft-Tasks-\\MVC\\BookStore\\BookStore\\Areas\\Customer\\Controller\\CartsController.cs",
+              "RelativeToolTip": "BookStore\\Areas\\Customer\\Controller\\CartsController.cs",
+              "ViewState": "AgIAABAAAAAAAAAAAAA0wMkAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-16T09:07:23.276Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "EmailSender.cs",
+              "DocumentMoniker": "E:\\programming\\Eraasoft\\Eraasoft\\EraaSoft-Tasks-\\MVC\\BookStore\\BookStore\\Services\\EmailSender.cs",
+              "RelativeDocumentMoniker": "BookStore\\Services\\EmailSender.cs",
+              "ToolTip": "E:\\programming\\Eraasoft\\Eraasoft\\EraaSoft-Tasks-\\MVC\\BookStore\\BookStore\\Services\\EmailSender.cs",
+              "RelativeToolTip": "BookStore\\Services\\EmailSender.cs",
+              "ViewState": "AgIAAAcAAAAAAAAAAAA1wBQAAAArAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-16T09:00:39.894Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "AccountController.cs",
+              "DocumentMoniker": "E:\\programming\\Eraasoft\\Eraasoft\\EraaSoft-Tasks-\\MVC\\BookStore\\BookStore\\Areas\\Identity\\Controller\\AccountController.cs",
+              "RelativeDocumentMoniker": "BookStore\\Areas\\Identity\\Controller\\AccountController.cs",
+              "ToolTip": "E:\\programming\\Eraasoft\\Eraasoft\\EraaSoft-Tasks-\\MVC\\BookStore\\BookStore\\Areas\\Identity\\Controller\\AccountController.cs",
+              "RelativeToolTip": "BookStore\\Areas\\Identity\\Controller\\AccountController.cs",
+              "ViewState": "AgIAAFAAAAAAAAAAAAAuwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-16T08:58:39.495Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Program.cs",
+              "DocumentMoniker": "E:\\programming\\Eraasoft\\Eraasoft\\EraaSoft-Tasks-\\MVC\\BookStore\\BookStore\\Program.cs",
+              "RelativeDocumentMoniker": "BookStore\\Program.cs",
+              "ToolTip": "E:\\programming\\Eraasoft\\Eraasoft\\EraaSoft-Tasks-\\MVC\\BookStore\\BookStore\\Program.cs",
+              "RelativeToolTip": "BookStore\\Program.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAABYAAAAjAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-16T08:38:45.058Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "CheckoutsController.cs",
+              "DocumentMoniker": "E:\\programming\\Eraasoft\\Eraasoft\\EraaSoft-Tasks-\\MVC\\BookStore\\BookStore\\Areas\\Customer\\Controller\\CheckoutsController.cs",
+              "RelativeDocumentMoniker": "BookStore\\Areas\\Customer\\Controller\\CheckoutsController.cs",
+              "ToolTip": "E:\\programming\\Eraasoft\\Eraasoft\\EraaSoft-Tasks-\\MVC\\BookStore\\BookStore\\Areas\\Customer\\Controller\\CheckoutsController.cs",
+              "RelativeToolTip": "BookStore\\Areas\\Customer\\Controller\\CheckoutsController.cs",
+              "ViewState": "AgIAACcAAAAAAAAAAAAiwH8BAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-15T18:11:42.895Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "OrdersController.cs",
+              "DocumentMoniker": "E:\\programming\\Eraasoft\\Eraasoft\\EraaSoft-Tasks-\\MVC\\BookStore\\BookStore\\Areas\\Customer\\Controller\\OrdersController.cs",
+              "RelativeDocumentMoniker": "BookStore\\Areas\\Customer\\Controller\\OrdersController.cs",
+              "ToolTip": "E:\\programming\\Eraasoft\\Eraasoft\\EraaSoft-Tasks-\\MVC\\BookStore\\BookStore\\Areas\\Customer\\Controller\\OrdersController.cs",
+              "RelativeToolTip": "BookStore\\Areas\\Customer\\Controller\\OrdersController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAFUAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-15T18:10:18.578Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "WishlistsController.cs",
+              "DocumentMoniker": "E:\\programming\\Eraasoft\\Eraasoft\\EraaSoft-Tasks-\\MVC\\BookStore\\BookStore\\Areas\\Customer\\Controller\\WishlistsController.cs",
+              "RelativeDocumentMoniker": "BookStore\\Areas\\Customer\\Controller\\WishlistsController.cs",
+              "ToolTip": "E:\\programming\\Eraasoft\\Eraasoft\\EraaSoft-Tasks-\\MVC\\BookStore\\BookStore\\Areas\\Customer\\Controller\\WishlistsController.cs",
+              "RelativeToolTip": "BookStore\\Areas\\Customer\\Controller\\WishlistsController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAHcAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-15T18:10:05.224Z"
             }
           ]
         }

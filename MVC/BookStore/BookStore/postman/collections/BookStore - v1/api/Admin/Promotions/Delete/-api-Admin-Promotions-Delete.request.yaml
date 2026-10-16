@@ -1,0 +1,9 @@
+$kind: http-request
+name: /api/Admin/Promotions/Delete
+url: "{{baseUrl}}/api/Admin/Promotions/Delete?id=-785498108"
+method: DELETE
+queryParams:
+  id: "-785498108"
+settings: {}
+examples: ./.resources/-api-Admin-Promotions-Delete.resources/examples
+order: 1000

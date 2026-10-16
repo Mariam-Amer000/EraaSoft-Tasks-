@@ -1,46 +1,62 @@
 $kind: http-request
 name: /api/Admin/Books/Update
-url: "{{baseUrl}}/api/Admin/Books/Update?id=4605828"
+url: "{{baseUrl}}/api/Admin/Books/Update?id=-785498108"
 method: PUT
 headers:
-  Content-Type: application/json
+  Content-Type: multipart/form-data
 queryParams:
-  id: "4605828"
+  id: "-785498108"
 body:
-  type: json
-  content: |-
-    {
-      "id": "0",
-      "name": "string",
-      "year": "9",
-      "image": "string",
-      "description": null,
-      "price": "-6775103",
-      "discount": "0",
-      "salesNumber": "5055025140",
-      "finalPrice": "-0.5364207343",
-      "stock": "-8004",
-      "flashSale": true,
-      "flashSaleFinalPrice": "15",
-      "authorId": "33",
-      "author": {
-        "value": "<Circular reference to #/components/schemas/Author detected>"
-      },
-      "categoryId": "-383431655",
-      "category": {
-        "id": "27189",
-        "name": "string",
-        "description": null,
-        "books": [
-          {
-            "value": "<Circular reference to #/components/schemas/Book detected>"
-          },
-          {
-            "value": "<Circular reference to #/components/schemas/Book detected>"
-          }
-        ]
-      }
-    }
+  type: formdata
+  content:
+    - type: text
+      key: id
+      value: "-0"
+    - type: text
+      key: name
+      value: string
+    - type: text
+      key: year
+      value: "0"
+    - type: text
+      key: image
+      value: string
+    - type: text
+      key: description
+      value: string
+    - type: text
+      key: price
+      value: "-0"
+    - type: text
+      key: discount
+      value: "-0"
+    - type: text
+      key: salesNumber
+      value: "5807296763"
+    - type: text
+      key: finalPrice
+      value: "6221669"
+    - type: text
+      key: stock
+      value: "-9886928"
+    - type: text
+      key: flashSale
+      value: "false"
+    - type: text
+      key: flashSaleFinalPrice
+      value: "0.752483"
+    - type: text
+      key: authorId
+      value: "73578268031"
+    - type: text
+      key: author
+      value: "[object Object]"
+    - type: text
+      key: categoryId
+      value: "-0"
+    - type: text
+      key: category
+      value: "[object Object]"
 settings: {}
 examples: ./.resources/-api-Admin-Books-Update.resources/examples
 order: 1000

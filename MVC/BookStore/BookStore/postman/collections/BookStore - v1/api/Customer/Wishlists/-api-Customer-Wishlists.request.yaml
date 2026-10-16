@@ -1,0 +1,7 @@
+$kind: http-request
+name: /api/Customer/Wishlists
+url: "{{baseUrl}}/api/Customer/Wishlists"
+method: GET
+settings: {}
+examples: ./.resources/-api-Customer-Wishlists.resources/examples
+order: 2000

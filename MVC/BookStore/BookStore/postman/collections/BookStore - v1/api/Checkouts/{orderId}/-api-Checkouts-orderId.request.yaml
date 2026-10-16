@@ -1,9 +1,11 @@
 $kind: http-request
 name: /api/Checkouts/:orderId
-url: "{{baseUrl}}/api/Checkouts/:orderId"
+url: "{{baseUrl}}/api/Checkouts/:orderId?session_id=string"
 method: GET
+queryParams:
+  session_id: string
 pathVariables:
-  orderId: "4605828"
+  orderId: "-785498108"
 settings: {}
 examples: ./.resources/-api-Checkouts-orderId.resources/examples
 order: 1000

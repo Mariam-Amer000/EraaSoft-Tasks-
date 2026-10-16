@@ -1,0 +1,21 @@
+$kind: http-example
+request:
+  url: "{{baseUrl}}/api/Identity/Profile"
+  method: PUT
+  headers:
+    Content-Type: application/json
+  body:
+    type: json
+    content: |-
+      {
+        "firstName": "string",
+        "lastName": "string",
+        "address": null
+      }
+response:
+  statusCode: 200
+  statusText: OK
+  body:
+    type: text
+    content: ""
+order: 1000

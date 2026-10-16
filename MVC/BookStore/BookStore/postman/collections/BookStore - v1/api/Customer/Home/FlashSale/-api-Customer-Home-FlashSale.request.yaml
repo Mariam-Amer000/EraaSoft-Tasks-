@@ -1,0 +1,7 @@
+$kind: http-request
+name: /api/Customer/Home/FlashSale
+url: "{{baseUrl}}/api/Customer/Home/FlashSale"
+method: GET
+settings: {}
+examples: ./.resources/-api-Customer-Home-FlashSale.resources/examples
+order: 1000

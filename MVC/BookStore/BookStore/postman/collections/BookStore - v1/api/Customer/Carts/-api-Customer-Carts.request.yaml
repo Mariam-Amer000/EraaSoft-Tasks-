@@ -1,10 +1,10 @@
 $kind: http-request
 name: /api/Customer/Carts
-url: "{{baseUrl}}/api/Customer/Carts?bookId=4605828&quantity=4605828"
+url: "{{baseUrl}}/api/Customer/Carts?bookId=-785498108&quantity=-785498108"
 method: POST
 queryParams:
-  bookId: "4605828"
-  quantity: "4605828"
+  bookId: "-785498108"
+  quantity: "-785498108"
 settings: {}
 examples: ./.resources/-api-Customer-Carts.resources/examples
 order: 4000

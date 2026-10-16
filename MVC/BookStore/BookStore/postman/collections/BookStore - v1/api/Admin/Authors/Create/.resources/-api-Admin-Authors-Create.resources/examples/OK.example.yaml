@@ -8,30 +8,30 @@ request:
     type: json
     content: |-
       {
-        "id": "0",
+        "id": "5121",
         "name": "string",
-        "birthYear": "1965-12-12",
+        "birthYear": "1996-03-30",
         "books": [
           {
-            "id": "-45",
+            "id": "-3",
             "name": "string",
-            "year": "-7992977501",
+            "year": "-12",
             "image": "string",
-            "description": "string",
-            "price": "0",
-            "discount": "-3",
-            "salesNumber": "10191",
-            "finalPrice": "0",
-            "stock": "3398731",
-            "flashSale": true,
-            "flashSaleFinalPrice": "73976668.38660728677",
-            "authorId": "-0",
+            "description": null,
+            "price": "-5650326",
+            "discount": "-0",
+            "salesNumber": "-877707033",
+            "finalPrice": "654861165.8585918630",
+            "stock": "-0",
+            "flashSale": false,
+            "flashSaleFinalPrice": "0",
+            "authorId": "-5",
             "author": {
               "value": "<Circular reference to #/components/schemas/Author detected>"
             },
-            "categoryId": "-0",
+            "categoryId": "-5",
             "category": {
-              "id": "-0",
+              "id": "0",
               "name": "string",
               "description": "string",
               "books": [
@@ -45,25 +45,25 @@ request:
             }
           },
           {
-            "id": "0",
+            "id": "-921",
             "name": "string",
-            "year": "6729320",
+            "year": "-0",
             "image": "string",
             "description": null,
-            "price": "-0.31631304",
-            "discount": "-0",
-            "salesNumber": "-317800786",
-            "finalPrice": "0.4917185651",
-            "stock": "-0",
+            "price": "0.61",
+            "discount": "-4499788",
+            "salesNumber": "0",
+            "finalPrice": "-97592.20358598787",
+            "stock": "0",
             "flashSale": true,
-            "flashSaleFinalPrice": "-9916320679",
-            "authorId": "-50",
+            "flashSaleFinalPrice": "-174377170",
+            "authorId": "7123712",
             "author": {
               "value": "<Circular reference to #/components/schemas/Author detected>"
             },
-            "categoryId": "-364",
+            "categoryId": "-9595371392",
             "category": {
-              "id": "5239",
+              "id": "4796780713",
               "name": "string",
               "description": null,
               "books": [

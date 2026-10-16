@@ -9,8 +9,8 @@ body:
   content: |-
     {
       "rate": "0",
-      "bookId": "-4089",
-      "comment": null
+      "bookId": "0",
+      "comment": "string"
     }
 settings: {}
 examples: ./.resources/-api-Customer-Reviews-Comment.resources/examples

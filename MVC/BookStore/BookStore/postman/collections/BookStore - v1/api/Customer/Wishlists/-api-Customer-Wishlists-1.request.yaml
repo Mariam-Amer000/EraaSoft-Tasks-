@@ -1,0 +1,9 @@
+$kind: http-request
+name: /api/Customer/Wishlists
+url: "{{baseUrl}}/api/Customer/Wishlists?bookId=-785498108"
+method: POST
+queryParams:
+  bookId: "-785498108"
+settings: {}
+examples: ./.resources/-api-Customer-Wishlists-1.resources/examples
+order: 3000

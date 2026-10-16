@@ -1,0 +1,9 @@
+$kind: http-request
+name: /api/Admin/Promotions/GetOne
+url: "{{baseUrl}}/api/Admin/Promotions/GetOne?id=-785498108"
+method: GET
+queryParams:
+  id: "-785498108"
+settings: {}
+examples: ./.resources/-api-Admin-Promotions-GetOne.resources/examples
+order: 1000

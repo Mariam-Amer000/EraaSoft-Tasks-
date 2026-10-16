@@ -96,6 +96,11 @@
         "Name": "book",
         "Type": "BookStore.Models.Book",
         "IsRequired": true
+      },
+      {
+        "Name": "Img",
+        "Type": "Microsoft.AspNetCore.Http.IFormFile",
+        "IsRequired": false
       }
     ],
     "ReturnTypes": []
@@ -175,6 +180,11 @@
         "Name": "book",
         "Type": "BookStore.Models.Book",
         "IsRequired": true
+      },
+      {
+        "Name": "Img",
+        "Type": "Microsoft.AspNetCore.Http.IFormFile",
+        "IsRequired": false
       }
     ],
     "ReturnTypes": []
@@ -265,9 +275,125 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "BookStore.Areas.Admin.PromotionsController",
+    "Method": "Create",
+    "RelativePath": "api/Admin/Promotions/Create",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "promotion",
+        "Type": "BookStore.Models.Promotion",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "BookStore.Areas.Admin.PromotionsController",
+    "Method": "Delete",
+    "RelativePath": "api/Admin/Promotions/Delete",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "BookStore.Areas.Admin.PromotionsController",
+    "Method": "Get",
+    "RelativePath": "api/Admin/Promotions/Get",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "BookStore.Areas.Admin.PromotionsController",
+    "Method": "GetOne",
+    "RelativePath": "api/Admin/Promotions/GetOne",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "BookStore.Areas.Admin.PromotionsController",
+    "Method": "Update",
+    "RelativePath": "api/Admin/Promotions/Update",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "promotion",
+        "Type": "BookStore.Models.Promotion",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "BookStore.Controllers.CheckoutsController",
+    "Method": "CreateCheckout",
+    "RelativePath": "api/Checkouts",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "promo",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "BookStore.Controllers.CheckoutsController",
     "Method": "Success",
     "RelativePath": "api/Checkouts/{orderId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "orderId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "session_id",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "BookStore.Controllers.CheckoutsController",
+    "Method": "Cancel",
+    "RelativePath": "api/Checkouts/Cancel/{orderId}",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -367,9 +493,9 @@
   },
   {
     "ContainingType": "BookStore.Areas.Customer.Controller.HomeController",
-    "Method": "FlashSale",
-    "RelativePath": "api/Customer/Home",
-    "HttpMethod": "",
+    "Method": "BestSeller",
+    "RelativePath": "api/Customer/Home/BestSeller",
+    "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
     "Parameters": [],
@@ -377,8 +503,18 @@
   },
   {
     "ContainingType": "BookStore.Areas.Customer.Controller.HomeController",
-    "Method": "BestSeller",
-    "RelativePath": "api/Customer/Home/BestSeller",
+    "Method": "FlashSale",
+    "RelativePath": "api/Customer/Home/FlashSale",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "BookStore.Areas.Customer.Controller.HomeController",
+    "Method": "RecommendedBooks",
+    "RelativePath": "api/Customer/Home/RecommendedBooks",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -397,6 +533,32 @@
         "Name": "searchString",
         "Type": "System.String",
         "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "BookStore.Areas.Customer.Controller.OrdersController",
+    "Method": "Get",
+    "RelativePath": "api/Customer/Orders",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "BookStore.Areas.Customer.Controller.OrdersController",
+    "Method": "GetOne",
+    "RelativePath": "api/Customer/Orders/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
       }
     ],
     "ReturnTypes": []
@@ -508,6 +670,48 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "BookStore.Areas.Customer.Controller.WishlistsController",
+    "Method": "Get",
+    "RelativePath": "api/Customer/Wishlists",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "BookStore.Areas.Customer.Controller.WishlistsController",
+    "Method": "AddToWishlist",
+    "RelativePath": "api/Customer/Wishlists",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "bookId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "BookStore.Areas.Customer.Controller.WishlistsController",
+    "Method": "Delete",
+    "RelativePath": "api/Customer/Wishlists/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "BookStore.Areas.Identity.Controller.AccountController",
     "Method": "Confirm",
     "RelativePath": "api/Identity/Account/confirm",
@@ -603,6 +807,32 @@
       {
         "Name": "request",
         "Type": "BookStore.DTOs.Requests.ValidateOTPRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "BookStore.Areas.Identity.Controller.ProfileController",
+    "Method": "GetProfile",
+    "RelativePath": "api/Identity/Profile",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "BookStore.Areas.Identity.Controller.ProfileController",
+    "Method": "UpdateProfile",
+    "RelativePath": "api/Identity/Profile",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "BookStore.DTOs.Requests.UpdateProfileRequest",
         "IsRequired": true
       }
     ],

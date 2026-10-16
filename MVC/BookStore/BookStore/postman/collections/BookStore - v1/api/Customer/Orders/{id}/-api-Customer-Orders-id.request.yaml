@@ -1,0 +1,9 @@
+$kind: http-request
+name: /api/Customer/Orders/:id
+url: "{{baseUrl}}/api/Customer/Orders/:id"
+method: GET
+pathVariables:
+  id: "-785498108"
+settings: {}
+examples: ./.resources/-api-Customer-Orders-id.resources/examples
+order: 1000

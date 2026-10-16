@@ -8,7 +8,7 @@ body:
   type: json
   content: |-
     {
-      "reviewId": "-0",
+      "reviewId": "-170809",
       "reply": "string",
       "bookId": "-0"
     }

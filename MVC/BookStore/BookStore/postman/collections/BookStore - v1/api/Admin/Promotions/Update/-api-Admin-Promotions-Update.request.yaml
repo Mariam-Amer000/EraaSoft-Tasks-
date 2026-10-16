@@ -1,0 +1,22 @@
+$kind: http-request
+name: /api/Admin/Promotions/Update
+url: "{{baseUrl}}/api/Admin/Promotions/Update?id=-785498108"
+method: PUT
+headers:
+  Content-Type: application/json
+queryParams:
+  id: "-785498108"
+body:
+  type: json
+  content: |-
+    {
+      "id": "-0",
+      "code": "string",
+      "discountPercentage": "0",
+      "startDate": "1959-12-22T23:23:01.807Z",
+      "endDate": "1948-08-09T04:53:54.088Z",
+      "isActive": true
+    }
+settings: {}
+examples: ./.resources/-api-Admin-Promotions-Update.resources/examples
+order: 1000

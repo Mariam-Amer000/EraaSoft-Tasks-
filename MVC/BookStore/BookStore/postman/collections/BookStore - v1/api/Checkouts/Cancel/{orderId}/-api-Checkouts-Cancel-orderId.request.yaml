@@ -1,0 +1,9 @@
+$kind: http-request
+name: /api/Checkouts/Cancel/:orderId
+url: "{{baseUrl}}/api/Checkouts/Cancel/:orderId"
+method: GET
+pathVariables:
+  orderId: "-785498108"
+settings: {}
+examples: ./.resources/-api-Checkouts-Cancel-orderId.resources/examples
+order: 1000
