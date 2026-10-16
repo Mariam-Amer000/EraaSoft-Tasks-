@@ -1,10 +1,8 @@
-﻿
 namespace BookStore.Areas.Customer.Controller;
 
 [Route("api/[area]/[controller]")]
 [ApiController]
 [Area(nameof(Customer))]
-[Authorize(Roles = $"{RoleConstants.SUPER_ADMIN},{RoleConstants.ADMIN},{RoleConstants.EMPLOYEE},{RoleConstants.CUSTOMER}")]
 public class HomeController : ControllerBase
 {
     public readonly IRepository<Author> _authorRepository;
@@ -20,6 +18,7 @@ public class HomeController : ControllerBase
 
     [HttpGet]
     [Route(nameof(Search))]
+    [AllowAnonymous]
     public IActionResult Search(string searchString)
     {
         if (string.IsNullOrWhiteSpace(searchString))
@@ -39,6 +38,7 @@ public class HomeController : ControllerBase
 
     [HttpGet]
     [Route(nameof(BestSeller))]
+    [AllowAnonymous]
     public IActionResult BestSeller()
     {
         var books = _bookRepository.Get()
@@ -50,6 +50,7 @@ public class HomeController : ControllerBase
 
     [HttpGet]
     [Route(nameof(RecommendedBooks))]
+    [AllowAnonymous]
     public IActionResult RecommendedBooks()
     {
         var books = _bookRepository.Get()
@@ -61,6 +62,7 @@ public class HomeController : ControllerBase
 
     [HttpGet]
     [Route(nameof(FlashSale))]
+    [AllowAnonymous]
     public IActionResult FlashSale()
     {
         var books = _bookRepository.Get(b =>

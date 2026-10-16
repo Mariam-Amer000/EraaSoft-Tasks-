@@ -21,7 +21,7 @@ public class BooksController : ControllerBase
 
     [HttpGet]
     [Route(nameof(Get))]
-    [Authorize(Roles = $"{RoleConstants.SUPER_ADMIN},{RoleConstants.ADMIN},{RoleConstants.EMPLOYEE},{RoleConstants.CUSTOMER}")]
+    [AllowAnonymous]
     public IActionResult Get(string? name, int page = 1, int size = 5)
     {
         var books = _bookRepository.Get();
@@ -44,7 +44,7 @@ public class BooksController : ControllerBase
 
     [HttpGet]
     [Route(nameof(GetOne))]
-    [Authorize(Roles = $"{RoleConstants.SUPER_ADMIN},{RoleConstants.ADMIN},{RoleConstants.EMPLOYEE},{RoleConstants.CUSTOMER}")]
+    [AllowAnonymous]
     public IActionResult GetOne(int id)
     {
         var book = _bookRepository.Get(e => e.Id == id).FirstOrDefault();
@@ -85,8 +85,17 @@ public class BooksController : ControllerBase
 
         var result = await _bookRepository.CreateAsync(book, CT);
 
-        if (result)
-            await _bookRepository.CommitAsync(CT);
+        if (!result)
+            return StatusCode(500, new ErrorResponse
+            {
+                ErrorNotification = "Could not create Book."
+            });
+
+        if (await _bookRepository.CommitAsync(CT) == 0)
+            return StatusCode(500, new ErrorResponse
+            {
+                ErrorNotification = "Could not save Book."
+            });
 
         return Ok(new SuccessResponse()
         {
