@@ -1,4 +1,4 @@
-﻿namespace BookStore.Areas.Admin
+namespace BookStore.Areas.Admin
 {
     [Route("api/[area]/[controller]")]
     [ApiController]
@@ -14,22 +14,20 @@
 
         [HttpGet]
         [Route(nameof(Get))]
-        [Authorize(Roles = $"{RoleConstants.SUPER_ADMIN},{RoleConstants.ADMIN},{RoleConstants.EMPLOYEE},{RoleConstants.CUSTOMER}")]
+        [AllowAnonymous]
         public IActionResult Get(string? name)
         {
             var authors = _authorRepository.Get();
 
             if (name is not null)
-            {
                 authors = authors.Where(a => a.Name.Contains(name));
-            }
 
             return Ok(authors);
         }
 
         [HttpGet]
         [Route(nameof(GetOne))]
-        [Authorize(Roles = $"{RoleConstants.SUPER_ADMIN},{RoleConstants.ADMIN},{RoleConstants.EMPLOYEE},{RoleConstants.CUSTOMER}")]
+        [AllowAnonymous]
         public IActionResult GetOne(int id)
         {
             var author = _authorRepository.Get(e => e.Id == id).FirstOrDefault();
@@ -50,8 +48,17 @@
 
             var result = await _authorRepository.CreateAsync(author, CT);
 
-            if (result)
-                await _authorRepository.CommitAsync(CT);
+            if (!result)
+                return StatusCode(500, new ErrorResponse
+                {
+                    ErrorNotification = "Could not create Author."
+                });
+
+            if (await _authorRepository.CommitAsync(CT) == 0)
+                return StatusCode(500, new ErrorResponse
+                {
+                    ErrorNotification = "Could not save Author."
+                });
 
             return Ok(new SuccessResponse()
             {

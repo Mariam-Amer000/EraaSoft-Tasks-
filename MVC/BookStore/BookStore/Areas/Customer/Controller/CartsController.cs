@@ -85,13 +85,19 @@ public class CartsController : ControllerBase
         }
         else
         {
-            await _cartRepository.CreateAsync(new Cart
+            var created = await _cartRepository.CreateAsync(new Cart
             {
                 ApplicationUserId = user.Id,
                 Quantity = quantity,
                 BookId = bookId,
                 TotalPrice = bookPrice * quantity
             }, ct);
+
+            if (!created)
+                return StatusCode(500, new ErrorResponse
+                {
+                    ErrorNotification = "Could not add book to cart."
+                });
         }
 
         await _cartRepository.CommitAsync(ct);

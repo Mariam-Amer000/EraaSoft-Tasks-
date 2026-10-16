@@ -1,4 +1,3 @@
-﻿
 namespace BookStore.Areas.Admin
 {
     [Route("api/[area]/[controller]")]
@@ -15,22 +14,20 @@ namespace BookStore.Areas.Admin
 
         [HttpGet]
         [Route(nameof(Get))]
-        [Authorize(Roles = $"{RoleConstants.SUPER_ADMIN},{RoleConstants.ADMIN},{RoleConstants.EMPLOYEE},{RoleConstants.CUSTOMER}")]
+        [AllowAnonymous]
         public IActionResult Get(string? name)
         {
             var categories = _categoryRepository.Get();
 
             if (name is not null)
-            {
                 categories = categories.Where(c => c.Name.Contains(name));
-            }
 
             return Ok(categories);
         }
 
         [HttpGet]
         [Route(nameof(GetOne))]
-        [Authorize(Roles = $"{RoleConstants.SUPER_ADMIN},{RoleConstants.ADMIN},{RoleConstants.EMPLOYEE},{RoleConstants.CUSTOMER}")]
+        [AllowAnonymous]
         public IActionResult GetOne(int id)
         {
             var category = _categoryRepository.Get(e => e.Id == id).FirstOrDefault();
@@ -51,8 +48,17 @@ namespace BookStore.Areas.Admin
 
             var result = await _categoryRepository.CreateAsync(category, CT);
 
-            if (result)
-                await _categoryRepository.CommitAsync(CT);
+            if (!result)
+                return StatusCode(500, new ErrorResponse
+                {
+                    ErrorNotification = "Could not create Category."
+                });
+
+            if (await _categoryRepository.CommitAsync(CT) == 0)
+                return StatusCode(500, new ErrorResponse
+                {
+                    ErrorNotification = "Could not save Category."
+                });
 
             return Ok(new SuccessResponse()
             {
